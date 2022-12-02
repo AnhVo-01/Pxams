@@ -6,9 +6,10 @@
     background: var(--drop-down);
     padding: 1.5rem 3rem;
     min-height: 480px;
+    font-weight: 600;
     width: 55rem;
     margin: 0 auto;
-    color: var(--text-color1);
+    color: var(--text-color3);
     border-radius: 8px;
     transition: width 2s, height 2s, transform 2s;
 }
@@ -16,7 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: var(--text-border);
+    color: var(--select-border);
     margin-bottom: 10px;
     font-size: 14px;
 }
@@ -26,23 +27,23 @@
     flex-direction: column;
     justify-content: space-between;
 }
-/* .flash-card-body .answer{
+.flash-card-body .answer{
     display: grid;
     gap: 1.5rem;
     grid-template-columns: 1fr 1fr;
-} */
+}
 .flash-card-body .answer .select{
+    position: relative;
     display: flex;
     align-items: center;
     gap: 10px;
-    position: relative;
-    border: 0.125em solid var(--text-border);
+    width: 100%;
     padding: 1rem;
     border-radius: 8px;
-    width: 100%;
+    border: 0.125em solid var(--select-border);
 }
 .flash-card-body .answer .select:hover{
-    border-color: var(--text-color1);
+    border-color: #939bb4;
     cursor: pointer;
 }
 .flash-card-body .answer .opt-index{

@@ -55,22 +55,22 @@
                 <div>
                     <span>Select the true answer</span>
                     <div class="row answer mt-3">
-                        <label class="select col-lg-6">
+                        <label class="select">
                             <input type="radio" name="ans" value="true" class="radiomark">
                             <span class="opt-index">1</span>
                             <span>D</span>
                         </label>
-                        <label class="select col-lg-6">
+                        <label class="select">
                             <input type="radio" name="ans" value="" class="radiomark">
                             <span class="opt-index">2</span>
                             <span>A</span>
                         </label>
-                        <label class="select col-lg-6">
+                        <label class="select">
                             <input type="radio" name="ans" value="" class="radiomark">
                             <span class="opt-index">3</span>
                             <span>B</span>
                         </label>
-                        <label class="select col-lg-6">
+                        <label class="select">
                             <input type="radio" name="ans" value="" class="radiomark">
                             <span class="opt-index">4</span>
                             <span>C</span>
