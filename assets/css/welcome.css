@@ -1,0 +1,417 @@
+:root{
+    /* ===== Colors ===== */
+    --body-color: #f6f7fb;
+    --switch-color: #0a092d;
+    --drop-down: #fff;
+    --options-divider: #231f20;
+    --text-color1: #010101;
+    --text-color2: #666666;
+    --text-color-reverse: #fff;
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+.dark-theme {
+    --body-color: #0a092d;
+    --switch-color: #f2f2f2;
+    --drop-down: #303545;
+    --options-divider: #ccc;
+    --text-color1: #fff;
+    --text-color2: #fff;
+    --text-color-reverse: #666666;
+}
+
+body {
+    color: var(--text-color2);
+    font-size: 15px;
+    line-height: 1.80857;
+    overflow: auto;
+}
+/* Hide password reveal button in MS Edge */
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+
+.dropdown-menu{
+    position: absolute;
+    max-width: 400px;
+    width: max-content;
+}
+.subject .subnav{
+    left: 286px;
+    width: 200px;
+}
+.subject .subnav ul li{
+    padding: 0;
+}
+/* ------ Popup -------------------------------------------------*/
+.Login-Cont {
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 0;
+    overflow: auto;
+    display: block;
+    transition: var(--tran-05);
+    background-color: var(--body-color);
+}
+
+/* ------ Setting ------------------------ */
+.Login-box{
+    position: absolute;
+    background: var(--drop-down);
+    width: 50vw;
+    max-width: 600px;
+    height: fit-content;
+    max-height: 89vh;
+    overflow: auto;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -50%);
+}
+.form-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 30px;
+    padding: 10px 0;
+}
+.form-title span{
+    font-weight: 700;
+    padding-bottom: 10px;
+    color: var(--text-color1);
+    width: 120px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.Set-pop{
+    position: relative;
+    height: fit-content;
+    padding: 0 10px;
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+.options{
+    padding: 10px;
+}
+.third-log{
+    position: relative;
+    margin: 10px 20px;
+    border-radius: 8px;
+    border: 0.08rem solid #ccc;
+}
+.third-log a{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text-color1) !important;
+    padding: 15px 20px;
+}
+.third-log:hover{
+    border-color: #3ccfcf;
+}
+.options input{
+    font-weight: 400;
+    padding: 8px 20px;
+    width: 100%;
+    outline: 0;
+    border: 0;
+    color: var(--text-color1);
+    background-color: var(--drop-down);
+    border-bottom: 1px solid #ccc;
+}
+.options input:focus{
+    border-bottom: 2px solid #ffcd1f;
+}
+.options input.in-cus{
+    border: 2px solid #010101;
+    border-radius: 5px;
+}
+.options span{
+    user-select: none;
+    font-size: 15px;
+    color: var(--text-color1);
+}
+.options .opt-label{
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .0625rem;
+    line-height: 1.333333333333333;
+    margin-bottom: 0.625rem;
+}
+.options .opt-btn{
+    font-weight: 700;
+    padding: 14px;
+    width: 100%;
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: #3ccfcf;
+}
+.options .opt-btn.disable{
+    background-color: #d9dde8;
+}
+.options button:hover{
+    background-color: #2eb8b8;
+}
+.options-divider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0.5rem 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--options-divider);
+    text-align: left;
+}
+.options-divider:before, .options-divider:after{
+    content: "";
+    display: block;
+    flex: 1;
+    height: 1px;
+    background-color: #ebebeb;
+}
+.submit-btn{
+    position: absolute;
+    transform: translateX(10%);
+    bottom: 0;
+    width: 670px;
+    padding: 30px;
+}
+.auth-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.auth-actions a{
+    color: #2eb8b8;
+    font-size: 14px;
+    transition: .2s all;
+    font-weight: 700;
+}
+a:hover{
+    color: #ffcd1f !important;
+    transition: .2s all;
+}
+.captcha{
+    padding: 8px 10px;
+    font-family: "Cursive";
+    font-size: 16px;
+    font-weight: 700;
+    min-width: 100px;
+    text-align: center;
+    color: #5cd6d6;
+    background-color: #2eb8b8;
+    border: 2px solid #010101;
+    border-radius: 5px;
+}
+/* ------------------------- Save Password ----------------------------- */
+.showPass {
+    position: relative;
+    right: 10px;
+    bottom: 28px;
+    float: right;
+    color: #ccc;
+    cursor: pointer;
+}
+.save-pass{
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+}
+/* The container */
+.save-pass-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    color: var(--text-color1);
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.save-pass-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    height: 18px;
+    width: 18px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ffcd1f;
+}
+.radio-mark{
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    height: 18px;
+    width: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+
+/* On mouse-over, add a grey background color */
+.save-pass-container:hover input ~ .checkmark,
+.save-pass-container:hover input ~ .radio-mark {
+    background-color: #ffcd1f;
+}
+
+/* When the checkbox is checked, add a blue background */
+.save-pass-container input:checked ~ .checkmark,
+.save-pass-container input:checked ~ .radio-mark {
+    background-color: #3ccfcf;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.save-pass-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.save-pass-container .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 7px;
+    height: 11px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* ================================= Container ================================= */
+.ImageCard{
+    position: relative;
+    width: 100vw;
+    height: 95vh;
+}
+.ImageCard picture{
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+}
+.ImageCard picture img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ImageCard .ImageCard-Text{
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin: 0 10%;
+    color: #fff;
+}
+.ImageCard-Text-Content{
+    margin: 3rem;
+    max-width: 40rem;
+}
+.ImageCard-Text-Content .UIHeading{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 2.75rem;
+    font-weight: 800;
+    letter-spacing: normal;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+.ImageCard-Text-Content .UIParagraph{
+    font-size: 1.25rem;
+    letter-spacing: normal;
+    line-height: 1.4;
+}
+.ImageCard-Text .Reg{
+    padding: 0.75rem 1.5rem;
+    margin: 0 3rem;
+    font-size: 15px;
+    letter-spacing: normal;
+    line-height: 1.5;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+    width: 180px;
+    border-radius: 8px;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+.ImgCard-Control a{
+    display: none;
+}
+
+/* ================================= footer ================================= */
+.SiteFooter{
+    padding-top: 4rem;
+    color: var(--text-color1);
+}
+.SiteFooter-sectionLabel{
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: normal;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+.SiteFooter-sectionLink{
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 1.5;
+}
+.SiteFooter-sectionLink a{
+    color: #2eb8b8;
+}
+.UIDropdown-select{
+    border: 0;
+    outline: 0;
+    width: 100%;
+    padding: 5px 0;
+    color: var(--text-color1);
+    border-bottom: 2px solid #2eb8b8;
+    background-color: inherit;
+}
+.UIDropdown-select option{
+    background: var(--body-color);
+}
+
+.SiteFooter-bottom{
+    padding: 2rem 0;
+}

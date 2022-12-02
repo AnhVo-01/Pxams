@@ -1,0 +1,98 @@
+/* ---------------------------- Main ----------------------------- */
+.flash-cards:not(:first-child){
+    display: none;
+}
+.flash-cards{
+    background: var(--drop-down);
+    padding: 1.5rem 3rem;
+    min-height: 480px;
+    width: 55rem;
+    margin: 0 auto;
+    color: var(--text-color1);
+    border-radius: 8px;
+    transition: width 2s, height 2s, transform 2s;
+}
+.flash-cards .flash-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-border);
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.flash-cards .flash-card-body{
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* .flash-card-body .answer{
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+} */
+.flash-card-body .answer .select{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    border: 0.125em solid var(--text-border);
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100%;
+}
+.flash-card-body .answer .select:hover{
+    border-color: var(--text-color1);
+    cursor: pointer;
+}
+.flash-card-body .answer .opt-index{
+    background: var(--body-color);
+    padding: 5px 10px;
+    font-size: 10px;
+    font-weight: bolder;
+    border-radius: 50%;
+    position: absolute;
+}
+.flash-card-body input[type="radio"]:not(:checked) {
+    /* Explicit Unchecked Styles */
+    border: 1px solid #FF0000 !important;
+}
+.radiomark{
+    width: 25px;
+}
+
+/* ============================== in-progress ========================== */
+.in-progress{
+    background: var(--drop-down);
+    color: var(--text-color2);
+    padding: 40px 0;
+}
+.in-progress .progress{
+    background-color: #f6f7fb;
+    border-radius: 1.5rem;
+    height: 1rem;
+    width: 100%;
+}
+.in-progress .progress-bar{
+    background-color: #65c999;
+    border: 0.125rem solid #fff;
+    border-radius: 1.5rem;
+    height: 100%;
+}
+
+.checkpoint-ft{
+    background: var(--footer-color1);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    font-size: 15px;
+}
+.checkpoint-ft .ft-content{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-color1);
+    font-weight: 900;
+    font-size: 14px;
+}

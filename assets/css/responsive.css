@@ -1,0 +1,69 @@
+@media (max-width: 768px){
+    #header{
+        display: none;
+    }
+    .mobile-view{
+        display: block;
+    }
+    .navigator{
+        display: block;
+    }
+    .carousel-inner{
+        height: 250px;
+    }
+    .carousel-item .qa{
+        font-size: 16px;
+    }
+    .carousel .controls{
+        font-size: 12px;
+        padding: 0;
+    }
+    .carousel .controls button{
+        visibility: hidden;
+    }
+    .card-option{
+        font-size: 15px;
+    }
+    .card-option .question{
+        border-right: none;
+        border-bottom: 1px solid #0a092d;
+    }
+    .card-option .answer{
+        border-left: none;
+        border-top: 1px solid #0a092d;
+    }
+    .cards-control-menu{
+        display: none !important;
+    }
+
+    /* --------------- Login --------------------------------- */
+    .Login-Cont{
+        height: 90.5% !important;
+        z-index: -1 !important;
+    }
+    .Login-box{
+        width: 97vw !important;
+        height: 90vh !important;
+    }
+    .third-log a {
+        font-size: 14px !important; 
+    }
+    
+    /* --------------- Welcome ------------------------------- */
+    .ImageCard .ImageCard-Text{
+        height: 95% !important;
+        margin: 0 2% !important;
+    }
+    .ImageCard-Text-Content .UIHeading{
+        font-size: 2rem !important;
+    }
+    .ImageCard-Text-Content .UIParagraph{
+        font-size: 1rem !important;
+    }
+    .ImgCard-Control a{
+        display: block !important;
+    }
+    .ImgCard-Control button{
+        display: none;
+    }
+}

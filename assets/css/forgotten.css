@@ -1,0 +1,83 @@
+:root{
+    /* ===== Colors ===== */
+    --body-color: #f6f7fb;
+    --switch-color: #0a092d;
+    --drop-down: #fff;
+    --options-divider: #231f20;
+    --text-color1: #010101;
+    --text-color-reverse: #fff;
+}
+
+.dark-theme {
+    --body-color: #0a092d;
+    --switch-color: #f2f2f2;
+    --drop-down: #303545;
+    --options-divider: #ccc;
+    --text-color1: #fff;
+    --text-color-reverse: #666666;
+}
+/* ------------------------------------------------------- */
+
+.SiteLayout {
+    margin: 0 auto;
+    max-width: 45rem;
+    padding: 6.25rem 0 3.75rem;
+    /* height: 87vh; */
+    color: var(--text-color1);
+}
+.SiteLayout .UIHeading {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 0 10px;
+    color: var(--text-color1);
+}
+.UIParagraph {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.625;
+    padding: 0 10px;
+}
+.SiteLayout .UIInput{
+    display: flex;
+    flex-direction: column;
+}
+.UIInput{
+    margin: 1.5rem 0;
+    padding: 0 10px;
+}
+.UIInput .UIInput-content input{
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-weight: 400;
+    padding: 8px 0;
+    width: 100%;
+    outline: 0;
+    border: 0;
+    color: var(--text-color1);
+    background-color: inherit;
+    border-bottom: 2px solid #ccc;
+}
+.UIInput-content input:focus{
+    border-bottom: 2px solid #ffcd1f;
+}
+.UIInput-label {
+    color: var(--ui_color_gray_60);
+    display: block;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .0625rem;
+    line-height: 1.333333333333333;
+    margin-top: 0.625rem;
+    text-align: inherit;
+    text-transform: uppercase;
+    user-select: none;
+}
+.third-log a{
+    justify-content: center;
+    background-color: #ddd;
+    border-radius: 8px;
+}
+.third-log a:hover{
+    color: #2eb8b8 !important;
+}

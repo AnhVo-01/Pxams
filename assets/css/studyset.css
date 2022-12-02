@@ -1,0 +1,199 @@
+:root{
+    /* ===== Colors ===== */
+    --body-color: #f6f7fb;
+    --switch-color: #0a092d;
+    --drop-down: #fff;
+    --option-box: #fff;
+    --dropdown-hover: #f2f2f2;
+    --text-color1: #010101;
+    --text-color2: #010101;
+    --text-color-reverse: #fff;
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+.dark-theme {
+    --body-color: #0a092d;
+    --switch-color: #f2f2f2;
+    --drop-down: #303545;
+    --option-box: #2e3856;
+    --dropdown-hover: #2e3856;
+    --text-color1: #fff;
+    --text-color2: #ccc;
+    --text-color-reverse: #010101;
+}
+
+body{
+    color: var(--text-color1) !important;
+}
+
+/* ==================================================================================== */
+.study-set{
+    margin-top: 70px;
+}
+.set-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.set-header input{
+    background: var(--option-box);
+    color: var(--text-color1);
+    border: 0;
+    outline: 0;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+}
+.cards-control{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 20px 0;
+}
+.cards-control ul li button{
+    color: var(--drop-down);
+    border: 1px solid var(--drop-down);
+    border-radius: 50%;
+    padding: 8px 12px;
+    background: #3ccfcf;
+}
+.cards-control ul li button:hover{
+    background: #ffcd1f;
+}
+.cards-control .select-menu{
+    background: var(--drop-down);
+    color: #3ccfcf;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+.set-body{
+    padding-bottom: 20px;
+}
+.set-body .card{
+    position: relative;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 500;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    color: var(--text-color1);
+    background-color: var(--option-box);
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+}
+.set-body .card .card-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-menu li a{
+    color: var(--text-color2);
+}
+.card-menu li a:hover{
+    color: #ffcd1f;
+}
+.set-body .card .card-body{
+    height: fit-content;
+}
+.set-body .card textarea{
+    background: inherit;
+    width: 100%;
+    outline: 0;
+    padding: 15px 0;
+    overflow: hidden; 
+    height: 55px;
+    border: 0;
+    color: var(--text-color1);
+    border-bottom: 3px solid var(--text-color1);
+    resize: none;
+}
+.set-body .card textarea:focus{
+    border-bottom: 3px solid #ffcd1f;
+}
+.card-body.addnew{
+    display: flex;
+    justify-content: center;
+    background: var(--option-box);
+    border-radius: 8px;
+}
+.addnew button{
+    color: inherit;
+    font-weight: bolder;
+    border-bottom: 3px solid #3ccfcf;
+}
+.addnew button:hover{
+    color: #ffcd1f;
+    border-bottom: 3px solid #ffcd1f;
+}
+
+.study-set-options{
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    transition: 0.3s;
+}
+/* ------ Refer a friend ------------------------ */
+.study-set-box{
+    position: absolute;
+    color: var(--text-color1);
+    background: var(--drop-down);
+    width: 600px;
+    min-height: 350px;
+    height: auto;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+.opt-pop{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 550px;
+    height: auto;
+    overflow-y: auto;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: justify;
+    line-height: 1.2;
+}
+.opt-pop input{
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(118, 118, 118);
+    box-shadow: none;
+}
+.submit-form{
+    background-color: #3ccfcf !important;
+    color: #fff !important;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 500px;
+    padding: 1rem 0.75rem !important;
+    margin-bottom: 20px;
+}
+.opt-pop .des-text{
+    margin-top: 20px;
+    color: var(--text-color2);
+    font-weight: 600;
+}
+.set-pass{
+    display: none;
+    flex-direction: column;
+    padding-top: 10px;
+    margin-top: 10px;
+}

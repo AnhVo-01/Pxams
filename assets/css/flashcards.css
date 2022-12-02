@@ -1,0 +1,336 @@
+/* ===== Colors ===== */
+/* :root{
+    --body-color: #f6f7fb;
+    --switch-color: #0a092d;
+    --drop-down: #fff;
+    --option-box: #fff;
+    --dropdown-hover: #f2f2f2;
+    --text-color1: #010101;
+    --text-color2: #010101;
+    --text-color-reverse: #fff;
+} */
+
+/* .dark-theme {
+    --body-color: #0a092d;
+    --switch-color: #f2f2f2;
+    --drop-down: #303545;
+    --option-box: #2e3856;
+    --dropdown-hover: #2e3856;
+    --text-color1: #fff;
+    --text-color2: #ccc;
+    --text-color-reverse: #010101;
+} */
+.btn:focus {
+    box-shadow: none;
+}
+.container{
+    color: var(--text-color1);
+}
+.navigator{
+    display: none;
+}
+.navigator a{
+    color: #fff;
+}
+.navigator a:hover{
+    color: #2e3856;
+}
+/*===============================================================================*/
+.carousel{
+    border-radius: 8px;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+}
+.carousel-inner{
+    height: 350px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: var(--option-box);
+}
+.carousel-item{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.carousel-item .flip-card{
+    height: 100%;
+    perspective: 1000px;
+}
+.carousel-item .qa{
+    cursor: pointer;
+    position: relative;
+    font-size: 22px;
+    color: var(--text-color1);
+    height: 100%;
+    padding: 20px 0;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.carousel-item .qa span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 30px;
+    overflow: auto;
+    backface-visibility: hidden;
+}
+.carousel-item .qa .question{
+    align-items: unset;
+}
+.carousel-item .qa .answer{
+    display: none;
+    transform: rotateX(180deg);
+}
+.carousel-item .qa span::-webkit-scrollbar{
+    width: 5px;
+}
+.carousel-item .qa span::-webkit-scrollbar-thumb{
+    background: #888; 
+}
+.carousel .controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 20px;
+    border-radius: 0 0 8px 8px;
+    background-color: var(--option-box);
+}
+.carousel .controls button{
+    color: var(--text-color2);
+    border: 1px solid var(--text-color2);
+    padding: 10px;
+    width: 300px;
+}
+.controls button:hover{
+    color: var(--text-color1);
+    border-color: var(--text-color1);
+}
+/*----------------------------- right -----------------------------*/
+.option, .card-option{
+    padding: 10px 20px;
+    font-weight: 500;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: var(--option-box);
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+}
+.option{
+    display: flex;
+    gap: 10px;
+}
+.option:hover{
+    cursor: pointer;
+    margin-bottom: 11px;
+    border-bottom: 4px solid #a8b1ff;
+}
+.option i{
+    color: #4257b2;
+    font-size: 24px;
+    padding-right: 10px;
+}
+.option a{
+    color: var(--text-color1);
+    font-size: 700;
+}
+
+.cre-user{
+    display: flex;
+    align-items: center;
+    color: var(--text-color1);
+    font-size: 14px;
+}
+.cre-ava{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 2px;
+    border-radius: 50%;
+    text-transform: uppercase;
+    user-select: none;
+    border: 2px solid #4257b2;
+}
+
+/*------------------------- card-content -------------------------*/
+.add-to{
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    transition: all ease-in-out 0.2s;
+}
+
+.add-to-box{
+    position: absolute;
+    color: var(--text-color1);
+    background: var(--drop-down);
+    width: 600px;
+    height: auto;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+.opt-pop{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 550px;
+    height: auto;
+    overflow-y: auto;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: justify;
+    line-height: 1.2;
+}
+.opt-pop .add-option{
+    color: #3ccfcf;
+    background: var(--body-color);
+}
+.btn.add-option{
+    border-radius: 0 !important;
+}
+.add-option.active{
+    color: var(--text-color-reverse);
+    background: #ffcd1f;
+}
+.add-option:not(.active):hover{
+    color: #ffcd1f;
+}
+.opt-pop .UIDiv{
+    margin-top: 1.5rem;
+}
+.opt-pop .createButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: var(--body-color);
+}
+.createButton .btn{
+    font-weight: bolder;
+    color: var(--text-color1);
+    border-bottom: 5px solid #3ccfcf;
+}
+
+.ToggleCard{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 300px;
+    overflow: auto;
+}
+.ToggleCard::-webkit-scrollbar{
+    display: none;
+}
+.ToggleCard:hover::-webkit-scrollbar{
+    display: block;
+    width: 6px;
+}
+.ToggleCard::-webkit-scrollbar-thumb{
+    background-color: #888;
+}
+.ToggleList{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: var(--body-color);
+}
+.ToggleList .UIHeading{
+    font-size: 20px;
+}
+.ToggleList .ToggleList-toggle{
+    cursor: pointer;
+    position: relative;
+}
+.ToggleList-toggle .UISwitch-label{
+    background: #2e3856;
+    padding: 10px 15px;
+    border-radius: 5px;
+    position: absolute;
+    left: -22px;
+    bottom: -11px;
+}
+.ToggleList-toggle .UISwitch-label::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    content: "\2b";
+    color: #f2f2f2;
+    border: 0 !important;
+    vertical-align: 0 !important;
+}
+.ToggleList-toggle input:checked ~ .UISwitch-label{
+    background: #ffcd1f;
+}
+.ToggleList-toggle input:checked ~ .UISwitch-label::after{
+    content: "\f068";
+    color: #010101;
+}
+
+/*--------------------------------------------------*/
+.cards-control{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cards-control a{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--text-color1);
+}
+.cards-control a:hover{
+    color: var(--text-color1);
+}
+.cards-control ul li a:not(.dropdown-item){
+    border: 1px solid var(--text-color1);
+    border-radius: 50%;
+    padding: 9px 10px;
+}
+.cards-control ul li a:hover{
+    background: var(--drop-down);
+}
+
+.card-option{
+    font-size: 16px;
+    line-height: 25px;
+}
+.card-option .edit-card,
+.card-option .bookmark-card{
+    font-size: 16px;
+    color: var(--text-color1);
+}
+.card-option .edit-card:hover,
+.card-option .bookmark-card:hover{
+    color: #ffcd1f;
+}
+.card-option .question{
+    padding: 10px;
+    border-right: 1px solid #0a092d;
+}
+.card-option .answer{
+    padding: 10px;
+    border-left: 1px solid #0a092d;
+}
+.card-option .card{
+    background-color: inherit;
+    border: 0;
+    border-radius: 8px;
+}
+.card-option .card .card-header{
+    display: flex;
+    justify-content: end;
+}
+.card .card-body{
+    padding: 10px 20px;
+}

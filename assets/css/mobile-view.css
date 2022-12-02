@@ -1,0 +1,11 @@
+/* ==================== Search ==================== */
+.search-header{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    font-size: 15px;
+    transition: top 0.3s;
+    background: #4257b2;
+    border-bottom: 1px solid #a8b1ff;
+}

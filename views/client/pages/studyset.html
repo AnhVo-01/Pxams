@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a new study set | Pxams</title>
+    <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/studyset.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://kit.fontawesome.com/a4edd5786f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header id="header">
+        <div class="container-fluid">
+            <div class="px-3">
+                <div class="row align-items-center">
+                    <div class="col-lg-2">
+                        <nav class="navbar">
+                            <div class="navigator">
+                                <a href="mobile/user.html">
+                                    <i class="fa-solid fa-arrow-left fa-xl"></i>
+                                </a>
+                            </div>
+                            <div class="navbar-brand image" id="back-to-top">
+                                <img src="image/logo.png" alt="logo">
+                            </div>
+                            <div class="navigator">
+                                <a href="#">
+                                    <i class="fa-solid fa-share-from-square fa-xl me-3"></i>
+                                </a>
+                            </div>
+                            <div class="navigator">
+                                <div class="dropdown">
+                                    <a href="#" data-bs-toggle="dropdown">
+                                        <i class="fa-solid fa-ellipsis-vertical fa-xl ms-3"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="fa-solid fa-folder-plus fa-lg me-2"></i> Add to folder
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="fa-solid fa-folder-plus fa-lg me-2"></i> Add to class
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="fa-solid fa-triangle-exclamation fa-lg me-2"></i> Report
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="nav-menu">
+                            <nav class="navbar navbar-expand-lg w-100">
+                                <ul class="nav navbar-nav align-items-center w-100" id="page-header">
+                                    <li class="nav-item px-3">
+                                        <a href="index.html" class="nav-link px-3">
+                                            <span class="nav-label">Home</span>
+                                        </a> 
+                                    </li>
+                                    <li class="nav-item px-3">
+                                        <a href="#" class="nav-link px-3">
+                                            <span class="nav-label">Your folder</span>
+                                        </a> 
+                                    </li>
+
+                                    <!----- Begin Library ----->
+                                    <li class="nav-item dropdown px-3">
+                                        <a href="#" class="nav-link dropdown-toggle px-3" data-bs-toggle="dropdown">
+                                            <span class="nav-label">Library</span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="subnavbtn">
+                                                <a class="dropdown-item" href="#">
+                                                    <span>Study sets</span>
+                                                    <i class="fa-solid fa-angle-right pt-1" style="float: right;"></i>
+                                                </a>
+                                                <div class="subnav">
+                                                    <div class="subnav-content">
+                                                        <ul class="p-0">
+                                                            <li>
+                                                                <a href="flashcards.html" class="dropdown-item">
+                                                                    <div class="d-flex flex-column">
+                                                                        <span>SWP391</span>
+                                                                        <span class="text-muted"><small>VoNVA</small></span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li><a href="#" class="dropdown-item">SWP391</a></li>
+                                                            <li><a href="#" class="dropdown-item">SWP391</a></li>
+                                                            <li><a href="#" class="dropdown-item">SWP391</a></li>
+                                                            <li><a href="#" class="dropdown-item">SWP391</a></li>
+                                                            <li><a href="#" class="dropdown-item">SWP391</a></li>
+                                                            <li><a href="#" class="dropdown-item">SWP391</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="all">
+                                                        <a class="dropdown-item text-primary" href="#">View alls</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="subnavbtn">
+                                                <a class="dropdown-item" href="#">
+                                                    <span>Classes</span>
+                                                    <i class="fa-solid fa-angle-right pt-1" style="float: right;"></i>
+                                                </a>
+                                                <div class="subnav">
+                                                    <div class="subnav-content">
+                                                        <ul class="p-0">
+                                                            <li>
+                                                                <a href="#" class="dropdown-item">
+                                                                    <div class="d-flex flex-column">
+                                                                        <span>Class1</span>
+                                                                        <span class="text-muted"><small>VoNVA</small></span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="all">
+                                                        <a class="dropdown-item text-primary" href="#">View alls</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <!----- Begin create ----->
+                                    <li class="dropdown px-3">
+                                        <a class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" style="color: #fff;">Create</a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item" href="studyset.html">
+                                                    <i class="fa-regular fa-file-lines me-2"></i>
+                                                    Study sets
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="fa-regular fa-folder me-2"></i>
+                                                    Folder
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="fa-solid fa-user-group me-2"></i>
+                                                    Class
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <nav class="navbar" id="user_box">
+                            <ul class="nav top-right">
+                                <li class="nav-item search-box">
+                                    <form action="Search" method="POST">
+                                        <i class="fa-solid fa-magnifying-glass fa-lg icon"></i>
+                                        <input type="text" placeholder="Search...">
+                                    </form>
+                                </li>
+                                <li class="nav-item">
+                                    <div class="dropdown">
+                                        <a href="#" class="rounded-circle top-noti" data-bs-toggle="dropdown">
+                                            <span class="badge-num bg-primary">3</span>
+                                            <i class="fa-regular fa-bell"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-end top-noti-box">
+                                            <li>
+                                                <a href="#" class="dropdown-item d-flex flex-column">
+                                                    <div class="d-flex align-items-center mb-2">
+                                                        <i class="fa-solid fa-circle fa-2xs" style="color: #0099c6;"></i>
+                                                        <p class="small ps-3 m-0" style="color: #0099c6;">11-07-2022</p>
+                                                    </div>                         
+                                                    <div class="d-flex align-items-center pb-3">
+                                                        <span class="rounded-circle top-noti me-3">
+                                                            <i class="fa-solid fa-dumbbell"></i>
+                                                        </span>
+                                                        <span style="font-size: 15px;">New order No. <strong>#11</strong></span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" data-bs-toggle="collapse" data-bs-target="#setting">
+                                        <img alt="Ảnh hồ sơ" class="rounded-circle" src="https://gimg.quizlet.com/a-/AOh14GgnLlV8m31W4uh75mFzjx41BLiZE7irWhqAE0S5=s96-c?sz=32" style="height: 32px; width: 32px;">
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="dropdown-ls collapse" id="setting">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item nav-tabs">
+                                        <div class="d-flex">
+                                            <img alt="Ảnh hồ sơ" class="rounded-circle" src="https://gimg.quizlet.com/a-/AOh14GgnLlV8m31W4uh75mFzjx41BLiZE7irWhqAE0S5=s96-c?sz=32" style="height: 32px; width: 32px;">
+                                            <div class="d-flex flex-column ps-3">
+                                                <span class="small"><strong>VoNVA</strong></span>
+                                                <span class="small">vonvahe151420@fpt.edu.vn</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#info">Profile</a> 
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#">Process</a> 
+                                    </li>
+                                    <li class="nav-link">
+                                        <div class="theme-setting">
+                                            <a href="#mode" class="text nav-text">Dark mode</a>
+                                            <div class="toggle-switch">
+                                                <span class="switch"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-link nav-tabs">
+                                        <a href="#">Setting</a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="#" id="myBtn">Refer a friend</a> 
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="#">Help and feedback</a> 
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="#">Blog</a> 
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="#">Privacy policy</a> 
+                                    </li>
+                                    <li class="nav-link">
+                                        <div class="d-flex">
+                                            <a href="#">Premium</a>
+                                            <i class="fa-solid fa-gem ms-2" style="color: gold;"></i>
+                                        </div>
+                                    </li>
+                                    <li class="nav-link nav-tabs">
+                                        <a href="#">App</a> 
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="#">
+                                            <span class="text nav-text">Log Out</span>
+                                        </a> 
+                                    </li>
+                                </ul>
+                            </div>         
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Refer a friend --------------------------------------- -->
+    <div class="Popup" id="myModal">
+        <div class="Refer_a_friend">
+            <span class="close" id="close-set">&times;</span>
+            <div style="padding: 20px 40px 0;">
+                <h1 style="text-align: center;">Share your referral link</h1>
+                <hr style="border: 0; height: 1px; background-color: #000; margin: 15px 0;">
+            </div>
+            <div class="ab-pop">
+                <span class="my-3">
+                    Invite friends who aren't using Pxams and receive a free week of Pxams Premium
+                    <a href="#">Terms apply.</a>
+                </span>
+                <div class="input-group refer-link mt-5">
+                    <input type="text" class="form-control" value="https://quizlet.com/referral-invite/AvoAW123?i=3fuwrc&x=1Nqt" id="myInput" disabled>
+                    <button class="btn btn-info" type="button" onclick="copyText()" id="copyBtn">Copy link</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content --------------------------------------- -->
+    <div class="container" style="margin-bottom: 80px;">
+        <div class="study-set">
+            <div class="set-title">
+                <div class="d-flex flex-column">
+                    <h5>Create a new study set</h5>
+                    <span class="text-muted"><small>Saved 4 min ago</small></span>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </div>
+
+            <div class="set-header">
+                <div class="d-flex flex-column my-3">
+                    <span>Title</span>
+                    <input type="text" name="" placeholder="Enter a title">
+                </div>
+                <div class="d-flex flex-column my-3">
+                    <span>Description</span>
+                    <input type="text" name="" placeholder="Add a description...">
+                </div>
+                <div class="cards-control">
+                    <ul class="nav">
+                        <li class="mx-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Visible to">
+                            <button class="nav-item" data-bs-toggle="collapse" data-bs-target="#options">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </li>
+                        <li class="mx-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Editable by">
+                            <button class="nav-item" data-bs-toggle="collapse" data-bs-target="#options">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                        </li>
+                        <li class="mx-2">
+                            <button class="nav-item" id="flip-qna" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Flip questions and answers">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                            </button>
+                        </li>
+                    </ul>
+                    <!-- study-set options --------------------------------------- -->
+                    <div class="study-set-options collapse" id="options">
+                        <div class="study-set-box">
+                            <div style="padding: 10px 40px 0;">
+                                <div class="d-flex flex-row-reverse justify-content-between align-items-center">
+                                    <span class="close" data-bs-toggle="collapse" data-bs-target="#options">&times;</span>
+                                    <h5>OPTIONS</h5>
+                                </div>
+                                <hr style="border: 0; height: 1px; background-color: #000; margin: 0 0 15px;">
+                            </div>
+                            <div class="opt-pop">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="d-flex flex-column">
+                                            <span class="mb-2"><small>VISIBLE TO</small></span>
+                                            <select name="" class="select-menu">
+                                                <option value="0" selected>Everyone</option>
+                                                <option value="1">Certain Classes</option>
+                                                <option value="2">User with a password</option>
+                                                <option value="3">Just me</option>
+                                            </select>
+                                            <span class="des-text">All users can use this set</span>
+                                        </div>
+                                        <div class="set-pass">
+                                            <input type="password" name="" class="select-menu" placeholder="Create a password">
+                                            <span class="mt-2"><small>PASSWORD</small></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex flex-column">
+                                            <span class="mb-2"><small>EDITABLE BY</small></span>
+                                            <select name="" class="select-menu">
+                                                <option value="" id="justme">Users with a password</option>
+                                                <option value="" selected>Just me</option>
+                                            </select>
+                                            <span class="des-text">Only you can edit this set</span>
+                                        </div>
+                                        <div class="set-pass">
+                                            <input type="password" name="" class="select-menu" placeholder="Create a password">
+                                            <span class="mt-2"><small>PASSWORD</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 0 40px 10px;">
+                                <hr style="border: 0; height: 1px; background-color: #000; margin: 15px 0;">
+                                <button type="submit" class="btn submit-form">SAVE</button>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            var desText = document.querySelectorAll(".des-text");
+                            var menu = document.querySelectorAll(".select-menu");
+                            var setPass = document.querySelectorAll(".set-pass");
+
+                            menu[0].onclick = function() {
+                                if(menu[0].options[menu[0].selectedIndex].text == "Everyone"){
+                                    desText[0].innerHTML = "All users can use this set";
+                                    setPass[0].style.display = "none";
+                                }else if(menu[0].options[menu[0].selectedIndex].text == "Certain Classes"){
+                                    desText[0].innerHTML = "All members in the class can use this set";
+                                    setPass[0].style.display = "none";
+                                }else if(menu[0].options[menu[0].selectedIndex].text == "Just me"){
+                                    desText[0].innerHTML = "Only you can view this set";
+                                    setPass[0].style.display = "none";
+                                }else{
+                                    desText[0].innerHTML = "Only people with this password can use this set";
+                                    setPass[0].style.display = "flex";
+                                }
+
+                                // ---------------------------------------------------------------
+                                if(menu[0].options[menu[0].selectedIndex].text == "Just me"){
+                                    document.getElementById("justme").style.display = "none";
+                                }else{
+                                    document.getElementById("justme").style.display = "block";
+                                }
+                            };
+
+                            menu[2].onclick = function() {
+                                if(menu[2].options[menu[2].selectedIndex].text == "Users with a password"){
+                                    desText[1].innerHTML = "Only people with this password can edit this set";
+                                    setPass[1].style.display = "flex";
+                                }else{
+                                    desText[1].innerHTML = "Only you can edit this set";
+                                    setPass[1].style.display = "none";
+                                }
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <div class="set-body">
+                <div class="card draggable">
+                    <div class="card-header">
+                        <span id="card-index">1</span>
+                        <ul class="nav card-menu">
+                            <li>
+                                <a href="#" class="btn moveBtn" style="cursor: all-scroll;">
+                                    <i class="fa-solid fa-grip-lines fa-lg"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#1" class="btn remove-btn" onclick="delCard()"><i class="fa-solid fa-trash-can fa-sm"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <textarea name="" id="question" placeholder="Enter question" onkeyup="expandtext(this);"></textarea>
+                                <span style="font-size: 12px;">QUESTION</span>
+                            </div>
+                            <div class="col-md-6">
+                                <textarea name="" id="answer" placeholder="Enter answer" onkeyup="expandtext(this);"></textarea>
+                                <span style="font-size: 12px;">ANSWER</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card draggable">
+                    <div class="card-header">
+                        <span id="card-index">2</span>
+                        <ul class="nav card-menu">
+                            <li>
+                                <a href="#" class="btn moveBtn" style="cursor: all-scroll;">
+                                    <i class="fa-solid fa-grip-lines fa-lg"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#1" class="btn remove-btn" onclick="delCard()"><i class="fa-solid fa-trash-can fa-sm"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <textarea name="" id="question" placeholder="Enter question" onkeyup="expandtext(this);"></textarea>
+                                <span style="font-size: 12px;">QUESTION</span>
+                            </div>
+                            <div class="col-md-6">
+                                <textarea name="" id="answer" placeholder="Enter answer" onkeyup="expandtext(this);"></textarea>
+                                <span style="font-size: 12px;">ANSWER</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card draggable">
+                    <div class="card-header">
+                        <span id="card-index">3</span>
+                        <ul class="nav card-menu">
+                            <li>
+                                <a href="#" class="btn moveBtn" style="cursor: all-scroll;">
+                                    <i class="fa-solid fa-grip-lines fa-lg"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#1" class="btn remove-btn" onclick="delCard()"><i class="fa-solid fa-trash-can fa-sm"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <textarea name="" id="question" placeholder="Enter question" onkeyup="expandtext(this);"></textarea>
+                                <span style="font-size: 12px;">QUESTION</span>
+                            </div>
+                            <div class="col-md-6">
+                                <textarea name="" id="answer" placeholder="Enter answer" onkeyup="expandtext(this);"></textarea>
+                                <span style="font-size: 12px;">ANSWER</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" style="background: inherit; border-radius: 8px;">
+                <div class="card-body addnew">
+                    <button class="btn" onclick="addnew()">
+                        <i class="fa-solid fa-plus fa-xs"></i>
+                        <span>ADD CARD</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="cards-control">
+                <button type="submit" class="btn btn-primary" style="padding: 15px 25px;">Create</button>
+            </div>
+            <script src="js/studyset.js"></script>
+            <script src="js/studysetremove.js"></script>
+        </div>
+    </div>
+
+    <footer>
+        <div class="mobile-view">
+            <div class="container-fluid">
+                <div class="px-3">
+                    <nav class="navbar navbar-expand-lg w-100">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a href="notification.html" class="top-noti rounded-circle border-info">
+                                    <i class="fa-solid fa-bell"></i>
+                                    <span class="badge-num bg-primary">3</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="search.html"><i class="fa-solid fa-magnifying-glass fa-lg"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/index.html"><i class="fa-solid fa-house fa-lg"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#create"><i class="fa-solid fa-circle-plus fa-lg"></i></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a href="user.html"><i class="fa-solid fa-user fa-lg"></i></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- Offcanvas Create -->
+            <div class="offcanvas offcanvas-bottom" id="create">
+                <div class="offcanvas-body">
+                    <nav class="navbar justify-content-between">
+                        <ul class="navbar-nav">
+                            <li class="nav-item py-2">
+                                <a href="#">
+                                    <i class="fa-regular fa-file-lines me-2"></i>
+                                    Exam
+                                </a>
+                            </li>
+                            <li class="nav-item py-2">
+                                <a href="#">
+                                    <i class="fa-regular fa-folder me-2"></i>
+                                    Folder
+                                </a>
+                            </li>
+                            <li class="nav-item py-2">
+                                <a href="#">
+                                    <i class="fa-solid fa-user-group me-2"></i>
+                                    Class
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navscroll.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script src="js/responsive.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/tooltip.js"></script>
+</body>
+</html>
