@@ -1,5 +1,5 @@
 <!-- Login Content ----------------------------------------- -->
-<span class="close" id="close-set">&times;</span>
+<span class="close px-4" id="close-set">&times;</span>
 <div class="Login-box">
     <div class="form-title">
         <span id="login" style="border-bottom: thick solid #3ccfcf;">Login</span>

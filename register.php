@@ -19,7 +19,7 @@
         </div>
         <div class="options-divider"><span class="mx-3">or</span></div>
 
-        <form action="" method="POST" id="RegForm">
+        <form action="controllers/RegisterController.php" method="POST" id="RegForm">
             <!-- RegForm ------------------------------------------------------------- -->
             <div class="Set-pop">
                 <?php

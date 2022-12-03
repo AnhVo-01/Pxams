@@ -1,4 +1,7 @@
 @media (max-width: 768px){
+    .SiteFooter{
+        display: none;
+    }
     #header{
         display: none;
     }
@@ -25,11 +28,11 @@
         font-size: 15px;
     }
     .card-option .question{
-        border-right: none;
+        border-right: none !important;
         border-bottom: 1px solid #0a092d;
     }
     .card-option .answer{
-        border-left: none;
+        border-left: none !important;
         border-top: 1px solid #0a092d;
     }
     .cards-control-menu{

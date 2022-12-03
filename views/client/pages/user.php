@@ -127,7 +127,7 @@
                 </div>
             </div>
             <div class="set-pop">
-                <a href="controllers/Logout.php" class="text-primary">Logout</a>
+                <a href="controllers/LogoutController.php" class="text-primary">Logout</a>
             </div>
         </div>
     </div>

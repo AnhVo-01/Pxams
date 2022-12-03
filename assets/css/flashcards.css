@@ -58,7 +58,7 @@
 .carousel-item .qa{
     cursor: pointer;
     position: relative;
-    font-size: 22px;
+    font-size: 20px;
     color: var(--text-color1);
     height: 100%;
     padding: 20px 0;
@@ -145,7 +145,6 @@
     justify-content: center;
     width: 32px;
     height: 32px;
-    padding: 2px;
     border-radius: 50%;
     text-transform: uppercase;
     user-select: none;
@@ -286,6 +285,7 @@
 .cards-control a{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 20px;
     color: var(--text-color1);
 }
@@ -295,7 +295,8 @@
 .cards-control ul li a:not(.dropdown-item){
     border: 1px solid var(--text-color1);
     border-radius: 50%;
-    padding: 9px 10px;
+    width: 36px;
+    height: 36px;
 }
 .cards-control ul li a:hover{
     background: var(--drop-down);

@@ -1,14 +1,30 @@
+#header{
+    display: none;
+}
+
+.SiteFooter {
+    display: none;
+}
+
 /* ---------------------------- Main ----------------------------- */
+.flash-box{
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
 .flash-cards:not(:first-child){
     display: none;
 }
+
 .flash-cards{
-    background: var(--drop-down);
+    background: var(--option-box);
     padding: 1.5rem 3rem;
     min-height: 480px;
-    font-weight: 600;
+    height: auto;
     width: 55rem;
     margin: 0 auto;
+    font-weight: 600;
     color: var(--text-color3);
     border-radius: 8px;
     transition: width 2s, height 2s, transform 2s;
@@ -17,7 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: var(--select-border);
+    color: #646f90;
     margin-bottom: 10px;
     font-size: 14px;
 }
@@ -47,12 +63,17 @@
     cursor: pointer;
 }
 .flash-card-body .answer .opt-index{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: var(--body-color);
-    padding: 5px 10px;
+    width: 26px;
+    height: 26px;
     font-size: 10px;
     font-weight: bolder;
     border-radius: 50%;
     position: absolute;
+    line-height: 0;
 }
 .flash-card-body input[type="radio"]:not(:checked) {
     /* Explicit Unchecked Styles */
@@ -87,6 +108,7 @@
     position: fixed;
     bottom: 0;
     font-size: 15px;
+    display: none;
 }
 .checkpoint-ft .ft-content{
     height: 80px;

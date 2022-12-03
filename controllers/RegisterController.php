@@ -22,7 +22,7 @@ if ( isset($_POST["uname"]) && isset($_POST["upass"]) &&
             ':un' => $_POST['uname'],
             ':pw' => $pass,
             ':em' => $_POST['email'],
-            ':em' => $_POST['dob']
+            ':dob' => $_POST['dob']
         ));
 
         header('Location: ../');

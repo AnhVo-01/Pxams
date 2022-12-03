@@ -4,7 +4,7 @@ var darkBtn = document.querySelector(".toggle-switch");
 // function settingsMenuToggle(){
 //     settingsmenu.classList.toggle("settings-menu-height");
 // }
-darkBtn.onclick = function(){
+$('.toggle-switch').click(function(){
     darkBtn.classList.toggle("dark-on");
     document.body.classList.toggle("dark-theme");
 
@@ -14,7 +14,7 @@ darkBtn.onclick = function(){
     else{
         localStorage.setItem("theme", "light");
     }
-}
+});
 
 if(localStorage.getItem("theme") == "light"){
     darkBtn.classList.remove("dark-on");

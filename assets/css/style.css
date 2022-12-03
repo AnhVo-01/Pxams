@@ -15,6 +15,7 @@
     --footer-color1: #fff;
     --switch-color: #0a092d;
     --select-border: #edeff4;
+    --option-box: #fff;
     --drop-down: #fff;
     --search-box: #f6f7fb;
     --dropdown-hover: #f2f2f2;
@@ -36,6 +37,7 @@
     --footer-color1: #1a1d28;
     --switch-color: #f2f2f2;
     --select-border: #646f90;
+    --option-box: #2e3856;
     --drop-down: #303545;
     --search-box: #2e3856;
     --dropdown-hover: #2e3856;
@@ -305,7 +307,7 @@ nav.navbar ul.nav li a{
     float: right;
     font-size: 30px;
     font-weight: bold;
-    padding: 10px 20px;
+    padding: 10px 0;
 }
   
 .close:hover, .close:focus {
@@ -318,7 +320,8 @@ nav.navbar ul.nav li a{
     position: absolute;
     color: var(--text-color1);
     background: var(--drop-down);
-    width: 800px;
+    max-width: 800px;
+    width: 95%;
     height: 400px;
     top: 50%;
     left: 50%;
@@ -329,7 +332,8 @@ nav.navbar ul.nav li a{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 670px;
+    max-width: 670px;
+    width: 100%;
     overflow-y: auto;
     padding: 10px 30px;
     font-size: 20px;

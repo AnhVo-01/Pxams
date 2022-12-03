@@ -86,7 +86,7 @@
                 </div>
                 <div class="cre-user mb-3">
                     <div class="cre-ava">
-                        <span>V</span>
+                        <span style="line-height: 1;">V</span>
                     </div>
                     <a href="library.html">
                         <span class="ms-2">VoNVA</span>
@@ -98,7 +98,7 @@
                     <i class="fa-solid fa-layer-group"></i>
                     <span>Flashcards</span>
                 </div>
-                <div class="option" onclick="location.href = '?redirect=client/pages/learn&local='">
+                <div class="option" onclick="location.href = '?redirect=client/pages/learn'">
                     <i class="fa-solid fa-chalkboard"></i>
                     <span>Learn</span>
                 </div>
@@ -281,7 +281,7 @@
                         </div>
                     </div>
 
-                    <div class="card-option" style="padding: 0;">
+                    <div class="card-option p-0">
                         <div class="card">
                             <div class="card-header">
                                 <a href="#" class="btn bookmark-card"><i class="fa-regular fa-star"></i></a>

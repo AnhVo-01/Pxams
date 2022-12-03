@@ -146,3 +146,4 @@
     document.title = "Welcome to Pxams";
 </script>
 <div class="Login-Cont" id="lg-form"></div>
+<script src="assets/js/navscroll.js"></script>

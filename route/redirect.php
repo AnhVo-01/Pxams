@@ -1,4 +1,6 @@
 <?php
 	$path = $_GET['redirect'];
-	$_SESSION['action'] = $_GET['local'];
+	if (isset($_GET['local'])){
+		$_SESSION['action'] = $_GET['local'];
+	}
 	require('views/' . $path . '.php');

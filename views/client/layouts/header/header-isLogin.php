@@ -40,7 +40,7 @@
                                                 <div class="subnav-content">
                                                     <ul class="p-0">
                                                         <li>
-                                                            <a href="?redirect=client/pages/flashcards&local=" class="dropdown-item">
+                                                            <a href="?redirect=client/pages/flashcards" class="dropdown-item">
                                                                 <div class="d-flex flex-column">
                                                                     <span>SWP391</span>
                                                                     <span class="text-muted"><small>VoNVA</small></span>
@@ -220,11 +220,11 @@
 <!-- Refer a friend --------------------------------------- -->
 <div class="Popup" id="myModal">
     <div class="Refer_a_friend">
-        <span class="close" id="close-set">&times;</span>
-        <div style="padding: 20px 40px 0;">
-            <h1 style="text-align: center;">Share your referral link</h1>
-            <hr style="border: 0; height: 1px; background-color: #000; margin: 15px 0;">
+        <div class="d-flex justify-content-between align-items-center" style="padding: 20px 40px 0;">
+            <h2 style="text-align: center;">Share your referral link</h2>
+            <span class="close" id="close-set">&times;</span>
         </div>
+        <hr style="border: 0; height: 2px; background-color: #000; margin: 15px 0;">
         <div class="ab-pop">
             <span class="my-3">
                 Invite friends who aren't using Pxams and receive a free week of Pxams Premium
@@ -239,3 +239,4 @@
 </div>
 
 <script src="assets/js/popup.js"></script>
+<script src="assets/js/navscroll.js"></script>
