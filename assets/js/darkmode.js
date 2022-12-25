@@ -1,27 +1,28 @@
 // var settingsmenu = document.querySelector(".settings-menu");
-var darkBtn = document.querySelector(".toggle-switch");
 
 // function settingsMenuToggle(){
 //     settingsmenu.classList.toggle("settings-menu-height");
 // }
-$('.toggle-switch').click(function(){
-    darkBtn.classList.toggle("dark-on");
-    document.body.classList.toggle("dark-theme");
-
-    if(localStorage.getItem("theme") == "light"){
-        localStorage.setItem("theme", "dark");
-    }
-    else{
-        localStorage.setItem("theme", "light");
-    }
+$(document).ready(function() {
+    $('.toggle-switch').click(function(){
+        $('.toggle-switch').toggleClass("dark-on");
+        document.body.classList.toggle("dark-theme");
+    
+        if(localStorage.getItem("theme") == "light"){
+            localStorage.setItem("theme", "dark");
+        }
+        else{
+            localStorage.setItem("theme", "light");
+        }
+    });
 });
 
 if(localStorage.getItem("theme") == "light"){
-    darkBtn.classList.remove("dark-on");
+    $('.toggle-switch').removeClass("dark-on");
     document.body.classList.remove("dark-theme");
 }
 else if(localStorage.getItem("theme") == "dark"){
-    darkBtn.classList.add("dark-on");
+    $('.toggle-switch').addClass("dark-on");
     document.body.classList.add("dark-theme");
 }
 else{

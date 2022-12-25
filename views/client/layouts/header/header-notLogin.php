@@ -28,9 +28,9 @@
                                     <ul class="dropdown-menu">
                                         <li class="subject subject subnavbtn">
                                             <a class="dropdown-item" href="#">
-                                                <i class="fa-solid fa-paintbrush"></i>
+                                                <i class="fas fa-paintbrush"></i>
                                                 <span class="mx-3">Arts and Humanities</span>
-                                                <i class="fa-solid fa-angle-right ms-3 pt-1" style="float: right;"></i>
+                                                <i class="fas fa-angle-right ms-3 pt-1" style="float: right;"></i>
                                             </a>
                                             <div class="subnav">
                                                 <div class="subnav-content">
@@ -48,11 +48,11 @@
                                             </div>
                                         </li>
 
-                                        <li class="subject subnavbtn">
+                                        <li class="subject hasChildren">
                                             <a class="dropdown-item" href="#">
-                                                <i class="fa-solid fa-language"></i>
+                                                <i class="fas fa-language"></i>
                                                 <span class="mx-3">Languages</span>
-                                                <i class="fa-solid fa-angle-right pt-1" style="float: right;"></i>
+                                                <i class="fas fa-angle-right pt-1" style="float: right;"></i>
                                             </a>
                                             <div class="subnav">
                                                 <div class="subnav-content">
@@ -66,11 +66,11 @@
                                             </div>
                                         </li>
 
-                                        <li class="subject subnavbtn">
+                                        <li class="subject hasChildren">
                                             <a class="dropdown-item" href="#">
-                                                <i class="fa-solid fa-pen-ruler"></i>
+                                                <i class="fas fa-pen-ruler"></i>
                                                 <span class="mx-3">Math</span>
-                                                <i class="fa-solid fa-angle-right pt-1" style="float: right;"></i>
+                                                <i class="fas fa-angle-right pt-1" style="float: right;"></i>
                                             </a>
                                             <div class="subnav">
                                                 <div class="subnav-content">
@@ -96,19 +96,19 @@
                                     <ul class="dropdown-menu">
                                         <li>
                                             <a class="dropdown-item" href="studyset.html">
-                                                <i class="fa-regular fa-file-lines me-2"></i>
+                                                <i class="far fa-file-lines me-2"></i>
                                                 Study sets
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="#">
-                                                <i class="fa-regular fa-folder me-2"></i>
+                                                <i class="far fa-folder me-2"></i>
                                                 Folder
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="#">
-                                                <i class="fa-solid fa-user-group me-2"></i>
+                                                <i class="fas fa-user-group me-2"></i>
                                                 Class
                                             </a>
                                         </li>
@@ -124,12 +124,13 @@
                         <ul class="nav top-right">
                             <li class="nav-item search-box" style="width: 70%;">
                                 <form action="Search" method="POST">
-                                    <i class="fa-solid fa-magnifying-glass fa-lg icon"></i>
+                                    <i class="fas fa-magnifying-glass fa-lg icon"></i>
                                     <input type="text" placeholder="Search...">
                                 </form>
                             </li>
                             <li class="nav-item">
                                 <button class="btn btn-light" onclick="$('#lg-form').css('height', '100%'); $('#lg-form').load('login.php');" style="padding: 0.27rem 0.75rem;">Login</button>
+                                <!-- <a href="?redirect=authority/login" class="btn btn-light" style="padding: 0.27rem 0.75rem;">Login</a> -->
                             </li>
                             <li class="nav-item">
                                 <button class="btn btn-warning" onclick="$('#lg-form').css('height', '100%'); $('#lg-form').load('register.php');" style="padding: 0.27rem 0.75rem;">Sign up</button>

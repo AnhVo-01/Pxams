@@ -13,7 +13,7 @@
                                     echo('<li class="nav-item">'."\n");
                                 }
                                 echo('<a href="?redirect=mobile/notification&local=notification" class="rounded-circle top-noti border-info">
-                                <i class="fa-solid fa-bell"></i>
+                                <i class="fas fa-bell"></i>
                                 <span class="badge-num bg-primary">3</span></a>'."\n");
                                 echo("</li>");
                             ?>
@@ -23,7 +23,7 @@
                                 }else{
                                     echo('<li class="nav-item">'."\n");
                                 }
-                                echo('<a href="?redirect=mobile/search&local=search"><i class="fa-solid fa-magnifying-glass fa-lg"></i></a>'."\n");
+                                echo('<a href="?redirect=mobile/search&local=search"><i class="fas fa-magnifying-glass fa-lg"></i></a>'."\n");
                                 echo("</li>");
                             ?>
                             <?php
@@ -32,11 +32,11 @@
                                 }else{
                                     echo('<li class="nav-item">'."\n");
                                 }
-                                echo('<a href="./"><i class="fa-solid fa-house fa-lg"></i></a>'."\n");
+                                echo('<a href="./"><i class="fas fa-house fa-lg"></i></a>'."\n");
                                 echo("</li>");
                             ?>
                             <li class="nav-item">
-                                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#create"><i class="fa-solid fa-circle-plus fa-lg"></i></a>
+                                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#create"><i class="fas fa-circle-plus fa-lg"></i></a>
                             </li>
                             <?php 
                                 if( isset($_SESSION['account_id']) ){
@@ -50,7 +50,7 @@
                                 }else{
                                     echo('<li class="nav-item">'."\n");
                                 }
-                                echo('<a href="'.$link.'"><i class="fa-solid fa-user fa-lg"></i></a>'."\n");
+                                echo('<a href="'.$link.'"><i class="fas fa-user fa-lg"></i></a>'."\n");
                                 echo("</li>");
                             ?>
                         </ul>
@@ -64,19 +64,19 @@
                         <ul class="navbar-nav">
                             <li class="nav-item py-2">
                                 <a href="#">
-                                    <i class="fa-regular fa-file-lines me-2"></i>
+                                    <i class="far fa-file-lines me-2"></i>
                                     Exam
                                 </a>
                             </li>
                             <li class="nav-item py-2">
                                 <a href="#">
-                                    <i class="fa-regular fa-folder me-2"></i>
+                                    <i class="far fa-folder me-2"></i>
                                     Folder
                                 </a>
                             </li>
                             <li class="nav-item py-2">
                                 <a href="#">
-                                    <i class="fa-solid fa-user-group me-2"></i>
+                                    <i class="fas fa-user-group me-2"></i>
                                     Class
                                 </a>
                             </li>
@@ -127,7 +127,7 @@
                                 <li class="SiteFooter-sectionLink"><a href="#">Sign up</a></li>
                                 <li class="SiteFooter-sectionLink"><a href="#">Honor code</a></li>
                                 <li class="SiteFooter-sectionLink"><a href="#">Community guidelines</a></li>
-                                <li class="SiteFooter-sectionLink"><a href="#">Privacy</a> <i class="fa-solid fa-shield-halved"></i></li>
+                                <li class="SiteFooter-sectionLink"><a href="#">Privacy</a> <i class="fas fa-shield-halved"></i></li>
                                 <li class="SiteFooter-sectionLink"><a href="#">Terms</a></li>
                                 <li class="SiteFooter-sectionLink"><a href="#">Ad and Cookie Policy</a></li>
                             </ul>
@@ -159,20 +159,20 @@
                         <div class="d-flex flex-column justify-content-between">
                             <ul class="nav justify-content-between">
                                 <li class="SiteFooter-sectionLink">
-                                    <a class="nav-item" href="#"><i class="fa-brands fa-twitter fa-lg"></i></a>
+                                    <a class="nav-item" href="#"><i class="fab fa-twitter fa-lg"></i></a>
                                 </li>
                                 <li class="SiteFooter-sectionLink">
-                                    <a class="nav-item" href="#"><i class="fa-brands fa-facebook-f fa-lg"></i></a>
+                                    <a class="nav-item" href="#"><i class="fab fa-facebook-f fa-lg"></i></a>
                                 </li>
                                 <li class="SiteFooter-sectionLink">
-                                    <a class="nav-item" href="#"><i class="fa-brands fa-linkedin-in fa-lg"></i></a>
+                                    <a class="nav-item" href="#"><i class="fab fa-linkedin-in fa-lg"></i></a>
                                 </li>
                                 <li class="SiteFooter-sectionLink">
-                                    <a class="nav-item" href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
+                                    <a class="nav-item" href="#"><i class="fab fa-youtube fa-lg"></i></a>
                                 </li>
                             </ul>
                             <div style="font-size: 14px;">
-                                <i class="fa-regular fa-copyright"></i>
+                                <i class="far fa-copyright"></i>
                                 <span>2022 Pxams - VoAnh</span>
                             </div>
                         </div>

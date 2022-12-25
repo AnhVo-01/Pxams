@@ -13,28 +13,28 @@
                 <div class="col-lg-6">
                     <div class="nav-menu">
                         <nav class="navbar navbar-expand-lg w-100">
-                            <ul class="nav navbar-nav align-items-center w-100" id="page-header">
-                                <li class="nav-item active px-3">
-                                    <a href="./" class="nav-link px-3">
+                            <ul class="nav navbar-nav align-items-center w-100 gap-3" id="page-header">
+                                <li class="nav-item active">
+                                    <a href="./" class="nav-link">
                                         <span class="nav-label">Home</span>
                                     </a>
                                 </li>
-                                <li class="nav-item px-3">
-                                    <a href="#" class="nav-link px-3">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
                                         <span class="nav-label">Your folder</span>
                                     </a>
                                 </li>
 
                                 <!----- Begin Library ----->
-                                <li class="nav-item dropdown px-3">
-                                    <a href="#" class="nav-link dropdown-toggle px-3" data-bs-toggle="dropdown">
+                                <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                         <span class="nav-label">Library</span>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li class="subnavbtn">
+                                        <li class="hasChildren">
                                             <a class="dropdown-item" href="#">
                                                 <span>Study sets</span>
-                                                <i class="fa-solid fa-angle-right pt-1" style="float: right;"></i>
+                                                <i class="fas fa-angle-right pt-1" style="float: right;"></i>
                                             </a>
                                             <div class="subnav">
                                                 <div class="subnav-content">
@@ -60,10 +60,10 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="subnavbtn">
+                                        <li class="hasChildren">
                                             <a class="dropdown-item" href="#">
                                                 <span>Classes</span>
-                                                <i class="fa-solid fa-angle-right pt-1" style="float: right;"></i>
+                                                <i class="fas fa-angle-right pt-1" style="float: right;"></i>
                                             </a>
                                             <div class="subnav">
                                                 <div class="subnav-content">
@@ -87,24 +87,24 @@
                                 </li>
 
                                 <!----- Begin create ----->
-                                <li class="dropdown px-3">
+                                <li class="dropdown">
                                     <a class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" style="color: #fff;">Create</a>
                                     <ul class="dropdown-menu">
                                         <li>
                                             <a class="dropdown-item" href="newStudyset.html">
-                                                <i class="fa-regular fa-file-lines me-2"></i>
+                                                <i class="far fa-clone me-2"></i>
                                                 Study sets
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="#">
-                                                <i class="fa-regular fa-folder me-2"></i>
+                                                <i class="far fa-folder me-2"></i>
                                                 Folder
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="#">
-                                                <i class="fa-solid fa-user-group me-2"></i>
+                                                <i class="far fa-user-friends me-2"></i>
                                                 Class
                                             </a>
                                         </li>
@@ -120,7 +120,7 @@
                         <ul class="nav top-right">
                             <li class="nav-item search-box">
                                 <form action="Search" method="POST">
-                                    <i class="fa-solid fa-magnifying-glass fa-lg icon"></i>
+                                    <i class="fas fa-magnifying-glass fa-lg icon"></i>
                                     <input type="text" placeholder="Search...">
                                 </form>
                             </li>
@@ -128,18 +128,18 @@
                                 <div class="dropdown">
                                     <a href="#" class="rounded-circle top-noti" data-bs-toggle="dropdown">
                                         <span class="badge-num bg-primary">3</span>
-                                        <i class="fa-regular fa-bell"></i>
+                                        <i class="far fa-bell"></i>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end top-noti-box">
                                         <li>
                                             <a href="#" class="dropdown-item d-flex flex-column">
                                                 <div class="d-flex align-items-center mb-2">
-                                                    <i class="fa-solid fa-circle fa-2xs" style="color: #0099c6;"></i>
+                                                    <i class="fas fa-circle fa-2xs" style="color: #0099c6;"></i>
                                                     <p class="small ps-3 m-0" style="color: #0099c6;">11-07-2022</p>
                                                 </div>
                                                 <div class="d-flex align-items-center pb-3">
                                                     <span class="rounded-circle top-noti me-3">
-                                                        <i class="fa-solid fa-dumbbell"></i>
+                                                        <i class="fas fa-dumbbell"></i>
                                                     </span>
                                                     <span style="font-size: 15px;">New order No. <strong>#11</strong></span>
                                                 </div>
@@ -197,7 +197,7 @@
                                 <li class="nav-link">
                                     <div class="d-flex">
                                         <a href="#">Premium</a>
-                                        <i class="fa-solid fa-gem ms-2" style="color: gold;"></i>
+                                        <i class="fas fa-gem ms-2" style="color: gold;"></i>
                                     </div>
                                 </li>
                                 <li class="nav-link nav-tabs">

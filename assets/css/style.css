@@ -90,7 +90,7 @@ nav.navbar ul.nav li a{
 .nav-menu nav.navbar ul.nav li.active a .nav-label::after {
     content: "";
     background-color: #a8b1ff;
-    bottom: -13px;
+    bottom: -11px;
     left: 0;
     position: absolute;
     width: 100%;
@@ -99,7 +99,7 @@ nav.navbar ul.nav li a{
 .nav-menu nav.navbar ul.nav li:not(.active) a:hover .nav-label::after {
     content: "";
     background-color: #a8b1ff;
-    bottom: -13px;
+    bottom: -11px;
     left: 0;
     position: absolute;
     width: 100%;
@@ -126,7 +126,7 @@ nav.navbar ul.nav li a{
 }
 
 .dropdown-toggle::after {
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 5 Pro";
     font-weight: bold;
     content: "\f107" !important;
     border: 0 !important;
@@ -170,7 +170,7 @@ nav.navbar ul.nav li a{
 .subnav-content::-webkit-scrollbar-thumb {
     background: #888; 
 }
-.subnavbtn:hover .subnav {
+.hasChildren:hover .subnav {
     display: block;
 }
 
@@ -192,7 +192,7 @@ nav.navbar ul.nav li a{
     background-color: var(--search-box);
     border: 0;
     color: var(--text-color1);
-    padding: 6px 10px;
+    padding: 5px 10px;
 }
 .search-box input:focus{
     border: 0;
@@ -202,7 +202,11 @@ nav.navbar ul.nav li a{
     position: relative;
     color: var(--text-color1);
     border: 1px solid #efefef;
-    padding: 7px 9px;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 .top-noti .badge-num {
     border-radius: 50%;
@@ -255,10 +259,11 @@ nav.navbar ul.nav li a{
     justify-content: space-between;
 }
 .toggle-switch{
-    background-color: var(--switch-color);
-    height: 12px;
+    cursor: pointer;
     width: 26px;
+    height: 12px;
     border-radius: 20px;
+    background-color: var(--switch-color);
 }
 .toggle-switch .switch{
     position: relative;
