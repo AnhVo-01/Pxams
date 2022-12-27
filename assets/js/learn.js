@@ -27,7 +27,7 @@ function selectTrue(e){
     selectBox[e].style.border = "0.125em solid var(--text-color1)";
 
     optIndex[e].style.background = "#19804f";
-    optIndex[e].innerHTML = `<i class="fa-solid fa-check fa-xl" style="color: #65c999;"></i>`;
+    optIndex[e].innerHTML = `<i class="fas fa-check fa-xl" style="color: #65c999;"></i>`;
 }
 
 function selectFalse(e){
@@ -42,8 +42,8 @@ function selectFalse(e){
     }
     selectBox[e].style.border = "0.125em solid #c34632";
     selectBox[e].style.opacity = "";
-    optIndex[e].style.background = "var(--drop-down)";
-    optIndex[e].innerHTML = `<i class="fa-solid fa-xmark fa-2xl" style="color: #c34632;"></i>`;
+    optIndex[e].style.background = "var(--body-color)";
+    optIndex[e].innerHTML = `<i class="fas fa-times fa-2xl" style="color: #c34632;"></i>`;
 }
 
 function cont(){

@@ -30,11 +30,10 @@ if ( isset($_POST["uname"]) && isset($_POST["pass"]) ) {
             setcookie('remember', 'on', time() + (86400 * 30));
         }
         // header('Location: ../');
-        return 'suc';
+        return;
     } else {
         $_SESSION["error"] = "Incorrect email or password.";
-        // header('Location: ../');
-        return;
+        return $_SESSION["error"];
     }
     exit();
 }

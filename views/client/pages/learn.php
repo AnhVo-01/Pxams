@@ -6,7 +6,7 @@
         <div class="flash-cards">
             <div class="flash-card-header">
                 <span>Question</span>
-                <a href="#" style="color: #646f90;"><i class="fa-regular fa-flag"></i></a>
+                <a href="#" style="color: #646f90;"><i class="far fa-flag"></i></a>
             </div>
             <div class="flash-card-body">
                 <span class="question">
@@ -44,7 +44,7 @@
         <div class="flash-cards">
             <div class="flash-card-header">
                 <span>Question</span>
-                <a href="#" style="color: #646f90;"><i class="fa-regular fa-flag"></i></a>
+                <a href="#" style="color: #646f90;"><i class="far fa-flag"></i></a>
             </div>
             <div class="flash-card-body">
                 <span class="question">

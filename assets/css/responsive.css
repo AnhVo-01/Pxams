@@ -70,3 +70,35 @@
         display: none;
     }
 }
+@media (max-width: 992px) {
+    .header-middle {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #4257b2;
+        height: 60px;
+    }
+    
+    .header-middle .navbar-nav {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .header-middle .navbar-nav .dropdown-menu {
+        position: absolute;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+    .subnav {
+        max-width: 245px;
+    }
+
+    .answer_opt {
+        border-top: 1px solid var(--text-color1);
+        padding-top: 0.75em;
+        margin-top: 0.75em;
+    }
+}

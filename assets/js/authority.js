@@ -30,7 +30,6 @@ function do_login(){
         },
 
         function(data, status){
-            console.log(data, status);
             alert("Data: " + data + "\nStatus: " + status);
         }
     );

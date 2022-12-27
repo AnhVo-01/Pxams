@@ -26,11 +26,10 @@
                                         <span class="nav-label">Subject</span>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li class="subject subject subnavbtn">
+                                        <li class="subject hasChildren">
                                             <a class="dropdown-item" href="#">
-                                                <i class="fas fa-paintbrush"></i>
-                                                <span class="mx-3">Arts and Humanities</span>
-                                                <i class="fas fa-angle-right ms-3 pt-1" style="float: right;"></i>
+                                                <i class="fas fa-paint-brush-alt"></i>
+                                                <span class="subject-title">Arts and Humanities</span>
                                             </a>
                                             <div class="subnav">
                                                 <div class="subnav-content">
@@ -50,9 +49,8 @@
 
                                         <li class="subject hasChildren">
                                             <a class="dropdown-item" href="#">
-                                                <i class="fas fa-language"></i>
-                                                <span class="mx-3">Languages</span>
-                                                <i class="fas fa-angle-right pt-1" style="float: right;"></i>
+                                                <i class="far fa-language"></i>
+                                                <span class="subject-title">Languages</span>
                                             </a>
                                             <div class="subnav">
                                                 <div class="subnav-content">
@@ -68,9 +66,8 @@
 
                                         <li class="subject hasChildren">
                                             <a class="dropdown-item" href="#">
-                                                <i class="fas fa-pen-ruler"></i>
-                                                <span class="mx-3">Math</span>
-                                                <i class="fas fa-angle-right pt-1" style="float: right;"></i>
+                                                <i class="fas fa-pencil-ruler"></i>
+                                                <span class="subject-title">Math</span>
                                             </a>
                                             <div class="subnav">
                                                 <div class="subnav-content">
@@ -88,6 +85,14 @@
                                             </div>
                                         </li>
                                     </ul>
+
+                                    <script>
+                                        $(document).ready(function() {
+                                            $('.dropdown-toggle').click(function() {
+                                                $('.subnav').css('left', $('.dropdown-menu').width() + 1 +'px');
+                                            })
+                                        });
+                                    </script>
                                 </li>
 
                                 <!----- Begin create ----->
@@ -96,7 +101,7 @@
                                     <ul class="dropdown-menu">
                                         <li>
                                             <a class="dropdown-item" href="studyset.html">
-                                                <i class="far fa-file-lines me-2"></i>
+                                                <i class="far fa-clone me-2"></i>
                                                 Study sets
                                             </a>
                                         </li>
@@ -108,7 +113,7 @@
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="#">
-                                                <i class="fas fa-user-group me-2"></i>
+                                                <i class="far fa-user-friends me-2"></i>
                                                 Class
                                             </a>
                                         </li>

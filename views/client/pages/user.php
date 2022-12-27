@@ -4,8 +4,8 @@
     <div class="user-top mb-4">
         <div class="row">
             <div class="col-4">
-                <a href="#" id="setBtn">
-                    <i class="fa-solid fa-gear fa-lg"></i>
+                <a data-bs-toggle="offcanvas" data-bs-target="#setting-box">
+                    <i class="fas fa-cog fa-lg"></i>
                 </a>
             </div>
             <div class="col-4">
@@ -23,7 +23,7 @@
                 <div class="premium">
                     <a href="#"> 
                         <span>Premium</span>
-                        <i class="fa-solid fa-gem" style="color: gold;"></i>
+                        <i class="fas fa-gem" style="color: gold;"></i>
                     </a>
                 </div>
             </div>
@@ -56,78 +56,80 @@
         </div>
 
         <!-- Setting --------------------------------------- -->
-        <div class="setting-box">
-            <div class="set-header">
-                <span class="close" id="close-set">&times;</span>
+        <div class="offcanvas offcanvas-start setting-box" id="setting-box">
+            <div class="offcanvas-header">
+                <span class="close" id="close-set" data-bs-dismiss="offcanvas">&times;</span>
                 <h5 class="ms-4 mt-2">Setting</h5>
             </div>
-            <div class="set-pop">
-                <div class="option">
-                    <div class="d-flex flex-column">
-                        <span>Account</span>
-                        <span class="text-muted"><small>Free</small></span>
-                    </div>
-                    <div class="btn">
-                        <a href="#" class="btn btn-primary">Update: Free try</a>
+            <div class="offcanvas-body">
+                <div class="set-pop">
+                    <div class="option">
+                        <div class="d-flex flex-column">
+                            <span>Account</span>
+                            <span class="text-muted"><small>Free</small></span>
+                        </div>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary">Update: Free try</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="set-pop">
-                <a href="#">
-                    <div class="d-flex flex-column">
-                        <span>Refer a friend</span>
-                        <span class="text-muted">Free</span>
+                <div class="set-pop">
+                    <a href="#">
+                        <div class="d-flex flex-column">
+                            <span>Refer a friend</span>
+                            <span class="text-muted">Free</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="set-pop">
+                    <a href="#">
+                        <div class="d-flex flex-column">
+                            <span>Email</span>
+                            <span class="text-muted"><small>vomoc123@gmail.com</small></span>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="d-flex flex-column mt-3 pt-3">
+                            <span>Username</span>
+                            <span class="text-muted"><small>VoNVA</small></span>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="d-flex flex-column mt-3 pt-3">
+                            <span>Password</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="set-pop">
+                    <div class="option">
+                        <div class="d-flex flex-column">
+                            <span>Dark mode</span>
+                        </div>
+                        <div class="toggle-switch">
+                            <span class="switch"></span>
+                        </div>
                     </div>
-                </a>
-            </div>
-            <div class="set-pop">
-                <a href="#">
-                    <div class="d-flex flex-column">
-                        <span>Email</span>
-                        <span class="text-muted"><small>vomoc123@gmail.com</small></span>
-                    </div>
-                </a>
-                <a href="#">
+                </div>
+                <div class="set-pop">
+                    <a href="#">Help Center</a>
+                </div>
+                <div class="set-pop">
+                    <a href="#">Send feedback</a>
+                </div>
+                <div class="set-pop">
+                    <a href="#">
+                        <div class="d-flex flex-column">
+                            <span>About</span>
+                        </div>
+                    </a>
                     <div class="d-flex flex-column mt-3 pt-3">
-                        <span>Username</span>
-                        <span class="text-muted"><small>VoNVA</small></span>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="d-flex flex-column mt-3 pt-3">
-                        <span>Password</span>
-                    </div>
-                </a>
-            </div>
-            <div class="set-pop">
-                <div class="option">
-                    <div class="d-flex flex-column">
-                        <span>Dark mode</span>
-                    </div>
-                    <div class="toggle-switch">
-                        <span class="switch"></span>
+                        <span>Version</span>
+                        <span class="text-muted"><small>Beta 0.0.1 (20220805)</small></span>
                     </div>
                 </div>
-            </div>
-            <div class="set-pop">
-                <a href="#">Help Center</a>
-            </div>
-            <div class="set-pop">
-                <a href="#">Send feedback</a>
-            </div>
-            <div class="set-pop">
-                <a href="#">
-                    <div class="d-flex flex-column">
-                        <span>About</span>
-                    </div>
-                </a>
-                <div class="d-flex flex-column mt-3 pt-3">
-                    <span>Version</span>
-                    <span class="text-muted"><small>Beta 0.0.1 (20220805)</small></span>
+                <div class="set-pop">
+                    <a href="controllers/LogoutController.php" class="text-primary">Logout</a>
                 </div>
-            </div>
-            <div class="set-pop">
-                <a href="controllers/LogoutController.php" class="text-primary">Logout</a>
             </div>
         </div>
     </div>
@@ -157,15 +159,3 @@
     </div>
     <script src="assets/js/calender.js"></script>
 </div>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("#close-set").click(function(){
-            $(".setting-box").hide();
-        });
-    
-        $("#setBtn").click(function(){
-            $(".setting-box").show();
-        });
-    });
-</script>

@@ -81,26 +81,18 @@
     height: 4px;
 }
 /* ------------------------- Setting ------------------------- */
-.setting-box{
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto;
-    background-color: var(--body-color);
-    display: none;
-    transition: left 0.4s;
+.offcanvas.setting-box {
+    height: 100% !important;
 }
-.setting-box .set-header .close{
-    float: left;
-    font-weight: 200;
-    font-size: 30px;
-    padding: 0 20px;
-}
-.setting-box .set-header h5{
+.setting-box .offcanvas-header .close{
+    font-size: 34px;
+    font-weight: bold;
     padding: 10px 0;
+}
+.setting-box .offcanvas-header{
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: unset;
 }
 .setting-box .set-pop{
     padding: 15px;

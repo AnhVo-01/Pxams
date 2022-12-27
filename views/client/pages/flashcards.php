@@ -65,7 +65,7 @@
                     <!-- Left and right controls/icons -->
                     <div class="controls">
                         <button type="button" class="btn prev-btn" data-bs-target="#demo" data-bs-slide="prev">
-                            <i class="fa-solid fa-chevron-left fa-xl"></i>
+                            <i class="fas fa-chevron-left fa-xl"></i>
                         </button>
                         <div class="d-flex">
                             <span id="index"></span>
@@ -73,7 +73,7 @@
                             <span id="card-total"></span>
                         </div>
                         <button type="button" class="btn next-btn" data-bs-target="#demo" data-bs-slide="next">
-                            <i class="fa-solid fa-chevron-right fa-xl"></i>
+                            <i class="fas fa-chevron-right fa-xl"></i>
                         </button>
                     </div>
                 </div>
@@ -95,19 +95,19 @@
                     <span id="total"></span>
                 </div>
                 <div class="option">
-                    <i class="fa-solid fa-layer-group"></i>
+                    <i class="fas fa-layer-group"></i>
                     <span>Flashcards</span>
                 </div>
                 <div class="option" onclick="location.href = '?redirect=client/pages/learn'">
-                    <i class="fa-solid fa-chalkboard"></i>
+                    <i class="fas fa-book"></i>
                     <span>Learn</span>
                 </div>
                 <div class="option">
-                    <i class="fa-solid fa-file-lines" style="padding-right: 18px;"></i>
+                    <i class="fas fa-file-alt"></i>
                     <span>Test</span>
                 </div>
                 <div class="option">
-                    <i class="fa-solid fa-link"></i>
+                    <i class="fas fa-link"></i>
                     <span>Match</span>
                 </div>
             </div>
@@ -122,56 +122,56 @@
                         <ul class="nav cards-control-menu">
                             <li class="mx-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add this set to a class or a folder">
                                 <a href="#" class="nav-item" data-bs-toggle="collapse" data-bs-target="#add">
-                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fas fa-plus"></i>
                                 </a>
                             </li>
                             <li class="mx-2">
                                 <a href="#" class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
-                                    <i class="fa-solid fa-pen"></i>
+                                    <i class="fas fa-pen"></i>
                                 </a>
                             </li>
                             <li class="mx-2">
                                 <a href="#" class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Save and edit">
-                                    <i class="fa-regular fa-clone"></i>
+                                    <i class="far fa-clone"></i>
                                 </a>
                             </li>
                             <li class="mx-2">
                                 <a href="#" class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Share">
-                                    <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                    <i class="fas fa-share"></i>
                                 </a>
                             </li>
                             <li class="dropdown mx-2">
                                 <a href="#" class="nav-item" data-bs-toggle="dropdown">
-                                    <i class="fa-solid fa-ellipsis"></i>
+                                    <i class="fas fa-ellipsis-h"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">
                                     <li>
                                         <a class="dropdown-item" href="#">
-                                            <i class="fa-solid fa-print"></i>
+                                            <i class="far fa-print"></i>
                                             <span>Print</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="#">
-                                            <i class="fa-solid fa-code-merge"></i>
+                                            <i class="far fa-code-merge"></i>
                                             <span>Combine</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="#">
-                                            <i class="fa-solid fa-download"></i>
+                                            <i class="far fa-download"></i>
                                             <span>Export</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="#">
-                                            <i class="fa-solid fa-code fa-sm"></i>
+                                            <i class="far fa-code fa-sm"></i>
                                             <span>Embed</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="#">
-                                            <i class="fa-solid fa-triangle-exclamation"></i>
+                                            <i class="far fa-exclamation-triangle"></i>
                                             <span>Report</span>
                                         </a>
                                     </li>
@@ -284,9 +284,9 @@
                     <div class="card-option p-0">
                         <div class="card">
                             <div class="card-header">
-                                <a href="#" class="btn bookmark-card"><i class="fa-regular fa-star"></i></a>
+                                <a href="#" class="btn bookmark-card"><i class="far fa-star"></i></a>
                                 <button class="btn edit-card">
-                                    <i class="fa-solid fa-pen"></i>
+                                    <i class="fas fa-pen"></i>
                                 </button>
                             </div>
                             <div class="card-body">

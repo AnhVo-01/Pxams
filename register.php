@@ -1,4 +1,4 @@
-<span class="close" id="close-set">&times;</span>
+<span class="close px-4" id="close-set">&times;</span>
 <div class="Login-box">
     <div class="form-title">
         <span class="Log" id="login">Login</span>
@@ -7,13 +7,13 @@
     <div class="Login-body">
         <div class="third-log">
             <a href="#">
-                <i class="fa-brands fa-google fa-lg"></i>
+                <i class="fab fa-google fa-lg"></i>
                 <span>Login width Google</span>
             </a>
         </div>
         <div class="third-log">
             <a href="#">
-                <i class="fa-brands fa-facebook fa-lg"></i>
+                <i class="fab fa-facebook fa-lg"></i>
                 <span>Login width Facebook</span>
             </a>
         </div>
@@ -53,7 +53,9 @@
                     <div class="d-flex align-items-center gap-3">
                         <input class="in-cus" type="text" name="captcha" placeholder="Input captcha">
                         <div class="captcha"><?php require 'models/captcha.php'; ?></div>
-                        <button type="button" class="btn refresh-captcha btn-warning p-2"><i class="fa-solid fa-rotate fa-lg"></i></button>
+                        <button type="button" class="btn refresh-captcha btn-warning p-2">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="save-pass">

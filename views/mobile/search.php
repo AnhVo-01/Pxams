@@ -8,7 +8,7 @@
                     <li class="nav-item d-flex align-items-center w-100">
                         <div class="search-box w-100">
                             <form action="Search" method="POST">
-                                <i class="fa-solid fa-magnifying-glass fa-lg icon"></i>
+                                <i class="fas fa-magnifying-glass fa-lg icon"></i>
                                 <input type="text" placeholder="Search...">
                             </form>
                         </div>

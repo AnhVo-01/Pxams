@@ -8,13 +8,17 @@
     <div class="Login-body">
         <div class="third-log">
             <a href="#">
-                <i class="fa-brands fa-google fa-lg"></i>
+                <div style="width: 22px;">
+                    <i class="fab fa-google fa-lg"></i>
+                </div>
                 <span>Login width Google</span>
             </a>
         </div>
         <div class="third-log">
             <a href="#">
-                <i class="fa-brands fa-facebook fa-lg"></i>
+                <div style="width: 22px;">
+                    <i class="fab fa-facebook fa-lg"></i>
+                </div>
                 <span>Login width Facebook</span>
             </a>
         </div>
@@ -34,7 +38,7 @@
                 </div>
                 <div class="options">
                     <input id="user-pass" type="password" name="pass" placeholder="Password" required>
-                    <i class="fa-regular fa-eye-slash showPass"></i>
+                    <i class="far fa-eye-slash showPass"></i>
                 </div>
                 <div class="save-pass">
                     <label class="save-pass-container">Remember password
@@ -43,7 +47,7 @@
                     </label>
                 </div>
                 <div class="options">
-                    <input type="hidden" name="controller" value="login">
+                    <!-- <input type="hidden" name="controller" value="login"> -->
                     <button class="opt-btn" type="submit">Log In</button>
                 </div>
                 <div class="options">

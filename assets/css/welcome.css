@@ -1,61 +1,59 @@
-:root{
-    /* ===== Colors ===== */
-    --body-color: #f6f7fb;
-    --switch-color: #0a092d;
-    --drop-down: #fff;
-    --options-divider: #231f20;
-    --text-color1: #010101;
-    --text-color2: #666666;
-    --text-color-reverse: #fff;
-
-    /* ====== Transition ====== */
-    --tran-03: all 0.2s ease;
-    --tran-03: all 0.3s ease;
-    --tran-04: all 0.4s ease;
-    --tran-05: all 0.5s ease;
-}
-
-.dark-theme {
-    --body-color: #0a092d;
-    --switch-color: #f2f2f2;
-    --drop-down: #303545;
-    --options-divider: #ccc;
-    --text-color1: #fff;
-    --text-color2: #fff;
-    --text-color-reverse: #666666;
-}
-
 body {
     color: var(--text-color2);
-    font-size: 15px;
-    line-height: 1.80857;
+    /* font-size: 15px;
+    line-height: 1.80857; */
     overflow: auto;
+    overflow-x: hidden;
 }
+
 /* Hide password reveal button in MS Edge */
 input::-ms-reveal,
 input::-ms-clear {
     display: none;
 }
 
-.dropdown-menu{
-    position: absolute;
-    max-width: 400px;
-    width: max-content;
+.subject a.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
-.subject .subnav{
-    left: 286px;
+
+.subject a.dropdown-item i {
+    width: 25px;
+}
+
+.subject .subject-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.subject-title::after {
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 900;
+    content: "\f105";
+}
+
+.subject .subnav {
     width: 200px;
 }
-.subject .subnav ul li{
+
+.subject .subnav ul li {
     padding: 0;
 }
+
 /* ------ Popup -------------------------------------------------*/
 .Login-Cont {
-    position: fixed; /* Stay in place */
-    z-index: 100; /* Sit on top */
+    position: fixed;
+    /* Stay in place */
+    z-index: 100;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
+    width: 100%;
+    /* Full width */
     height: 0;
     overflow: auto;
     display: block;
@@ -64,7 +62,7 @@ input::-ms-clear {
 }
 
 /* ------ Setting ------------------------ */
-.Login-box{
+.Login-box {
     position: absolute;
     background: var(--drop-down);
     width: 50vw;
@@ -80,7 +78,8 @@ input::-ms-clear {
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
     transform: translate(-50%, -50%);
 }
-.form-title{
+
+.form-title {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,7 +87,8 @@ input::-ms-clear {
     gap: 30px;
     padding: 10px 0;
 }
-.form-title span{
+
+.form-title span {
     font-weight: 700;
     padding-bottom: 10px;
     color: var(--text-color1);
@@ -97,24 +97,25 @@ input::-ms-clear {
     text-align: center;
     cursor: pointer;
 }
-.Set-pop{
+
+.Set-pop {
     position: relative;
     height: fit-content;
     padding: 0 10px;
 }
-::-webkit-scrollbar { 
-    display: none; 
-}
-.options{
+
+.options {
     padding: 10px;
 }
-.third-log{
+
+.third-log {
     position: relative;
     margin: 10px 20px;
     border-radius: 8px;
     border: 0.08rem solid #ccc;
 }
-.third-log a{
+
+.third-log a {
     display: flex;
     align-items: center;
     gap: 30px;
@@ -124,12 +125,14 @@ input::-ms-clear {
     color: var(--text-color1) !important;
     padding: 15px 20px;
 }
-.third-log:hover{
+
+.third-log:hover {
     border-color: #3ccfcf;
 }
-.options input{
+
+.options input {
     font-weight: 400;
-    padding: 8px 20px;
+    padding: 0.5rem 1rem;
     width: 100%;
     outline: 0;
     border: 0;
@@ -137,26 +140,31 @@ input::-ms-clear {
     background-color: var(--drop-down);
     border-bottom: 1px solid #ccc;
 }
-.options input:focus{
+
+.options input:focus {
     border-bottom: 2px solid #ffcd1f;
 }
-.options input.in-cus{
+
+.options input.in-cus {
     border: 2px solid #010101;
     border-radius: 5px;
 }
-.options span{
+
+.options span {
     user-select: none;
     font-size: 15px;
     color: var(--text-color1);
 }
-.options .opt-label{
+
+.options .opt-label {
     font-size: .75rem;
     font-weight: 600;
     letter-spacing: .0625rem;
     line-height: 1.333333333333333;
     margin-bottom: 0.625rem;
 }
-.options .opt-btn{
+
+.options .opt-btn {
     font-weight: 700;
     padding: 14px;
     width: 100%;
@@ -166,13 +174,16 @@ input::-ms-clear {
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
     background-color: #3ccfcf;
 }
-.options .opt-btn.disable{
+
+.options .opt-btn.disable {
     background-color: #d9dde8;
 }
-.options button:hover{
+
+.options button:hover {
     background-color: #2eb8b8;
 }
-.options-divider{
+
+.options-divider {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -183,37 +194,44 @@ input::-ms-clear {
     color: var(--options-divider);
     text-align: left;
 }
-.options-divider:before, .options-divider:after{
+
+.options-divider:before,
+.options-divider:after {
     content: "";
     display: block;
     flex: 1;
     height: 1px;
     background-color: #ebebeb;
 }
-.submit-btn{
+
+.submit-btn {
     position: absolute;
     transform: translateX(10%);
     bottom: 0;
     width: 670px;
     padding: 30px;
 }
+
 .auth-actions {
     display: flex;
     justify-content: space-between;
     gap: 10px;
 }
-.auth-actions a{
+
+.auth-actions a {
     color: #2eb8b8;
     font-size: 14px;
     transition: .2s all;
     font-weight: 700;
 }
-a:hover{
+
+a:hover {
     color: #ffcd1f !important;
     transition: .2s all;
 }
-.captcha{
-    padding: 8px 10px;
+
+.captcha {
+    padding: 0.5rem 0.7rem;
     font-family: "Cursive";
     font-size: 16px;
     font-weight: 700;
@@ -224,6 +242,7 @@ a:hover{
     border: 2px solid #010101;
     border-radius: 5px;
 }
+
 /* ------------------------- Save Password ----------------------------- */
 .showPass {
     position: relative;
@@ -233,11 +252,13 @@ a:hover{
     color: #ccc;
     cursor: pointer;
 }
-.save-pass{
+
+.save-pass {
     display: flex;
     align-items: center;
     padding: 6px 0;
 }
+
 /* The container */
 .save-pass-container {
     display: block;
@@ -271,7 +292,8 @@ a:hover{
     border-radius: 5px;
     border: 1px solid #ffcd1f;
 }
-.radio-mark{
+
+.radio-mark {
     position: absolute;
     top: 3px;
     left: 10px;
@@ -283,14 +305,14 @@ a:hover{
 }
 
 /* On mouse-over, add a grey background color */
-.save-pass-container:hover input ~ .checkmark,
-.save-pass-container:hover input ~ .radio-mark {
+.save-pass-container:hover input~.checkmark,
+.save-pass-container:hover input~.radio-mark {
     background-color: #ffcd1f;
 }
 
 /* When the checkbox is checked, add a blue background */
-.save-pass-container input:checked ~ .checkmark,
-.save-pass-container input:checked ~ .radio-mark {
+.save-pass-container input:checked~.checkmark,
+.save-pass-container input:checked~.radio-mark {
     background-color: #3ccfcf;
 }
 
@@ -302,7 +324,7 @@ a:hover{
 }
 
 /* Show the checkmark when checked */
-.save-pass-container input:checked ~ .checkmark:after {
+.save-pass-container input:checked~.checkmark:after {
     display: block;
 }
 
@@ -320,22 +342,25 @@ a:hover{
 }
 
 /* ================================= Container ================================= */
-.ImageCard{
+.ImageCard {
     position: relative;
     width: 100vw;
     height: 95vh;
 }
-.ImageCard picture{
+
+.ImageCard picture {
     position: relative;
     width: 100%;
     object-fit: cover;
 }
-.ImageCard picture img{
+
+.ImageCard picture img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.ImageCard .ImageCard-Text{
+
+.ImageCard .ImageCard-Text {
     position: absolute;
     top: 0;
     display: flex;
@@ -345,11 +370,13 @@ a:hover{
     margin: 0 10%;
     color: #fff;
 }
-.ImageCard-Text-Content{
+
+.ImageCard-Text-Content {
     margin: 3rem;
     max-width: 40rem;
 }
-.ImageCard-Text-Content .UIHeading{
+
+.ImageCard-Text-Content .UIHeading {
     font-family: 'Noto Sans', sans-serif;
     font-size: 2.75rem;
     font-weight: 800;
@@ -357,12 +384,14 @@ a:hover{
     line-height: 1.3;
     margin-bottom: 1rem;
 }
-.ImageCard-Text-Content .UIParagraph{
+
+.ImageCard-Text-Content .UIParagraph {
     font-size: 1.25rem;
     letter-spacing: normal;
     line-height: 1.4;
 }
-.ImageCard-Text .Reg{
+
+.ImageCard-Text .Reg {
     padding: 0.75rem 1.5rem;
     margin: 0 3rem;
     font-size: 15px;
@@ -374,6 +403,7 @@ a:hover{
     border-radius: 8px;
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
 }
-.ImgCard-Control a{
+
+.ImgCard-Control a {
     display: none;
 }

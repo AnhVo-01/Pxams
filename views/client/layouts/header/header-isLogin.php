@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="px-3">
             <div class="row align-items-center">
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-2">
                     <nav class="navbar">
                         <div class="navbar-brand image" id="back-to-top">
                             <img src="assets/image/logo.png" alt="logo">
@@ -10,7 +10,7 @@
                     </nav>
                 </div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-6 header-middle">
                     <div class="nav-menu">
                         <nav class="navbar navbar-expand-lg w-100">
                             <ul class="nav navbar-nav align-items-center w-100 gap-3" id="page-header">
@@ -91,7 +91,7 @@
                                     <a class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" style="color: #fff;">Create</a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a class="dropdown-item" href="newStudyset.html">
+                                            <a class="dropdown-item" onclick="createStudySet()">
                                                 <i class="far fa-clone me-2"></i>
                                                 Study sets
                                             </a>
@@ -115,7 +115,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-10">
                     <nav class="navbar" id="user_box">
                         <ul class="nav top-right">
                             <li class="nav-item search-box">
@@ -153,6 +153,11 @@
                                     <img alt="Ảnh hồ sơ" class="rounded-circle" src="https://gimg.quizlet.com/a-/AOh14GgnLlV8m31W4uh75mFzjx41BLiZE7irWhqAE0S5=s96-c?sz=32" style="height: 32px; width: 32px;">
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <button class="menu-toggle">
+                                    <i class="far fa-bars"></i>
+                                </button>
+                            </li>
                         </ul>
                         <div class="dropdown-ls collapse" id="setting">
                             <ul class="nav flex-column">
@@ -166,7 +171,7 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#info">Profile</a>
+                                    <a href="?redirect=client/pages/user">Profile</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#">Process</a>
@@ -212,31 +217,40 @@
                         </div>
                     </nav>
                 </div>
+
+                <script>
+                    $(document).ready(function() {
+                        $('.menu-toggle').click(function() {
+                            $('.header-middle').toggle();
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Refer a friend --------------------------------------- -->
+    <div class="Popup" id="myModal">
+        <div class="Refer_a_friend">
+            <div class="d-flex justify-content-between align-items-center" style="padding: 20px 40px 0;">
+                <h2 style="text-align: center;">Share your referral link</h2>
+                <span class="close" id="close-set">&times;</span>
+            </div>
+            <hr style="border: 0; height: 2px; background-color: #000; margin: 15px 0;">
+            <div class="ab-pop">
+                <span class="my-3">
+                    Invite friends who aren't using Pxams and receive a free week of Pxams Premium
+                    <a href="#">Terms apply.</a>
+                </span>
+                <div class="input-group refer-link mt-5">
+                    <input type="text" class="form-control" value="https://quizlet.com/referral-invite/AvoAW123?i=3fuwrc&x=1Nqt" id="myInput" disabled>
+                    <button class="btn btn-info" type="button" onclick="copyText()" id="copyBtn">Copy link</button>
+                </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Refer a friend --------------------------------------- -->
-<div class="Popup" id="myModal">
-    <div class="Refer_a_friend">
-        <div class="d-flex justify-content-between align-items-center" style="padding: 20px 40px 0;">
-            <h2 style="text-align: center;">Share your referral link</h2>
-            <span class="close" id="close-set">&times;</span>
-        </div>
-        <hr style="border: 0; height: 2px; background-color: #000; margin: 15px 0;">
-        <div class="ab-pop">
-            <span class="my-3">
-                Invite friends who aren't using Pxams and receive a free week of Pxams Premium
-                <a href="#">Terms apply.</a>
-            </span>
-            <div class="input-group refer-link mt-5">
-                <input type="text" class="form-control" value="https://quizlet.com/referral-invite/AvoAW123?i=3fuwrc&x=1Nqt" id="myInput" disabled>
-                <button class="btn btn-info" type="button" onclick="copyText()" id="copyBtn">Copy link</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <script src="assets/js/popup.js"></script>
+<script src="assets/js/createController.js"></script>
 <script src="assets/js/navscroll.js"></script>

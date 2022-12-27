@@ -23,7 +23,7 @@
                                 }else{
                                     echo('<li class="nav-item">'."\n");
                                 }
-                                echo('<a href="?redirect=mobile/search&local=search"><i class="fas fa-magnifying-glass fa-lg"></i></a>'."\n");
+                                echo('<a href="?redirect=mobile/search&local=search"><i class="far fa-search fa-xl"></i></a>'."\n");
                                 echo("</li>");
                             ?>
                             <?php
@@ -32,11 +32,11 @@
                                 }else{
                                     echo('<li class="nav-item">'."\n");
                                 }
-                                echo('<a href="./"><i class="fas fa-house fa-lg"></i></a>'."\n");
+                                echo('<a href="./"><i class="fas fa-home-lg fa-xl"></i></a>'."\n");
                                 echo("</li>");
                             ?>
                             <li class="nav-item">
-                                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#create"><i class="fas fa-circle-plus fa-lg"></i></a>
+                                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#create"><i class="fas fa-plus-circle fa-xl"></i></a>
                             </li>
                             <?php 
                                 if( isset($_SESSION['account_id']) ){
@@ -50,7 +50,7 @@
                                 }else{
                                     echo('<li class="nav-item">'."\n");
                                 }
-                                echo('<a href="'.$link.'"><i class="fas fa-user fa-lg"></i></a>'."\n");
+                                echo('<a href="'.$link.'"><i class="fas fa-user fa-xl"></i></a>'."\n");
                                 echo("</li>");
                             ?>
                         </ul>
@@ -63,9 +63,9 @@
                     <nav class="navbar justify-content-between">
                         <ul class="navbar-nav">
                             <li class="nav-item py-2">
-                                <a href="#">
-                                    <i class="far fa-file-lines me-2"></i>
-                                    Exam
+                                <a href="?redirect=client/pages/studyset&local=studyset">
+                                    <i class="far fa-clone me-2"></i>
+                                    Study set
                                 </a>
                             </li>
                             <li class="nav-item py-2">
@@ -76,7 +76,7 @@
                             </li>
                             <li class="nav-item py-2">
                                 <a href="#">
-                                    <i class="fas fa-user-group me-2"></i>
+                                    <i class="fas fa-user-friends me-2"></i>
                                     Class
                                 </a>
                             </li>
@@ -90,7 +90,7 @@
             <div class="container">
                 <div class="SiteFooter-bottom">
                     <div class="row">
-                        <div class="col-lg-2">
+                        <div class="col-lg-2 col-md-6">
                             <h5 class="SiteFooter-sectionLabel">About us</h5>
                             <ul class="navbar-nav">
                                 <li class="SiteFooter-sectionLink"><a href="#">About Pxams</a></li>
@@ -101,7 +101,7 @@
                                 <li class="SiteFooter-sectionLink"><a href="#">Get the app</a></li>
                             </ul>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-2 col-md-6">
                             <h5 class="SiteFooter-sectionLabel">For students</h5>
                             <ul class="navbar-nav">
                                 <li class="SiteFooter-sectionLink"><a href="#">Flash cards</a></li>
@@ -110,7 +110,7 @@
                                 <li class="SiteFooter-sectionLink"><a href="#">Pxams premium</a></li>
                             </ul>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-6">
                             <h5 class="SiteFooter-sectionLabel">For teacher</h5>
                             <ul class="navbar-nav">
                                 <li class="SiteFooter-sectionLink"><a href="#">Live</a></li>
@@ -120,7 +120,7 @@
                                 <li class="SiteFooter-sectionLink"><a href="#">Pxams premium for teachers</a></li>
                             </ul>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-6">
                             <h5 class="SiteFooter-sectionLabel">Resources</h5>
                             <ul class="navbar-nav">
                                 <li class="SiteFooter-sectionLink"><a href="#">Help center</a></li>

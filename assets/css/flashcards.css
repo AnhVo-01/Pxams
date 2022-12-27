@@ -116,7 +116,7 @@
 }
 .option{
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 .option:hover{
     cursor: pointer;
@@ -126,7 +126,7 @@
 .option i{
     color: #4257b2;
     font-size: 24px;
-    padding-right: 10px;
+    width: 24px;
 }
 .option a{
     color: var(--text-color1);
@@ -291,6 +291,19 @@
 }
 .cards-control a:hover{
     color: var(--text-color1);
+}
+.cards-control ul.dropdown-menu a{
+    justify-content: start;
+}
+.cards-control ul.dropdown-menu a i{
+    font-size: 18px;
+    width: 22px;
+}
+.cards-control ul li a:not(.dropdown-item){
+    border: 1px solid var(--text-color1);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
 }
 .cards-control ul li a:not(.dropdown-item){
     border: 1px solid var(--text-color1);
