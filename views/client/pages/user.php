@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="mobile-menu pt-3">
+        <div class="user-menu pt-3">
             <nav class="navbar navbar-expand-lg pb-0 w-100">
                 <ul class="nav align-items-center w-100" id="page-header">
                     <li class="nav-item active">
@@ -37,7 +37,7 @@
                         </a> 
                     </li>
                     <li class="nav-item">
-                        <a href="/flashcards.html" class="nav-link">
+                        <a href="?redirect=library" class="nav-link">
                             <span class="nav-label">Library</span>
                         </a> 
                     </li>

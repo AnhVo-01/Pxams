@@ -89,7 +89,7 @@
         position: absolute;
     }
 
-    .menu-toggle {
+    .nav-item:has(.menu-toggle) {
         display: block;
     }
     .subnav {

@@ -1,5 +1,3 @@
-    <link rel="stylesheet" href="assets/css/footer.css">
-
     <footer>
         <div class="mobile-view">
             <div class="container-fluid">
@@ -185,5 +183,7 @@
 
     <script src="assets/js/darkmode.js"></script>
     <script src="assets/js/tooltip.js"></script>
+    <script src="assets/js/ajax_request.js"></script>
+    <script src="assets/js/commonController.js"></script>
 </body>
 </html>
