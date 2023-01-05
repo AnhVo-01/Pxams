@@ -1,16 +1,3 @@
-// ----- Flip qna ------------------------------------------------
-var flipQnA = document.getElementById("flip-qna");
-var qblank = document.querySelectorAll("#question");
-var ablank = document.querySelectorAll("#answer");
-
-flipQnA.onclick = () =>{
-    for(let i = 0; i < qblank.length; i++){
-        var temp = qblank[i].value;
-        qblank[i].value = ablank[i].value;
-        ablank[i].value = temp;
-    }
-}
-
 // ----- Auto resize textarea ------------------------------------
 function expandtext(text) {
     if (text.scrollHeight > text.clientHeight) {
@@ -19,51 +6,6 @@ function expandtext(text) {
         text.style.height = "55px";
     }
 }
-
-// ----- Add new a element ---------------------------------------
-var element = document.querySelector(".set-body");
-
-function addnew(){
-    var tag = document.createElement("div");
-    var index = document.querySelectorAll("#card-index");
-    var newIndex;
-
-    if(index.length < 1){
-        newIndex = 1;
-    }else{
-        newIndex = parseInt(index[index.length-1].textContent) + 1
-    }
-
-    tag.classList.add("card","draggable");
-    tag.innerHTML = 
-    `<div class="card-header">
-        <span id="card-index">`+newIndex+`</span>
-        <ul class="nav card-menu">
-            <li>
-                <a href="#" class="btn" style="cursor: all-scroll;">
-                    <i class="fa-solid fa-grip-lines fa-lg"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#`+(newIndex-1)+`" class="btn remove-btn" onclick="delCard(this)"><i class="fa-solid fa-trash-can fa-sm"></i></a>
-            </li>
-        </ul>
-    </div>
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-6 question">
-                <textarea name="" id="" placeholder="Enter question" onkeyup="expandtext(this);"></textarea>
-                <span style="font-size: 12px;">QUESTION</span>
-            </div>
-            <div class="col-md-6 answer">
-                <textarea name="" id="" placeholder="Enter answer" onkeydown="expandtext(this);"></textarea>
-                <span style="font-size: 12px;">ANSWER</span>
-            </div>
-        </div>
-    </div>`;
-    element.appendChild(tag);
-}
-
 
 // ----- Move a element (Support for touch inputs) ---------------
 const d = document.querySelectorAll(".moveBtn");
@@ -93,8 +35,14 @@ function filter(e) {
     }
     //NOTICE THIS 👆 Since there can be multiple touches, you need to mention which touch to look for, we are using the first touch only in this case
 
-    target.oldLeft = window.getComputedStyle(target).getPropertyValue("left").split("px")[0] * 1;
-    target.oldTop = window.getComputedStyle(target).getPropertyValue("top").split("px")[0] * 1;
+    target.oldLeft =
+        window
+            .getComputedStyle(target)
+            .getPropertyValue("left")
+            .split("px")[0] * 1;
+    target.oldTop =
+        window.getComputedStyle(target).getPropertyValue("top").split("px")[0] *
+        1;
 
     document.onmousemove = dr;
     //NOTICE THIS 👇

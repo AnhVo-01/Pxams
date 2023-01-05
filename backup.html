@@ -1,0 +1,64 @@
+<div class="card" id="draggable<?=htmlentities($question['question_id'])?>">
+    <div class="card-header">
+        <ul class="nav card-menu">
+            <li>
+                <a href="#" class="btn">
+                    <i class="far fa-image fa-lg"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="btn remove-btn" onclick="$('#draggable0').remove(); return false;">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="btn moveBtn" style="cursor: all-scroll;">
+                    <i class="fas fa-grip-lines fa-lg"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="d-flex flex-column gap-3">
+                    <textarea id="<?=htmlentities($question['question_id'])?>" placeholder="Enter question" onchange="setQuestion(this)" onkeyup="expandtext(this);"><?=htmlentities($question['question'])?></textarea>
+                    <ul class="option_details" id="q<?=htmlentities($question['question_id'])?>">
+                        <li id="q<?=htmlentities($question['question_id'])?>a<?=htmlentities($option['option_id'])?>">
+                            <i class="far fa-circle" id="dragIcon0"></i>
+                            <div class="d-flex w-100">
+                                <input type="text" placeholder="Enter option" onchange="setOption(this)" id="<?=htmlentities($option['option_id'])?>" value="<?=htmlentities($option['option_title'])?>">
+                                
+                                <button class="btn" id="q0b" style="color: var(--text-color1);" onclick="removeOpt('#q0a0')">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="add_option">
+                        <i class="far fa-plus"></i>
+                        <a href="#" onclick="addMoreOption(<?=htmlentities($question['question_id'])?>)" style="font-size: 15px;">More option</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="answer_opt">
+                    <div style="font-size: 15px;">
+                        <i class="far fa-clipboard-check fa-lg"></i>
+                        <span class="text-primary ms-2">Answer</span>
+                    </div>
+                    <select onchange="setQuestionType(this.value)">
+                        <option value="0" selected>
+                            &#xf192; &ensp;
+                            <span>An option</span>
+                        </option>
+                        <option value="1">
+                            &#xf14a; &ensp;
+                            <span>Multiple-choice</span>
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
