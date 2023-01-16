@@ -59,10 +59,10 @@
 }
 
 /* ------------------------------------------------ */
-.mobile-menu nav.navbar ul.nav li a{
+.user-menu nav.navbar ul.nav li a{
     color: var(--text-color1);
 }
-.mobile-menu nav.navbar ul.nav li.active a .nav-label::after {
+.user-menu nav.navbar ul.nav li.active a .nav-label::after {
     content: "";
     background-color: #4257b2;
     bottom: 0;
@@ -71,7 +71,7 @@
     width: 100%;
     height: 4px;
 }
-.mobile-menu nav.navbar ul.nav li:not(.active) a:hover .nav-label::after {
+.user-menu nav.navbar ul.nav li:not(.active) a:hover .nav-label::after {
     content: "";
     background-color: #4257b2;
     bottom: 0;

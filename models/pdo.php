@@ -1,8 +1,8 @@
 <?php
 	$server = 'localhost';
 	$dbName = 'pxams';
-	$username = 'pxm';
-	$password = 'zap';
+	$username = 'root';
+	$password = '';
 
     try {
         $pdo = new PDO("mysql:host=$server;port=3306;dbname=$dbName", $username, $password);

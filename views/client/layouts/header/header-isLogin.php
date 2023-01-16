@@ -171,7 +171,7 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="?redirect=client/pages/user">Profile</a>
+                                    <a href="?redirect=user">Profile</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#">Process</a>
@@ -252,5 +252,4 @@
 </header>
 
 <script src="assets/js/popup.js"></script>
-<script src="assets/js/createController.js"></script>
 <script src="assets/js/navscroll.js"></script>

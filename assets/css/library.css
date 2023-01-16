@@ -1,0 +1,194 @@
+.user-top{
+    color: var(--text-color1);
+    border-bottom: 1px solid #a8b1ff;
+}
+.user-top a:hover{
+    color: #4257b2;
+}
+.user-top .premium{
+    float: right;
+    font-size: 14px;
+    padding-left: 0.5em;
+}
+.user-top .image{
+    border: 2px solid #4257b2;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+.user-top .image img{
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    object-fit: cover;
+}
+.user-top .about .username{
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+/* ------------------------------------------------ */
+.user-menu nav.navbar ul.nav li a{
+    color: var(--text-color1);
+}
+.user-menu nav.navbar ul.nav li.active a .nav-label::after {
+    content: "";
+    background-color: #4257b2;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+}
+.user-menu nav.navbar ul.nav li:not(.active) a:hover .nav-label::after {
+    content: "";
+    background-color: #4257b2;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+}
+
+/* ======================================================================= */
+.library-filter #f-type {
+    background: var(--option-box);
+    color: var(--text-color1);
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    border-color: #d9dde8;
+}
+
+.library-filter option {
+    background: var(--option-box);
+}
+
+.search {
+    position: relative;
+    display: flex;
+}
+
+.search input {
+    background: var(--option-box);
+    border: 0;
+    outline: 0;
+    border-radius: 0.5rem;
+    color: var(--text-color1);
+    padding: 0.5rem 1rem;
+    width: 400px;
+}
+
+@media (max-width: 992px) {
+    .search input {
+        width: 200px;
+    }
+}
+
+.search input:active,
+.search input:focus {
+    margin-bottom: -3px;
+    border-bottom: 3px solid;
+}
+
+.search .search-icon {
+    position: absolute;
+    color: var(--option-box-highlight);
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.LatestActivityFeed {
+    margin-top: 1.5rem;
+}
+
+.Feed-title {
+    display: flex;
+    padding-bottom: 1rem;
+    color: var(--text-color1);
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .0625rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    align-items: center;
+}
+.Feed-title::after {
+    content: "";
+    border-bottom: .0625rem solid #d9dde8;
+    margin-left: .75rem;
+    width: 100%;
+}
+
+.ListItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    margin-bottom: 0.75rem;
+    border-radius: .25rem;
+    background: linear-gradient(to right, var(--select-border) 50%, var(--option-box) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    box-shadow: 0 0.125rem 0.25rem #00000014;
+    transition: var(--tran-05);
+    /* transition: all .12s cubic-bezier(.47,0,.745,.715); */
+}
+.ListItem:hover {
+    cursor: pointer;
+    background-position: left bottom;
+}
+.ListItem .SetPreview {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0.75rem 1.25rem;
+}
+
+.ListItem .TermsCount {
+    display: flex;
+    align-items: center;
+    color: var(--text-color2);
+    font-size: .875rem;
+    font-weight: 600;
+}
+
+.ListItem .TermsCount .owned {
+    display: inline-flex;
+    gap: 7px;
+    align-items: center;
+    color: var(--text-color2);
+    padding-left: 0.625rem;
+    margin-left: 0.625rem;
+    border-left: 0.125rem solid #f6f7fb;
+}
+
+.ListItem .TermsCount .owned:hover {
+    color: #a8b1ff;
+}
+
+.ListItem .TermsCount .owned .profile-image {
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    object-fit: cover;
+}
+
+.ListItem .SetPreviewTitle {
+    color: var(--text-color1);
+    word-wrap: break-word;
+    display: inline;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: normal;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ListItem .SetPreviewTitle i {
+    font-size: 15px;
+    color: var(--option-box-highlight);
+}

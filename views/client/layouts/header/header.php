@@ -8,6 +8,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/image/favicon.ico">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
     <link href="assets/css/plugins/fontawesome-all.min.css" rel="stylesheet"></link>
     <link href="assets/css/plugins/fontawesome-duotone.css" rel="stylesheet"></link>
     <script src="assets/js/plugins/jquery-3.6.1.min.js"></script>

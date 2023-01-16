@@ -3,4 +3,7 @@
 	if (isset($_GET['local'])){
 		$_SESSION['action'] = $_GET['local'];
 	}
-	require('views/' . $path . '.php');
+	if (isset($_GET['activeChild'])) {
+		$_SESSION['activeChild'] = $_GET['activeChild'];
+	}
+	require_once('views/client/pages/' . $path . '.php');

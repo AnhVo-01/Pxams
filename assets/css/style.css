@@ -16,6 +16,7 @@
     --switch-color: #0a092d;
     --select-border: #edeff4;
     --option-box: #fff;
+    --option-box-highlight: #646f90;
     --drop-down: #fff;
     --search-box: #f6f7fb;
     --dropdown-hover: #f2f2f2;
@@ -38,6 +39,7 @@
     --switch-color: #f2f2f2;
     --select-border: #646f90;
     --option-box: #2e3856;
+    --option-box-highlight: #939bb4;
     --drop-down: #303545;
     --search-box: #2e3856;
     --dropdown-hover: #2e3856;
@@ -75,14 +77,21 @@ a{
 .navigator{
     display: none;
 }
-.menu-toggle {
+.nav-item:has(.menu-toggle) {
     display: none;
+}
+.menu-toggle {
+    display: inline-flex;
     color: #fff;
     background: inherit;
-    padding: 0.375rem 0.75rem;
+    width: 32px;
+    height: 32px;
     border: 1px solid #fff;
     line-height: 1.5;
     font-size: 1rem;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
 }
 
 .dropdown-menu {

@@ -1,8 +1,9 @@
 <?php
 	require_once 'models/pdo.php';
+    session_start();
 
-	require('controllers/HeaderController.php');
-    // require 'views/client/layouts/header.php';
+	// require('controllers/HeaderController.php');
+    require 'views/client/layouts/header/header.php';
 
 
 	if (isset($_POST['controller'])) {
@@ -14,19 +15,4 @@
 	}
 
 	require('views/client/layouts/footer.php');
-
-    // require_once 'models/pdo.php';
-
-    // if (isset($_GET['controller'])) {
-    //     $controller = $_GET['controller'];
-    //     if (isset($_GET['action'])) {
-    //         $action = $_GET['action'];
-    //     } else {
-    //         $action = 'index';
-    //     }
-    // } else {
-    //     $controller = 'pages';
-    //     $action = 'home';
-    // }
-    // require_once 'routes.php';
 ?>
