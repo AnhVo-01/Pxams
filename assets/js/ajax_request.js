@@ -78,7 +78,3 @@ function deleteOption(id) {
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("option_id="+id);
 }
-
-$(document).ready(() => {
-    $('.set-body').load('models/option.php');
-})

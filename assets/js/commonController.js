@@ -11,3 +11,13 @@ function createStudySet() {
     });
 }
 
+
+function editStudySet(e) {
+    $.post("controllers/LibraryController.php",{
+        ssID: e
+    }, function(data, status){
+        if (status === 'success') {
+            window.location.href = '?redirect=studyset';
+        }
+    });
+}
