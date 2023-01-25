@@ -19,10 +19,79 @@
                                         <span class="nav-label">Home</span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <span class="nav-label">Your folder</span>
+                                <!----- Begin Subject ----->
+                                <li class="nav-item dropdown px-3">
+                                    <a href="#" class="nav-link dropdown-toggle px-3" data-bs-toggle="dropdown">
+                                        <span class="nav-label">Subject</span>
                                     </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="subject hasChildren">
+                                            <a class="dropdown-item" href="#">
+                                                <i class="fas fa-paint-brush-alt"></i>
+                                                <span class="subject-title">Arts and Humanities</span>
+                                            </a>
+                                            <div class="subnav subject-menu">
+                                                <div class="subnav-content">
+                                                    <ul class="py-2 px-0">
+                                                        <li><a href="library.html" class="dropdown-item">History</a></li>
+                                                        <li><a href="#" class="dropdown-item">English</a></li>
+                                                        <li><a href="#" class="dropdown-item">Philosophy</a></li>
+                                                        <li><a href="#" class="dropdown-item">Visual Arts</a></li>
+                                                        <li><a href="#" class="dropdown-item">Music</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="all">
+                                                    <a class="dropdown-item text-primary" href="#">View alls</a>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="subject hasChildren">
+                                            <a class="dropdown-item" href="#">
+                                                <i class="far fa-language"></i>
+                                                <span class="subject-title">Languages</span>
+                                            </a>
+                                            <div class="subnav subject-menu">
+                                                <div class="subnav-content">
+                                                    <ul class="py-2 px-0">
+                                                        <li><a href="#" class="dropdown-item"></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="all">
+                                                    <a class="dropdown-item text-primary" href="#">View alls</a>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="subject hasChildren">
+                                            <a class="dropdown-item" href="#">
+                                                <i class="fas fa-pencil-ruler"></i>
+                                                <span class="subject-title">Math</span>
+                                            </a>
+                                            <div class="subnav subject-menu">
+                                                <div class="subnav-content">
+                                                    <ul class="py-2 px-0">
+                                                        <li><a href="#" class="dropdown-item">Arithmetic</a></li>
+                                                        <li><a href="#" class="dropdown-item">Geometry</a></li>
+                                                        <li><a href="#" class="dropdown-item">Algebra</a></li>
+                                                        <li><a href="#" class="dropdown-item">Applied Math</a></li>
+                                                        <li><a href="#" class="dropdown-item">Statistic</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="all">
+                                                    <a class="dropdown-item text-primary" href="#">View alls</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <script>
+                                        $(document).ready(function() {
+                                            $('.dropdown-toggle').click(function() {
+                                                $('.subject-menu').css('left', $('.dropdown-menu').width() + 2 +'px');
+                                            })
+                                        });
+                                    </script>
                                 </li>
 
                                 <!----- Begin Library ----->
@@ -56,7 +125,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="all">
-                                                    <a class="dropdown-item text-primary" href="#">View alls</a>
+                                                    <a class="dropdown-item text-primary" href="?redirect=library">View alls</a>
                                                 </div>
                                             </div>
                                         </li>
@@ -73,6 +142,29 @@
                                                                 <div class="d-flex flex-column">
                                                                     <span>Class1</span>
                                                                     <span class="text-muted"><small>VoNVA</small></span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="all">
+                                                    <a class="dropdown-item text-primary" href="#">View alls</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="hasChildren">
+                                            <a class="dropdown-item" href="#">
+                                                <span>Folders</span>
+                                                <i class="fas fa-angle-right pt-1" style="float: right;"></i>
+                                            </a>
+                                            <div class="subnav">
+                                                <div class="subnav-content">
+                                                    <ul class="p-0">
+                                                        <li>
+                                                            <a href="#" class="dropdown-item">
+                                                                <div class="d-flex flex-column">
+                                                                    <span class="text-muted"><small>2 sets</small></span>
+                                                                    <span>Folder 1</span>
                                                                 </div>
                                                             </a>
                                                         </li>

@@ -4191,6 +4191,10 @@ readers do not read off random characters that represent icons */
     content: "\f302";
 }
 
+.fa-image-polaroid:before {
+    content: "\f8c4";
+}
+
 .fa-imdb:before {
     content: "\f2d8";
 }

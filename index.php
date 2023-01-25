@@ -10,9 +10,7 @@
 		require_once('route/web.php'); /*xử lý các request trong Route/web.php*/
 	} elseif(isset($_GET['redirect'])) {
 		require_once('route/redirect.php');
-	} elseif($_SERVER['REQUEST_URI'] == '/'.$_REQUEST['']) {
-        require_once('route/routes.php');
-    } else {
+	} else {
 		require_once('views/client/pages/home.php'); /*require giao diện trang chủ*/
 	}
 
