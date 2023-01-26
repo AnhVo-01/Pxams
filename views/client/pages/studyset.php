@@ -6,6 +6,8 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
 
 <link rel="stylesheet" href="assets/css/studyset.css">
 
+<div class="toast-alert"></div>
+
 <!-- Main Content --------------------------------------- -->
 <div class="container" style="margin-bottom: 80px;">
     <div class="study-set">
@@ -16,18 +18,18 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
                 <span class="text-muted"><small><?=htmlentities($ssDetails['udate'])?></small></span>
             </div>
             <div class="d-none d-lg-block">
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="button" class="btn btn-primary" onclick="createStudySet()">Create</button>
             </div>
         </div>
 
         <div class="set-header">
             <div class="d-flex flex-column my-3">
                 <span>Title</span>
-                <input type="text" placeholder="Enter a title" value="<?=htmlentities($ssDetails['title'])?>" onchange="setTitle(this)">
+                <input type="text" id="titleVal" placeholder="Enter a title" value="<?=htmlentities($ssDetails['title'])?>" onchange="setTitle(this)">
             </div>
             <div class="d-flex flex-column my-3">
                 <span>Description</span>
-                <input type="text" placeholder="Add a description..." value="<?=htmlentities($ssDetails['description'])?>" onchange="setDescription(this)">
+                <input type="text" id="descVal" placeholder="Add a description..." value="<?=htmlentities($ssDetails['description'])?>" onchange="setDescription(this)">
             </div>
             
             <div class="cards-control">
@@ -42,8 +44,8 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
                             <i class="fas fa-file-import"></i>
                         </button>
                     </li>
-                    <li class="mx-2">
-                        <button class="nav-item" id="flip-qna" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Error report">
+                    <li class="mx-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Error report">
+                        <button class="nav-item" onclick="report();">
                             <i class="fas fa-exclamation-triangle"></i>
                         </button>
                     </li>
@@ -61,7 +63,7 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
                         <form action="controllers/StudySetController.php" method="POST">
                             <div class="opt-pop">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 my-3">
                                         <div class="d-flex flex-column">
                                             <span class="mb-2"><small>VISIBLE TO</small></span>
                                             <select name="visible" class="select-menu">
@@ -89,7 +91,7 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
                                             <span class="mt-2"><small>PASSWORD</small></span>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 my-3">
                                         <div class="d-flex flex-column">
                                             <span class="mb-2"><small>EDITABLE BY</small></span>
                                             <?php 
@@ -168,13 +170,17 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
                         }
                     </script>
                 </div>
+
+                <!-- study-set report -->
+                <div id="study-set-report"></div>
             </div>
+
         </div>
 
         <div class="set-body">
         </div>
 
-        <div class="card" style="background: inherit; border-radius: 8px;">
+        <div class="card" style="background: inherit; border-radius: .25em;">
             <div class="card-body addnew">
                 <button class="btn" onclick="addNewCard()">
                     <i class="fas fa-plus fa-xs"></i>
@@ -184,8 +190,9 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
         </div>
 
         <div class="cards-control">
-            <button type="submit" class="btn btn-primary" style="padding: 15px 25px;">Create</button>
+            <button type="button" class="btn btn-primary" style="padding: 0.75rem 2rem;" onclick="createStudySet()">Create</button>
         </div>
-        <!-- <script src="assets/js/studyset.js"></script> -->
+        <script src="assets/js/studyset.js"></script>
+        <script src="assets/js/services/StudySetService.js"></script>
     </div>
 </div>

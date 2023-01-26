@@ -1,3 +1,36 @@
+@media (max-width: 992px) {
+    .header-middle {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #4257b2;
+        height: 60px;
+    }
+    
+    .header-middle .navbar-nav {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .header-middle .navbar-nav .dropdown-menu {
+        position: absolute;
+    }
+
+    .nav-item:has(.menu-toggle) {
+        display: block;
+    }
+    .subnav {
+        max-width: 245px;
+    }
+
+    .answer_opt {
+        border-bottom: 1px solid var(--text-color1);
+        padding-bottom: 0.75em;
+        margin-bottom: 0.75em;
+    }
+}
+
 @media (max-width: 768px){
     .SiteFooter{
         display: none;
@@ -69,36 +102,15 @@
     .ImgCard-Control button{
         display: none;
     }
-}
-@media (max-width: 992px) {
-    .header-middle {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: #4257b2;
-        height: 60px;
-    }
-    
-    .header-middle .navbar-nav {
-        flex-direction: row;
-        justify-content: center;
-    }
-    
-    .header-middle .navbar-nav .dropdown-menu {
-        position: absolute;
-    }
 
-    .nav-item:has(.menu-toggle) {
-        display: block;
+    /* --------------- Study set ----------------------------- */
+    .study-set-box {
+        width: 95vw !important;
     }
-    .subnav {
-        max-width: 245px;
+    .opt-pop {
+        width: 90% !important;
     }
-
-    .answer_opt {
-        border-top: 1px solid var(--text-color1);
-        padding-top: 0.75em;
-        margin-top: 0.75em;
+    .submit-form {
+        width: 90% !important;
     }
 }

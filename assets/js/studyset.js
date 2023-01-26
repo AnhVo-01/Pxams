@@ -1,9 +1,21 @@
+$(document).ready(() => {
+    $('.set-body').load('models/option.php');
+});
+
+function cancelSA() {
+    $('.set-body').load('models/option.php');
+}
+
+function report() {
+    $('#study-set-report').load('views/client/layouts/feedback-modal.php');
+}
+
 // ----- Auto resize textarea ------------------------------------
 function expandtext(text) {
     if (text.scrollHeight > text.clientHeight) {
         text.style.height = text.scrollHeight + "px";
     } else {
-        text.style.height = "55px";
+        text.style.height = text.scrollHeight +"px";
     }
 }
 

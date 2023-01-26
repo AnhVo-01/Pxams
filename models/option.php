@@ -1,6 +1,6 @@
 <?php 
 require_once 'pdo.php';
-require_once 'util.php';
+require_once 'StudySet.php';
 session_start();
 
 $stmt = $pdo->prepare('SELECT * FROM `question_table` WHERE ssid = :ssId');

@@ -38,7 +38,7 @@
     left: 0;
     position: absolute;
     width: 100%;
-    height: 4px;
+    height: 3px;
 }
 .user-menu nav.navbar ul.nav li:not(.active) a:hover .nav-label::after {
     content: "";
@@ -47,7 +47,7 @@
     left: 0;
     position: absolute;
     width: 100%;
-    height: 4px;
+    height: 3px;
 }
 
 /* ======================================================================= */
@@ -72,22 +72,16 @@
     background: var(--option-box);
     border: 0;
     outline: 0;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     color: var(--text-color1);
     padding: 0.5rem 1rem;
     width: 400px;
 }
 
-@media (max-width: 992px) {
-    .search input {
-        width: 200px;
-    }
-}
-
 .search input:active,
 .search input:focus {
-    margin-bottom: -3px;
-    border-bottom: 3px solid;
+    margin-bottom: -2px;
+    border-bottom: 2px solid;
 }
 
 .search .search-icon {
@@ -124,6 +118,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 70px;
     margin-bottom: 0.75rem;
     border-radius: .25rem;
@@ -188,7 +183,69 @@
     gap: 10px;
 }
 
-.ListItem .SetPreviewTitle i {
+.ListItem i {
     font-size: 15px;
     color: var(--option-box-highlight);
+}
+
+.ListItemGroup {
+    position: relative;
+}
+
+.ListItemGroup .ss-menu {
+    position: absolute;
+    z-index: 1000;
+    right: -8rem;
+    top: 2rem;
+    display: none;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: 0;
+    text-align: left;
+    list-style: none;
+    background-color: var(--select-border);
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 0.125rem 0.25rem #00000014;
+    border-radius: .25rem;
+}
+
+.ListItemGroup .ss-menu .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: .25rem 1rem;
+    border: 0;
+    border-radius: 0;
+}
+
+.ListItemGroup .ss-menu .menu-item:hover {
+    background-color: var(--option-box);
+    color: var(--text-color1);
+}
+
+#confirm .modal-content {
+    color: var(--text-color1);
+    background-color: var(--drop-down);
+}
+
+#confirm .modal-content .btn-confirm {
+    color: #fff;
+    background-color: #3ccfcf;
+}
+
+#confirm .modal-content .btn-cancel {
+    color: #3ccfcf;
+    background-color: inherit;
+    border: 1px solid #3ccfcf;
+}
+
+#confirm .modal-content .btn:hover {
+    opacity: .75;
+}
+
+@media (max-width: 992px) {
+    .search input {
+        width: 200px;
+    }
 }

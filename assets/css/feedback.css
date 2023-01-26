@@ -1,0 +1,84 @@
+.system-report {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: var(--tran-03);
+}
+
+.system-report .system-report-box {
+    position: absolute;
+    color: var(--text-color1);
+    background: var(--drop-down);
+    width: 700px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.system-report .report-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    position: relative;
+    width: 600px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: auto;
+    overflow-y: auto;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: justify;
+    line-height: 1.2;
+}
+
+.system-report input {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border-radius: .25rem;
+    background: var(--option-box);
+    color: var(--text-color1);
+    outline: 0;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+}
+
+.system-report input[type='file'] {
+    background: inherit;
+    box-shadow: none;
+    padding: 0;
+}
+
+.system-report textarea {
+    background: var(--option-box);
+    color: var(--text-color1);
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+    height: 250px;
+    resize: none;
+    border: none;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+}
+
+.system-report .submit-form {
+    background-color: #3ccfcf;
+    color: #fff;
+    position: relative;
+    width: 70px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 20px;
+}

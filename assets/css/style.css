@@ -98,6 +98,11 @@ a{
     max-width: 400px;
     width: max-content;
 }
+
+.toast-alert {
+    position: fixed;
+    right: 0;
+}
 /* ---------------------------------- Top-left ----------------------------------*/
 nav.navbar ul.nav li a{
     color: #fff;

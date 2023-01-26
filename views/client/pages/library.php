@@ -1,5 +1,5 @@
 <?php 
-    $stmt = $pdo->prepare('SELECT ssid, title, description, cdate, udate, status, visible_to 
+    $stmt = $pdo->prepare('SELECT ssid, title, cdate, udate, status, visible_to, ass.active
                             FROM `study_set` AS ss 
                             INNER JOIN `acount_study_set` AS ass ON ss.ssid = ass.ss_id 
                             INNER JOIN `account` acc ON ass.account_id = acc.account_id WHERE acc.account_id = :accId ORDER BY udate DESC');
@@ -66,7 +66,7 @@
                         </select>
                     </div>
                     <label class="search">
-                        <input type="search" placeholder="Search your sets" value="">
+                        <input type="text" placeholder="Search your sets" value="">
                         <div class="search-icon">
                             <i class="far fa-search"></i>
                         </div>
@@ -79,22 +79,30 @@
                         echo('<div class="InprogressFeeds mb-5">');
                         echo('<h3 class="Feed-title">IN PROGRESS</h3>');
                         foreach($progressList as $row) {
-                            echo('<div class="ListItem" onclick="editStudySet('.htmlentities($row['ssid']).')">');
-                            echo('<div class="SetPreview">');
-                            echo('<span class="TermsCount"></span>');
-                            echo('<div class="SetPreviewTitle">');
-                            if($row['status'] === 'DRAFT' || $row['status'] === 'INPROGRESS') {
-                                echo('<span>( '.htmlentities($row['status']).' )</span>');
+                            if ($row['active'] == 1 && $row['status'] !== 'ACTIVE') {
+                                echo('<div class="ListItemGroup" oncontextmenu="option('.htmlentities($row['ssid']).'); return false;">');
+                                echo('<div class="ListItem" onclick="editStudySet('.htmlentities($row['ssid']).')">');
+                                echo('<div class="SetPreview">');
+                                echo('<div class="SetPreviewTitle">');
+                                if($row['status'] === 'DRAFT' || $row['status'] === 'INPROGRESS') {
+                                    echo('<span>( '.htmlentities($row['status']).' )</span>');
+                                }
+                                if($row['title']) {
+                                    echo('<span>'.htmlentities($row['title']).'</span>');
+                                }
+                                if($row['visible_to'] == 1) {
+                                    echo('<i class="far fa-user-friends"></i>');
+                                } else if ($row['visible_to'] == 2 || $row['visible_to'] == 3) {
+                                    echo('<i class="far fa-lock-alt"></i>');
+                                }
+                                echo('</div></div></div>');
+                                echo('<ul class="ss-menu" id="menu-'.htmlentities($row['ssid']).'">');
+                                echo('<li><button type="button" class="btn menu-item" onclick="deleteSet('.htmlentities($row['ssid']).');" data-bs-toggle="modal" data-bs-target="#confirm">');
+                                echo('<i class="far fa-trash"></i><span>Remove</span>');
+                                echo('</button></li>');
+                                echo('</ul>');
+                                echo('</div>');
                             }
-                            if($row['title']) {
-                                echo('<span>'.htmlentities($row['title']).'</span>');
-                            }
-                            if($row['visible_to'] == 1) {
-                                echo('<i class="far fa-user-friends"></i>');
-                            } else if ($row['visible_to'] == 2 || $row['visible_to'] == 3) {
-                                echo('<i class="far fa-lock-alt"></i>');
-                            }
-                            echo('</div></div></div>');
                         }
                         echo('</div>');
                     }
@@ -102,7 +110,7 @@
 
                     <div class="DashboardFeed mb-5">
                         <div class="DashboardFeedGroup">
-                            <h3 class="Feed-title">Tuần trước</h3>
+                            <h3 class="Feed-title">Last Week</h3>
                             <div class="ListItem">
                                 <div class="SetPreview">
                                     <div class="TermsCount">
@@ -121,7 +129,27 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- The Modal -->
+                <div class="modal fade" id="confirm">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h4 class="py-3 mb-2">Move to bin?</h4>
+                                <p>This study set will be moved to bin and deleted forever after 30 days.</p>
+                                <p>If this file is shared, collaborators can still make a copy of it until it's permanently deleted.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-confirm" onclick="deleteConfirm(true);">OK</button>
+                                <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <script src="assets/js/library.js"></script>
+    <script src="assets/js/services/LibraryService.js"></script>
 </div>

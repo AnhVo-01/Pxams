@@ -183,7 +183,6 @@
 
     <script src="assets/js/darkmode.js"></script>
     <script src="assets/js/tooltip.js"></script>
-    <script src="assets/js/ajax_request.js"></script>
-    <script src="assets/js/commonController.js"></script>
+    <script src="assets/js/services/core.js"></script>
 </body>
 </html>

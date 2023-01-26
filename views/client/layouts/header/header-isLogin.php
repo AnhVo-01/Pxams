@@ -183,7 +183,7 @@
                                     <a class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" style="color: #fff;">Create</a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a class="dropdown-item" onclick="createStudySet()">
+                                            <a class="dropdown-item" onclick="createStudySetDraft()">
                                                 <i class="far fa-clone me-2"></i>
                                                 Study sets
                                             </a>
