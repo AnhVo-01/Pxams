@@ -1,11 +1,168 @@
-#header{
-    display: none;
+header {
+    box-shadow: 0 .25rem 1rem 0 #30354514;
+}
+
+.top-group {
+    align-items: center;
+    height: 65px;
+}
+
+.top-group .dropdown-menu {
+    width: 220px;
+    border: 0;
+    border-radius: .5rem;
+    background-color: var(--option-box) !important;
+    box-shadow: 0 .25rem 1rem 0 #30354514;
+}
+
+.top-group .dropdown-menu .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .5rem 1.25rem;
+}
+
+.top-group .dropdown-menu .dropdown-item:hover {
+    background: var(--select-border) !important;
+}
+
+.top-group .dropdown-menu .dropdown-item i {
+    color: #4257b2;
+    font-size: 20px;
+    width: 22px;
+    text-align: center;
+}
+
+.top-group .dropdown-menu .dropdown-divider {
+    border-top: 1px solid #f6f7fb;
+}
+
+.top-group .btn:hover,
+.top-group .btn:focus {
+    outline: 0;
+    box-shadow: none;
+    background-color: #6a7bc8;
+}
+
+.top-middle{
+    color: #fff;
+    text-align: center;
+}
+
+.top-middle h3{
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.top-right {
+    justify-content: flex-end;
+    gap: 1.25rem;
+}
+
+.top-right .btn {
+    color: #fff;
+    border: 1px solid #fff;
 }
 
 .SiteFooter {
     display: none;
 }
 
+#optionModal .modal-content {
+    border-radius: 0;
+}
+
+#optionModal .modal-header {
+    border-radius: 0;
+    background-color: #4257b2;
+    color: #fff;
+    padding: 1.5rem 2rem;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+#optionModal .modal-header .close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 3px #3b4c9b;
+}
+
+#optionModal .modal-header .close:hover {
+    background-color: #3b4c9b;
+}
+
+#optionModal .modal-body {
+    padding: 2rem;
+    background-color: var(--drop-down);
+}
+
+.UIFieldset-legend {
+    display: table;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .0625rem;
+    line-height: 1.333333333333333;
+    padding: 0;
+    width: 100%;
+    color: var(--text-color1);
+}
+
+.UIFieldset-fields {
+    margin-top: 1rem;
+}
+
+.UIFieldset-fields .btn {
+    font-size: .85rem;
+    font-weight: 900;
+    color: #4255ff;
+    padding: 0;
+}
+
+.toggle-switch {
+    display: inline-flex;
+    border: .125rem solid #d9dde8;
+    border-radius: .25rem;
+    height: 100%;
+    width: fit-content;
+    background-color: var(--drop-down);
+}
+
+.UIToggle-option {
+    background-color: inherit;
+    color: #3ccfcf;
+    display: inline-block;
+    font-size: .875rem;
+    font-weight: 700;
+    line-height: 1.2;
+    width: fit-content;
+    padding: .625rem 1rem;
+    transition: all .12s cubic-bezier(.47,0,.745,.715);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.UIToggle-option:hover {
+    color: #ffcd1f;
+}
+
+.toggle-switch .light,
+.toggle-switch.dark-on .dark {
+    color: #303545;
+    background-color: #ffcd1f;
+}
+
+.toggle-switch.dark-on .light {
+    color: #3ccfcf;
+    background-color: var(--drop-down);
+}
 /* ---------------------------- Main ----------------------------- */
 .flash-box{
     position: relative;
@@ -26,7 +183,8 @@
     margin: 0 auto;
     font-weight: 600;
     color: var(--text-color3);
-    border-radius: 8px;
+    border-radius: .5rem;
+    box-shadow: 0 .25rem 1rem 0 #30354514;
     transition: width 2s, height 2s, transform 2s;
 }
 .flash-cards .flash-card-header{
@@ -43,17 +201,24 @@
     flex-direction: column;
     justify-content: space-between;
 }
+.flash-card-body .question{
+    font-size: 18px;
+    font-family: inherit;
+    white-space: break-spaces;
+}
 .flash-card-body .answer{
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
 }
 .flash-card-body .answer .select{
     position: relative;
     display: flex;
     align-items: center;
-    gap: 10px;
-    width: 100%;
+    gap: 1rem;
+    min-width: 380px;
+    width: min-content;
     padding: 1rem;
     border-radius: 8px;
     border: 0.125em solid var(--select-border);
@@ -85,9 +250,16 @@
 
 /* ============================== in-progress ========================== */
 .in-progress{
+    display: none;
     background: var(--drop-down);
     color: var(--text-color2);
-    padding: 40px 0;
+    padding: 1.5rem 3rem;
+    width: 100%;
+    margin: 0 auto;
+    font-weight: 600;
+    border-radius: .5rem;
+    box-shadow: 0 0.25rem 1rem 0 #30354514;
+    transition: width 2s, height 2s, transform 2s;
 }
 .in-progress .progress{
     background-color: #f6f7fb;

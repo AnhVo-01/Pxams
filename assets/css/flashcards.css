@@ -1,112 +1,101 @@
-/* ===== Colors ===== */
-/* :root{
-    --body-color: #f6f7fb;
-    --switch-color: #0a092d;
-    --drop-down: #fff;
-    --option-box: #fff;
-    --dropdown-hover: #f2f2f2;
-    --text-color1: #010101;
-    --text-color2: #010101;
-    --text-color-reverse: #fff;
-} */
-
-/* .dark-theme {
-    --body-color: #0a092d;
-    --switch-color: #f2f2f2;
-    --drop-down: #303545;
-    --option-box: #2e3856;
-    --dropdown-hover: #2e3856;
-    --text-color1: #fff;
-    --text-color2: #ccc;
-    --text-color-reverse: #010101;
-} */
 .btn:focus {
     box-shadow: none;
 }
-.container{
+
+.container {
     color: var(--text-color1);
 }
-.navigator{
-    display: none;
-}
-.navigator a{
-    color: #fff;
-}
-.navigator a:hover{
-    color: #2e3856;
-}
+
 /*===============================================================================*/
-.carousel{
-    border-radius: 8px;
-    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+.carousel-inner {
+    height: 380px;
+    overflow: unset;
 }
-.carousel-inner{
-    height: 350px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    background-color: var(--option-box);
-}
-.carousel-item{
+
+.carousel-item {
     width: 100%;
     height: 100%;
     position: relative;
 }
-.carousel-item .flip-card{
+
+.flip-card {
     height: 100%;
     perspective: 1000px;
 }
-.carousel-item .qa{
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 20px 30px;
+    overflow: auto;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.flip-card-front ul.options {
+    list-style: decimal;
+}
+  
+  /* Style the back side */
+.flip-card-back {
+    align-items: center;
+    justify-content: center;
+    transform: rotateX(180deg);
+}
+
+.carousel-item .flip-card-inner {
     cursor: pointer;
     position: relative;
     font-size: 20px;
     color: var(--text-color1);
     height: 100%;
-    padding: 20px 0;
-    transition: transform 0.6s;
+    transition: transform 0.3s;
     transform-style: preserve-3d;
+    border-radius: 8px;
+    background-color: var(--option-box);
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
 }
-.carousel-item .qa span{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 0 30px;
-    overflow: auto;
-    backface-visibility: hidden;
-}
-.carousel-item .qa .question{
-    align-items: unset;
-}
-.carousel-item .qa .answer{
-    display: none;
-    transform: rotateX(180deg);
-}
-.carousel-item .qa span::-webkit-scrollbar{
+
+.carousel-item .flip-card-inner .qa::-webkit-scrollbar {
     width: 5px;
 }
-.carousel-item .qa span::-webkit-scrollbar-thumb{
-    background: #888; 
+
+.carousel-item .flip-card-inner .qa::-webkit-scrollbar-thumb {
+    background: #888;
 }
-.carousel .controls{
+
+.carousel .controls {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 50px 20px;
-    border-radius: 0 0 8px 8px;
-    background-color: var(--option-box);
+    margin-top: 20px;
+    gap: 1rem;
 }
-.carousel .controls button{
+
+.carousel .controls button {
     color: var(--text-color2);
     border: 1px solid var(--text-color2);
     padding: 10px;
     width: 300px;
 }
-.controls button:hover{
+
+.controls button:hover {
     color: var(--text-color1);
     border-color: var(--text-color1);
 }
+
 /*----------------------------- right -----------------------------*/
-.option, .card-option{
+.option,
+.card-option {
     padding: 10px 20px;
     font-weight: 500;
     border-radius: 8px;
@@ -114,32 +103,39 @@
     background-color: var(--option-box);
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
 }
-.option{
+
+.option {
     display: flex;
     gap: 15px;
 }
-.option:hover{
+
+.option:hover {
     cursor: pointer;
     margin-bottom: 11px;
     border-bottom: 4px solid #a8b1ff;
 }
-.option i{
+
+.option i {
     color: #4257b2;
     font-size: 24px;
     width: 24px;
+    text-align: center;
 }
-.option a{
+
+.option a {
     color: var(--text-color1);
     font-size: 700;
 }
 
-.cre-user{
+.cre-user {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     color: var(--text-color1);
     font-size: 14px;
 }
-.cre-ava{
+
+.cre-ava {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -152,19 +148,24 @@
 }
 
 /*------------------------- card-content -------------------------*/
-.add-to{
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+.add-to {
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
     background-color: rgb(0, 0, 0);
-    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black w/ opacity */
     transition: all ease-in-out 0.2s;
 }
 
-.add-to-box{
+.add-to-box {
     position: absolute;
     color: var(--text-color1);
     background: var(--drop-down);
@@ -177,7 +178,8 @@
     display: flex;
     flex-direction: column;
 }
-.opt-pop{
+
+.opt-pop {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -191,68 +193,82 @@
     text-align: justify;
     line-height: 1.2;
 }
-.opt-pop .add-option{
+
+.opt-pop .add-option {
     color: #3ccfcf;
     background: var(--body-color);
 }
-.btn.add-option{
+
+.btn.add-option {
     border-radius: 0 !important;
 }
-.add-option.active{
+
+.add-option.active {
     color: var(--text-color-reverse);
     background: #ffcd1f;
 }
-.add-option:not(.active):hover{
+
+.add-option:not(.active):hover {
     color: #ffcd1f;
 }
-.opt-pop .UIDiv{
+
+.opt-pop .UIDiv {
     margin-top: 1.5rem;
 }
-.opt-pop .createButton{
+
+.opt-pop .createButton {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
     background: var(--body-color);
 }
-.createButton .btn{
+
+.createButton .btn {
     font-weight: bolder;
     color: var(--text-color1);
     border-bottom: 5px solid #3ccfcf;
 }
 
-.ToggleCard{
+.ToggleCard {
     display: flex;
     flex-direction: column;
     gap: 10px;
     max-height: 300px;
     overflow: auto;
 }
-.ToggleCard::-webkit-scrollbar{
+
+.ToggleCard::-webkit-scrollbar {
     display: none;
 }
-.ToggleCard:hover::-webkit-scrollbar{
+
+.ToggleCard:hover::-webkit-scrollbar {
     display: block;
     width: 6px;
 }
-.ToggleCard::-webkit-scrollbar-thumb{
+
+.ToggleCard::-webkit-scrollbar-thumb {
     background-color: #888;
 }
-.ToggleList{
+
+.ToggleList {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
     background: var(--body-color);
 }
-.ToggleList .UIHeading{
+
+.ToggleList .UIHeading {
     font-size: 20px;
 }
-.ToggleList .ToggleList-toggle{
+
+.ToggleList .ToggleList-toggle {
     cursor: pointer;
     position: relative;
 }
-.ToggleList-toggle .UISwitch-label{
+
+.ToggleList-toggle .UISwitch-label {
     background: #2e3856;
     padding: 10px 15px;
     border-radius: 5px;
@@ -260,91 +276,127 @@
     left: -22px;
     bottom: -11px;
 }
-.ToggleList-toggle .UISwitch-label::after{
-    font-family: "Font Awesome 5 Free";
-    font-weight: bold;
-    content: "\2b";
+
+.ToggleList-toggle .UISwitch-label::after {
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    content: "\f067";
     color: #f2f2f2;
     border: 0 !important;
     vertical-align: 0 !important;
 }
-.ToggleList-toggle input:checked ~ .UISwitch-label{
+
+.ToggleList-toggle input:checked~.UISwitch-label {
     background: #ffcd1f;
 }
-.ToggleList-toggle input:checked ~ .UISwitch-label::after{
+
+.ToggleList-toggle input:checked~.UISwitch-label::after {
     content: "\f068";
     color: #010101;
 }
 
 /*--------------------------------------------------*/
-.cards-control{
+.cards-control {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.cards-control a{
+
+.cards-control button {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
     color: var(--text-color1);
 }
-.cards-control a:hover{
+
+.cards-control a:hover {
     color: var(--text-color1);
 }
-.cards-control ul.dropdown-menu a{
+
+.cards-control ul.dropdown-menu .dropdown-item {
     justify-content: start;
 }
-.cards-control ul.dropdown-menu a i{
+
+.cards-control ul.dropdown-menu .dropdown-item i {
     font-size: 18px;
     width: 22px;
+    text-align: center;
 }
-.cards-control ul li a:not(.dropdown-item){
+
+.cards-control ul li button:not(.dropdown-item) {
     border: 1px solid var(--text-color1);
     border-radius: 50%;
     width: 36px;
     height: 36px;
+    background-color: inherit;
 }
-.cards-control ul li a:not(.dropdown-item){
-    border: 1px solid var(--text-color1);
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-}
-.cards-control ul li a:hover{
+
+.cards-control ul li a:hover {
     background: var(--drop-down);
 }
 
-.card-option{
+.card-option {
     font-size: 16px;
     line-height: 25px;
 }
+
 .card-option .edit-card,
-.card-option .bookmark-card{
+.card-option .bookmark-card {
     font-size: 16px;
     color: var(--text-color1);
 }
+
 .card-option .edit-card:hover,
-.card-option .bookmark-card:hover{
+.card-option .bookmark-card:hover {
     color: #ffcd1f;
 }
-.card-option .question{
-    padding: 10px;
-    border-right: 1px solid #0a092d;
+
+.card-option .question {
+    padding: 0 0.75rem 1rem;
 }
+
+.card-option ul.options{
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.card-option ul.options li {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+    margin-top: .125em;
+    margin-right: 0.75rem;
+    padding: .5em;
+    border-radius: .25em;
+}
+
+.card-option .options span{
+    width: 100%;
+    white-space: pre-wrap;
+    background: inherit;
+    color: inherit;
+    line-height: 1;
+}
+
 .card-option .answer{
-    padding: 10px;
-    border-left: 1px solid #0a092d;
+    color: #010101;
+    background-color: #a4ddc5;
+    /* background-color: #f1f8e9; */
 }
-.card-option .card{
+
+.card-option .answer i{
+    color: #19804f;
+}
+
+.card-option .card {
     background-color: inherit;
     border: 0;
     border-radius: 8px;
 }
-.card-option .card .card-header{
+
+.card-option .card .card-header {
     display: flex;
     justify-content: end;
-}
-.card .card-body{
-    padding: 10px 20px;
+    border-radius: 8px 8px 0 0;
 }

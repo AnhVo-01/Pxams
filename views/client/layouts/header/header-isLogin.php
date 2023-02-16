@@ -107,21 +107,28 @@
                                             </a>
                                             <div class="subnav">
                                                 <div class="subnav-content">
-                                                    <ul class="p-0">
-                                                        <li>
-                                                            <a href="?redirect=client/pages/flashcards" class="dropdown-item">
-                                                                <div class="d-flex flex-column">
-                                                                    <span>SWP391</span>
-                                                                    <span class="text-muted"><small>VoNVA</small></span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li><a href="#" class="dropdown-item">SWP391</a></li>
-                                                        <li><a href="#" class="dropdown-item">SWP391</a></li>
-                                                        <li><a href="#" class="dropdown-item">SWP391</a></li>
-                                                        <li><a href="#" class="dropdown-item">SWP391</a></li>
-                                                        <li><a href="#" class="dropdown-item">SWP391</a></li>
-                                                        <li><a href="#" class="dropdown-item">SWP391</a></li>
+                                                    <ul>
+                                                    <?php 
+                                                        $stmt = $pdo->prepare("SELECT acc.account_id, user_name, ssid, title, ass.date, status, ass.type, active 
+                                                                            FROM `study_set` AS ss 
+                                                                            INNER JOIN `acount_study_set` AS ass ON ss.ssid = ass.ss_id 
+                                                                            INNER JOIN `account` acc ON ass.account_id = acc.account_id 
+                                                                            WHERE ss.status = 'ACTIVE' AND ass.active = 1 
+                                                                            AND acc.account_id=:accId ORDER BY ass.date DESC");
+                                                        $stmt->execute(array(':accId' => $_SESSION['account_id']));
+                                                        $ssList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                                                        foreach ($ssList as $row) {
+                                                            echo('<li>');
+                                                            echo('<a href="?redirect=flashcard&id='.htmlentities($row['ssid']).'" class="dropdown-item">');
+                                                            echo('<div class="d-flex flex-column">');
+                                                            echo('<span class="title">'.$row['title'].'</span>');
+                                                            echo('<span class="text-muted"><small>'.$row['user_name'].'</small></span>');
+                                                            echo('</div>');
+                                                            echo('</a>');
+                                                            echo('</li>');
+                                                        }
+                                                    ?>
                                                     </ul>
                                                 </div>
                                                 <div class="all">

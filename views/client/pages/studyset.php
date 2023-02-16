@@ -190,7 +190,7 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
         </div>
 
         <div class="cards-control">
-            <button type="button" class="btn btn-primary" style="padding: 0.75rem 2rem;" onclick="createStudySet()">Create</button>
+            <button type="button" class="btn btn-primary" style="padding: 0.75rem 2rem;" onclick="createStudySet(<?= $_SESSION['study_set_id'] ?>)">Create</button>
         </div>
         <script src="assets/js/studyset.js"></script>
         <script src="assets/js/services/StudySetService.js"></script>

@@ -6,4 +6,10 @@
 	if (isset($_GET['activeChild'])) {
 		$_SESSION['activeChild'] = $_GET['activeChild'];
 	}
-	require_once('views/client/pages/' . $path . '.php');
+
+	if (isset($_SESSION['account_id'])) {
+		require_once('views/client/pages/' . $path . '.php');
+	} else {
+		require_once('views/client/layouts/404.php');
+	}
+	

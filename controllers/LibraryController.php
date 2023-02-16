@@ -1,5 +1,5 @@
 <?php
-require_once '../models/pdo.php';
+require_once '../util/pdo.php';
 session_start();
 
 if (isset($_POST['action']) && isset($_POST['ssID'])) {

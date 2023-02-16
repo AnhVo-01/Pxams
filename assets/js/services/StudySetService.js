@@ -17,7 +17,7 @@ function addNewCard() {
     xmlhttp.onload = function() {
         if (xmlhttp.readyState === XMLHttpRequest.DONE) {
             if (xmlhttp.status === 200) {
-                $('.set-body').load('models/option.php');
+                $('.set-body').load('util/option.php');
             }
         }
     }
@@ -36,7 +36,7 @@ function setQuestionType(type, id) {
     xmlhttp.onload = function() {
         if (xmlhttp.readyState === XMLHttpRequest.DONE) {
             if (xmlhttp.status === 200) {
-                $('.set-body').load('models/option.php');
+                $('.set-body').load('util/option.php');
             }
         }
     }
@@ -49,7 +49,7 @@ function deleteQuestion(id) {
     xmlhttp.onload = function() {
         if (xmlhttp.readyState === XMLHttpRequest.DONE) {
             if (xmlhttp.status === 200) {
-                $('.set-body').load('models/option.php');
+                $('.set-body').load('util/option.php');
             }
         }
     }
@@ -68,7 +68,7 @@ function addMoreOption(id) {
     xmlhttp.onload = function() {
         if (xmlhttp.readyState === XMLHttpRequest.DONE) {
             if (xmlhttp.status === 200) {
-                $('.set-body').load('models/option.php');
+                $('.set-body').load('util/option.php');
             }
         }
     }
@@ -81,7 +81,7 @@ function deleteOption(id) {
     xmlhttp.onload = function() {
         if (xmlhttp.readyState === XMLHttpRequest.DONE) {
             if (xmlhttp.status === 200) {
-                $('.set-body').load('models/option.php');
+                $('.set-body').load('util/option.php');
             }
         }
     }
@@ -107,7 +107,7 @@ function submitAnswer(id) {
     xmlhttp.onload = function() {
         if (xmlhttp.readyState === XMLHttpRequest.DONE) {
             if (xmlhttp.status === 200) {
-                $('.set-body').load('models/option.php');
+                $('.set-body').load('util/option.php');
             }
         }
     }
@@ -116,7 +116,7 @@ function submitAnswer(id) {
     xmlhttp.send(formData);
 }
 
-function createStudySet() {
+function createStudySet(id) {
     xmlhttp.open("POST", "controllers/StudySetController.php");
     xmlhttp.onload = function() {
         if (xmlhttp.readyState === XMLHttpRequest.DONE) {
@@ -127,7 +127,7 @@ function createStudySet() {
                         $(".toast").removeClass("show");
                     }, 5000);
                 } else {
-                    window.location.href = '?redirect=flashcards';
+                    window.location.href = '?redirect=flashcard&id='+id;
                 }
             }
         }

@@ -1,3 +1,20 @@
+<?php 
+require_once 'util/flashcards.php';
+
+$stmt = $pdo->prepare('SELECT ssid, title, description, ass.date, visible_to, editable_by, ass.type, active, user_name
+                        FROM `study_set` AS ss 
+                        INNER JOIN `acount_study_set` AS ass ON ss.ssid = ass.ss_id 
+                        INNER JOIN `account` acc ON ass.account_id = acc.account_id 
+                        WHERE ss.ssid=:ssId');
+$stmt->execute(array(':ssId' => $_GET['id']));
+$studyset = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+$stmt = $pdo->prepare('SELECT * FROM `question_table` WHERE ssid = :ssId');
+$stmt->execute(array(':ssId' => $_GET['id']));
+$listQuestion = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <link rel="stylesheet" href="assets/css/flashcards.css">
 
 <!-- Main Content ----------------------------------------- -->
@@ -9,57 +26,7 @@
                 <div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
                     <!-- The slideshow/carousel -->
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="flip-card">
-                                <div class="qa">
-                                    <span class="question">
-                                        Given the following state transition table Which of the test cases below will cover the following series of state transitions? S1 SO S1 S2 SO
-                                        <br>
-                                        Exhibit:
-                                        <br>
-                                        A. D, A, B, C.
-                                        <br>
-                                        B. A, B, C, D.
-                                        <br>
-                                        C. D, A, B.
-                                        <br>
-                                        D. A, B, C.
-                                    </span>
-                                    <span class="answer">
-                                        B
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="flip-card">
-                                <div class="qa">
-                                    <span class="question">From a Testing perspective, what are the MAIN purposes of Configuration Management?:
-                                        <br>
-                                        i) Identifying the version of software under test.
-                                        <br>
-                                        ii) Controlling the version of testware items.
-                                        <br>
-                                        ii) Controlling the version of testware items.
-                                        <br>
-                                        ii) Controlling the version of testware items.
-                                        <br>
-                                        ii) Controlling the version of testware items.
-                                        <br>
-                                        A. ii, iv and v.
-                                        <br>
-                                        B. ii, iii and iv.i,
-                                        <br>
-                                        C. i, ii and iv.
-                                        <br>
-                                        C. i, ii and iv.
-                                    </span>
-                                    <span class="answer">
-                                        A
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+                        <?php showFlashCard($pdo, $listQuestion) ?>
                     </div>
 
                     <!-- Left and right controls/icons -->
@@ -81,24 +48,28 @@
 
             <div class="col-md-4">
                 <div class="my-3">
-                    <h4>SWP391</h4>
-                    <span class="text-muted">Description</span>
+                    <h4><?= $studyset['title'] ?></h4>
+                    <span class="text-muted"><?= $studyset['description'] ?></span>
                 </div>
                 <div class="cre-user mb-3">
-                    <div class="cre-ava">
-                        <span style="line-height: 1;">V</span>
+                    <div class="d-flex align-items-center">
+                        <div class="cre-ava">
+                            <span style="line-height: 1;"><?= substr($studyset['user_name'], 0, 1) ?></span>
+                        </div>
+                        <a href="library.html">
+                            <span class="ms-2"><?= $studyset['user_name'] ?></span>
+                        </a>
                     </div>
-                    <a href="library.html">
-                        <span class="ms-2">VoNVA</span>
-                    </a>
-                    <span class="mx-2">| Terms in this set</span>
-                    <span id="total"></span>
+                    <div class="d-flex align-items-center">
+                        <span class="mx-2">| Terms in this set</span>
+                        <span id="total"></span>
+                    </div>
                 </div>
                 <div class="option">
                     <i class="fas fa-layer-group"></i>
                     <span>Flashcards</span>
                 </div>
-                <div class="option" onclick="location.href = '?redirect=client/pages/learn'">
+                <div class="option" onclick="location.href = '?redirect=learn&id=<?= $_GET['id'] ?>'">
                     <i class="fas fa-book"></i>
                     <span>Learn</span>
                 </div>
@@ -121,59 +92,64 @@
                         <h6 class="my-3">Cards</h6>
                         <ul class="nav cards-control-menu">
                             <li class="mx-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add this set to a class or a folder">
-                                <a href="#" class="nav-item" data-bs-toggle="collapse" data-bs-target="#add">
+                                <button class="nav-item" data-bs-toggle="collapse" data-bs-target="#add">
                                     <i class="fas fa-plus"></i>
-                                </a>
+                                </button>
                             </li>
+                            <?php 
+                            if ($studyset['type'] == 'OWNED') {
+                                echo('<li class="mx-2">');
+                                echo('<button class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">');
+                                echo('<i class="fas fa-pen"></i>');
+                                echo('</button>');
+                                echo('</li>');
+                            } else {
+                                echo('<li class="mx-2">');
+                                echo('<button class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Save and edit">');
+                                echo('<i class="far fa-clone"></i>');
+                                echo('</button>');
+                                echo('</li>');
+                            }
+                            ?>
                             <li class="mx-2">
-                                <a href="#" class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
-                                    <i class="fas fa-pen"></i>
-                                </a>
-                            </li>
-                            <li class="mx-2">
-                                <a href="#" class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Save and edit">
-                                    <i class="far fa-clone"></i>
-                                </a>
-                            </li>
-                            <li class="mx-2">
-                                <a href="#" class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Share">
+                                <button class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Share">
                                     <i class="fas fa-share"></i>
-                                </a>
+                                </button>
                             </li>
                             <li class="dropdown mx-2">
-                                <a href="#" class="nav-item" data-bs-toggle="dropdown">
+                                <button class="nav-item" data-bs-toggle="dropdown">
                                     <i class="fas fa-ellipsis-h"></i>
-                                </a>
+                                </button>
                                 <ul class="dropdown-menu dropdown-menu-end">
                                     <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="far fa-print"></i>
-                                            <span>Print</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
+                                        <button class="dropdown-item">
                                             <i class="far fa-code-merge"></i>
                                             <span>Combine</span>
-                                        </a>
+                                        </button>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <button class="dropdown-item">
                                             <i class="far fa-download"></i>
                                             <span>Export</span>
-                                        </a>
+                                        </button>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <button class="dropdown-item">
                                             <i class="far fa-code fa-sm"></i>
                                             <span>Embed</span>
-                                        </a>
+                                        </button>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <button class="dropdown-item">
                                             <i class="far fa-exclamation-triangle"></i>
                                             <span>Report</span>
-                                        </a>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#confirm" onclick="deleteSet(<?= $studyset['ssid'] ?>);">
+                                            <i class="far fa-trash"></i>
+                                            <span>Delete</span>
+                                        </button>
                                     </li>
                                 </ul>
                             </li>
@@ -280,42 +256,32 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="card-option p-0">
-                        <div class="card">
-                            <div class="card-header">
-                                <a href="#" class="btn bookmark-card"><i class="far fa-star"></i></a>
-                                <button class="btn edit-card">
-                                    <i class="fas fa-pen"></i>
-                                </button>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-7 question">
-                                        Given the following state transition table Which of the test cases below will cover the following series of state transitions? S1 SO S1 S2 SO
-                                        <br>
-                                        Exhibit:
-                                        <br>
-                                        A. D, A, B, C.
-                                        <br>
-                                        B. A, B, C, D.
-                                        <br>
-                                        C. D, A, B.
-                                        <br>
-                                        D. A, B, C.
-                                    </div>
-                                    <div class="col-md-5 answer">
-                                        B
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    <?php
+                        getAllCards($pdo, $listQuestion, $studyset);
+                    ?>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script src="assets/js/carousel-lib.js"></script>
+<!-- The Modal -->
+<div class="modal fade" id="confirm">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4 class="py-3 mb-2">Move to bin?</h4>
+                <p>This study set will be moved to bin and deleted forever after 30 days.</p>
+                <p>If this file is shared, collaborators can still make a copy of it until it's permanently deleted.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-confirm" onclick="deleteConfirm(true);">OK</button>
+                <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/flashcards.js"></script>
 <script src="assets/js/popup.js"></script>

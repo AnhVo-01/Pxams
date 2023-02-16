@@ -24,6 +24,9 @@
     --text-color2: #010101;
     --text-color3: #303545;
     --text-color-reverse: #fff;
+    --dark-green: #a4ddc5;
+    --light-green: #f2fbf6;
+    --light-green-border: #23b26d;
 
     /* ====== Transition ====== */
     --tran-03: all 0.2s ease;
@@ -47,11 +50,15 @@
     --text-color2: #ccc;
     --text-color3: #fff;
     --text-color-reverse: #010101;
+    --dark-green: #19804f;
+    --light-green: #23b26d;
+    --light-green-border: #fff;
 }
 
 ::selection{
-    background-color: #0d6efd;
-    color: var(--text-color1);
+    /* background-color: #0d6efd; */
+    background-color: #c5f1f1;
+    color: #010101;
 }
 
 body{
@@ -174,7 +181,7 @@ nav.navbar ul.nav li a{
     border-radius: 0.25rem;
     background-color: var(--drop-down);
 }
-.subnav ul li{
+.subnav ul{
     list-style: none;
     padding: 10px 0;
 }
@@ -191,6 +198,12 @@ nav.navbar ul.nav li a{
     height: 300px;
     overflow: auto;
 }
+.subnav .subnav-content .title{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .subnav-content::-webkit-scrollbar{
     width: 5px;
 }
@@ -200,6 +213,26 @@ nav.navbar ul.nav li a{
 }
 .hasChildren:hover .subnav {
     display: block;
+}
+
+#confirm .modal-content {
+    color: var(--text-color1);
+    background-color: var(--drop-down);
+}
+
+#confirm .modal-content .btn-confirm {
+    color: #fff;
+    background-color: #3ccfcf;
+}
+
+#confirm .modal-content .btn-cancel {
+    color: #3ccfcf;
+    background-color: inherit;
+    border: 1px solid #3ccfcf;
+}
+
+#confirm .modal-content .btn:hover {
+    opacity: .75;
 }
 
 /* ---------------------------------- Top-right ----------------------------------*/

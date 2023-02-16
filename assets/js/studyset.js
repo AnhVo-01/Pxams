@@ -1,9 +1,9 @@
 $(document).ready(() => {
-    $('.set-body').load('models/option.php');
+    $('.set-body').load('util/option.php');
 });
 
 function cancelSA() {
-    $('.set-body').load('models/option.php');
+    $('.set-body').load('util/option.php');
 }
 
 function report() {

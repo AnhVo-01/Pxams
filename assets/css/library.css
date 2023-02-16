@@ -224,26 +224,6 @@
     color: var(--text-color1);
 }
 
-#confirm .modal-content {
-    color: var(--text-color1);
-    background-color: var(--drop-down);
-}
-
-#confirm .modal-content .btn-confirm {
-    color: #fff;
-    background-color: #3ccfcf;
-}
-
-#confirm .modal-content .btn-cancel {
-    color: #3ccfcf;
-    background-color: inherit;
-    border: 1px solid #3ccfcf;
-}
-
-#confirm .modal-content .btn:hover {
-    opacity: .75;
-}
-
 @media (max-width: 992px) {
     .search input {
         width: 200px;

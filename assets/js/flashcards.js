@@ -1,29 +1,36 @@
 const index = document.getElementById("index"),
-    prevBtn = document.querySelector(".prev-btn"),
-    nextBtn = document.querySelector(".next-btn"),
     total1 = document.getElementById("card-total"),
     total2 = document.getElementById("total"),
     select = document.querySelectorAll(".carousel-item");
 
-let count = 1;
+var count = 1;
 index.innerHTML = count;
 
-prevBtn.onclick = function () {
+$(".prev-btn").click(() => {
     if (count == 1) {
         count = select.length;
     } else {
         count -= 1;
     }
     index.innerHTML = count;
-};
-nextBtn.onclick = function () {
+});
+
+$(".next-btn").click(() => {
     if (count == select.length) {
         count = 1;
     } else {
         count += 1;
     }
     index.innerHTML = count;
-};
+});
+
+function hiddenSlide() {
+    $(".carousel-inner").css("overflow", "hidden");
+}
+
+function showSlide() {
+    $(".carousel-inner").css("overflow", "unset");
+}
 
 let sum = 0;
 for (let i = 0; i < select.length; i++) {
@@ -34,9 +41,9 @@ total2.textContent = "( " + sum + " )";
 
 // =====================================================================
 
-const ques = document.querySelectorAll(".question"),
-    ans = document.querySelectorAll(".answer"),
-    flip = document.querySelectorAll(".qa"),
+const ques = document.querySelectorAll(".flip-card-front"),
+    ans = document.querySelectorAll(".flip-card-back"),
+    flip = document.querySelectorAll(".flip-card-inner"),
     qaBox = document.querySelectorAll(".flip-card");
 
 for (let j = 0; j < qaBox.length; j++){
@@ -46,12 +53,11 @@ for (let j = 0; j < qaBox.length; j++){
 
         if(ans[j].style.display === "flex"){
             ans[j].style.display = "none";
-            ques[j].style.display = "block";
+            ques[j].style.display = "flex";
             flip[j].style.transform = "rotateX(0deg)";
         }else{
             ans[j].style.display = "flex";
             ques[j].style.display = "none";
-            
         }
     }
 }
