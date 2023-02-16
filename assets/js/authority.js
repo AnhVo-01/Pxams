@@ -1,38 +1,37 @@
 // ----------------------------------------------------------------
 
-$(document).ready(function(){
-    $("#close-set").click(function(){
-        $("#lg-form").css("height", "0");
-    });
+// $(document).ready(function(){
+//     $("#close-set").click(function(){
+//         $("#lg-form").css("height", "0");
+//     });
 
-    $(".Log").click(function(){
-        $("#lg-form").load("login.php");
-        $("#lg-form").show();
-        // $("#lg-form").css("height", "100%");
-        $("#register").css("border", "none");
-    });
+//     $(".Log").click(function(){
+//         $("#lg-form").load("login.php");
+//         $("#lg-form").show();
+//         // $("#lg-form").css("height", "100%");
+//         $("#register").css("border", "none");
+//     });
 
-    $(".Reg").click(function(){
-        $("#lg-form").load("register.php");  
-        $("#lg-form").show();
-        // $("#lg-form").css("height", "100%");
-        $("#login").css("border", "none");
-    });
-});
+//     $(".Reg").click(function(){
+//         $("#lg-form").load("register.php");  
+//         $("#lg-form").show();
+//         // $("#lg-form").css("height", "100%");
+//         $("#login").css("border", "none");
+//     });
+// });
 
 function do_login(){
-    let email = $("#user-name").val();
-    let pass = $("#user-pass").val();
-    $.post("controllers/LoginController.php",
-        {
-            uname: email,
-            pass: pass
-        },
-
-        function(data, status){
-            alert("Data: " + data + "\nStatus: " + status);
+    xmlhttp.open("POST", "controllers/LoginController.php");
+    xmlhttp.onload = function() {
+        if (xmlhttp.readyState === XMLHttpRequest.DONE) {
+            if (xmlhttp.status === 200) {
+                $('#lg-form').load('login.php');
+            }
         }
-    );
+    }
+    let form = document.getElementById("LoginForm");
+    let formData = new FormData(form);
+    xmlhttp.send(formData);
 }
 
 // function do_signup() {

@@ -1,7 +1,25 @@
+$(document).ready(() => {
+    const listJSON = localStorage.getItem("flashCardQues");
+
+    xmlhttp.open("POST", "controllers/LearnController.php");
+    xmlhttp.onload = function() {
+        if (xmlhttp.readyState === XMLHttpRequest.DONE) {
+            if (xmlhttp.status === 200) {
+                $('.flash-box').html(xmlhttp.response);
+            }
+        }
+    }
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+    xmlhttp.send("ss_id="+getUrlParameter("id")+"&question_id=&value="+listJSON+"&action=firstLoad");
+})
+
 window.onbeforeunload = function () {
     xmlhttp.open("POST", "controllers/LearnController.php");
+    xmlhttp.onload = function() {
+        localStorage.setItem("flashCardQues", xmlhttp.response);
+    }
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    xmlhttp.send("ss_id="+getUrlParameter("id")+"&question_id="+"&value="+"&action=saveProgress");
+    xmlhttp.send("ss_id="+getUrlParameter("id")+"&question_id=&value=&action=saveProgress");
 
     return "Do you really want to close?";
 };
@@ -17,16 +35,18 @@ function choose(qid, value) {
         if (xmlhttp.readyState === XMLHttpRequest.DONE) {
             if (xmlhttp.status === 200) {
                 $('.flash-box').html(xmlhttp.response);
+
+                if ($(".flash-cards").length < 1) {
+                    setTimeout(() => {
+                        $(".in-progress").css("display", "block");
+                    }, 500);
+                }
             }
         }
     }
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     xmlhttp.send("ss_id="+getUrlParameter("id")+"&question_id="+qid+"&value="+value+"&action=choose");
 }
-
-$(".flash-box").load(() => {
-    console.log($(".flash-cards").length);
-})
 
 function checkSelect(qid, value, target) {
     if (value == 1) {
@@ -40,12 +60,6 @@ function checkSelect(qid, value, target) {
         optionData.value = value;
     }
     $(".radiomark").prop('disabled', true);
-
-    // if ($(".flash-cards").length < 1) {
-    //     setTimeout(() => {
-    //         $(".in-progress").css("display", "block");
-    //     }, 1000);
-    // }
 }
 
 function selectTrue(qid, e){
@@ -93,3 +107,16 @@ document.addEventListener("keypress", function(event) {
       cont();
     }
 });
+
+function startOver() {
+    xmlhttp.open("POST", "controllers/LearnController.php");
+    xmlhttp.onload = function() {
+        if (xmlhttp.readyState === XMLHttpRequest.DONE) {
+            if (xmlhttp.status === 200) {
+                $('.flash-box').html(xmlhttp.response);
+            }
+        }
+    }
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+    xmlhttp.send("ss_id="+getUrlParameter("id")+"&question_id=&value=startOver&action=firstLoad");
+}

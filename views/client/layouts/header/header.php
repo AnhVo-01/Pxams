@@ -20,14 +20,16 @@
 </head>
 <body>
 <?php
-    if (isset($_SESSION['account_id']) && isset($_GET['redirect'])) {
-        if ($_GET['redirect'] == 'learn') {
-            require_once 'header-learn.php';
+    if (isset($_SESSION['account_id'])) {
+        if (isset($_GET['redirect'])) {
+            if ($_GET['redirect'] == 'learn') {
+                require_once 'header-learn.php';
+            } else {
+                require_once 'header-isLogin.php';
+            }
         } else {
             require_once 'header-isLogin.php';
         }
-    } elseif( isset($_SESSION['account_id']) ){
-        require_once 'header-isLogin.php';
     } else { 
         require_once 'header-notLogin.php';
     }

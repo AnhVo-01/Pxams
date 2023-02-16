@@ -1,5 +1,5 @@
 <?php 
-function flashBox($pdo, $listQuestion) {
+function flashBox($pdo, $listQuestion, $progress, $total) {
     foreach ($listQuestion as $ques) {
         if ($ques->status != 1){
             echo('<div class="flash-cards">');
@@ -31,5 +31,23 @@ function flashBox($pdo, $listQuestion) {
             echo('</div></div></div></div>');
         }
     }
+
+    echo('<div class="in-progress">');
+    echo('<h3>Tốt lắm, bạn đang tiến bộ đấy.</h3>');
+    echo('<div class="d-flex flex-column mt-4">');
+    echo('<span><small>');
+    echo($progress.' / '. $total . ' questions');
+    echo('</small></span>');
+    echo('<div class="progress">');
+    $tu = (int) $progress;
+    $mau = (int) $total;
+    $percent = ($tu / $mau) * 100;
+                
+    echo('<div class="progress-bar" style="width:'.$percent.'%"></div>');
+    echo('</div></div></div>');
+}
+
+function learnSuccessful() {
+    echo("success");
 }
 ?>

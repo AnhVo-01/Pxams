@@ -24,7 +24,7 @@
         </div>
         <div class="options-divider"><span class="mx-3">or</span></div>
     
-        <form id="LoginForm" onsubmit="do_login();">
+        <form action="" id="LoginForm">
             <!-- LoginForm ------------------------------------------------------------- -->
             <div class="Set-pop">
                 <?php
@@ -47,8 +47,7 @@
                     </label>
                 </div>
                 <div class="options">
-                    <!-- <input type="hidden" name="controller" value="login"> -->
-                    <button class="opt-btn" type="submit">Log In</button>
+                    <button class="opt-btn" onclick="do_login()">Log In</button>
                 </div>
                 <div class="options">
                     <div class="auth-actions">
