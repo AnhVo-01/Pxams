@@ -1,31 +1,55 @@
+var x = document.getElementById("user-pass");
+var submitBtn = document.querySelector(".opt-btn");
+
+
+$(document).ready(() => {
+    $(".showPass").click(() => {
+        if (x.type === "password") {
+            x.type = "text";
+            show.classList.replace("fa-eye-slash", "fa-eye");
+        } else {
+            x.type = "password";
+            show.classList.replace("fa-eye", "fa-eye-slash");
+        }
+    });
+
+    $(".refresh-captcha").click(function(){
+        $(".captcha").load("models/captcha.php");
+    });
+
+    function killCopy(){
+        return false;
+    }
+    
+    function reEnable(){
+        return true;
+    }
+    
+    document.onselectstart = new Function ("return false");
+    
+    if (window.sidebar){
+        document.onmousedown = killCopy;
+        document.onclick = reEnable;
+    }
+
+    $("#agree").click(() => {
+        if (submitBtn.disabled == true) {
+            submitBtn.classList.toggle("disable");
+            submitBtn.disabled = false;
+        } else {
+            submitBtn.classList.toggle("disable");
+            submitBtn.disabled = true;
+        }
+    });
+})
+
 // ----------------------------------------------------------------
-
-// $(document).ready(function(){
-//     $("#close-set").click(function(){
-//         $("#lg-form").css("height", "0");
-//     });
-
-//     $(".Log").click(function(){
-//         $("#lg-form").load("login.php");
-//         $("#lg-form").show();
-//         // $("#lg-form").css("height", "100%");
-//         $("#register").css("border", "none");
-//     });
-
-//     $(".Reg").click(function(){
-//         $("#lg-form").load("register.php");  
-//         $("#lg-form").show();
-//         // $("#lg-form").css("height", "100%");
-//         $("#login").css("border", "none");
-//     });
-// });
-
 function do_login(){
     xmlhttp.open("POST", "controllers/LoginController.php");
     xmlhttp.onload = function() {
         if (xmlhttp.readyState === XMLHttpRequest.DONE) {
             if (xmlhttp.status === 200) {
-                $('#lg-form').load('login.php');
+                window.location.href = "?redirect=register&source=authen";
             }
         }
     }
@@ -34,20 +58,18 @@ function do_login(){
     xmlhttp.send(formData);
 }
 
-// function do_signup() {
-//     let email = $("#user-name").val();
-//     let pass = $("#user-pass").val();
-//     let dob = $("#user-pass").val();
+function do_signup() {
+    let form = document.getElementById("RegForm");
+    // form.preventDefault();
 
-//     $.post("controllers/RegisterController.php",
-//     {
-//         uname: $("#user-name").value,
-//         pass: $("#user-pass").value
-//     },
-
-//     function(data, status){
-//         console.log(data, status);
-//         alert("Data: " + data + "\nStatus: " + status);
-//     });
-//     console.log($("#user-name").value);
-// }
+    xmlhttp.open("POST", "controllers/RegisterController.php");
+    xmlhttp.onload = function() {
+        if (xmlhttp.readyState === XMLHttpRequest.DONE) {
+            if (xmlhttp.status === 200) {
+                window.location.href = "?redirect=register&source=authen";
+            }
+        }
+    }
+    let formData = new FormData(form);
+    xmlhttp.send(formData);
+}

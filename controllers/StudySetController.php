@@ -1,6 +1,6 @@
 <?php
 require_once '../util/pdo.php';
-require_once '../models/StudySet.php';
+require_once '../util/StudySet.php';
 
 session_start();
 
@@ -8,19 +8,20 @@ session_start();
 if (isset($_POST['visible']) && isset($_POST['editable']) && isset($_POST['status'])) {
     
     // Check already draft
-    $stmt = $pdo->prepare("SELECT account_id, s.ssid, type, s.status FROM `acount_study_set` AS ass 
+    $stmt = $pdo->prepare("SELECT owner_id, s.ssid, type, s.status FROM `acount_study_set` AS ass 
                         INNER JOIN `study_set` AS s 
                         ON ass.ss_id = s.ssid 
-                        WHERE type = 'OWNED' AND s.status = 'DRAFT' AND account_id=:accId");
+                        WHERE type = 'OWNED' AND s.status = 'DRAFT' AND owner_id=:accId");
     $stmt->execute(
         array(
             ':accId' => $_SESSION["account_id"]
         )
     );
     $hadDraft = $stmt->fetch(PDO::FETCH_ASSOC);
-    $had = $stmt->rowCount();
 
-    if ($had < 1) {
+    if ($hadDraft) {
+        $_SESSION['study_set_id'] = $hadDraft['ssid'];
+    } else {
         // new study set
         $stmt = $pdo->prepare('INSERT INTO `study_set`(status, visible_to, editable_by) VALUES (:status, :visible, :editable)');
         $stmt->execute(
@@ -35,10 +36,11 @@ if (isset($_POST['visible']) && isset($_POST['editable']) && isset($_POST['statu
         $_SESSION['study_set_id'] = $studySet_id;
     
         // set study set for account
-        $stmt = $pdo->prepare('INSERT INTO `acount_study_set`(account_id, ss_id, date, type) VALUES (:accId, :ssId, :date, :type)');
+        $stmt = $pdo->prepare('INSERT INTO `acount_study_set`(account_id, owner_id, ss_id, date, type, active) VALUES (:accId, ownerId, :ssId, :date, :type, 1)');
         $stmt->execute(
             array(
                 ':accId' => $_SESSION['account_id'],
+                ':ownerId' => $_SESSION['account_id'],
                 ':type' => 'OWNED',
                 ':date' => time(),
                 ':ssId' => $studySet_id
@@ -46,8 +48,6 @@ if (isset($_POST['visible']) && isset($_POST['editable']) && isset($_POST['statu
         );
     
         insertQuestion($pdo, $studySet_id);
-    } else {
-        $_SESSION['study_set_id'] = $hadDraft['ssid'];
     }
 
     exit();

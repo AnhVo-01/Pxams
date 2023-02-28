@@ -134,11 +134,10 @@
                                 </form>
                             </li>
                             <li class="nav-item">
-                                <button class="btn btn-light" onclick="$('#lg-form').css('height', '100%'); $('#lg-form').load('login.php');" style="padding: 0.27rem 0.75rem;">Login</button>
-                                <!-- <a href="?redirect=authority/login" class="btn btn-light" style="padding: 0.27rem 0.75rem;">Login</a> -->
+                                <a href="?redirect=login&source=authen" class="btn btn-light" style="color: #000; padding: 0.27rem 0.75rem;">Login</a>
                             </li>
                             <li class="nav-item">
-                                <button class="btn btn-warning" onclick="$('#lg-form').css('height', '100%'); $('#lg-form').load('register.php');" style="padding: 0.27rem 0.75rem;">Sign up</button>
+                                <a href="?redirect=register&source=authen" class="btn btn-warning" style="color: #000; padding: 0.27rem 0.75rem;">Sign up</a>
                             </li>
                         </ul>
                     </nav>
@@ -151,5 +150,4 @@
 <script type="text/javascript">
     document.title = "Welcome to Pxams";
 </script>
-<div class="Login-Cont" id="lg-form"></div>
 <script src="assets/js/navscroll.js"></script>

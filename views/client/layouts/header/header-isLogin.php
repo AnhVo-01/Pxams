@@ -109,12 +109,12 @@
                                                 <div class="subnav-content">
                                                     <ul>
                                                     <?php 
-                                                        $stmt = $pdo->prepare("SELECT acc.account_id, user_name, ssid, title, ass.date, status, ass.type, active 
+                                                        $stmt = $pdo->prepare("SELECT ss.ssid, title, ass.create_by, ass.owner_id, avatar, acc.user_name, ass.date, 
+                                                                            ss.status, visible_to, ass.type, active 
                                                                             FROM `study_set` AS ss 
-                                                                            INNER JOIN `acount_study_set` AS ass ON ss.ssid = ass.ss_id 
-                                                                            INNER JOIN `account` acc ON ass.account_id = acc.account_id 
-                                                                            WHERE ss.status = 'ACTIVE' AND ass.active = 1 
-                                                                            AND acc.account_id=:accId ORDER BY ass.date DESC");
+                                                                            INNER JOIN `acount_study_set` AS ass ON ss.ssid = ass.ss_id
+                                                                            INNER JOIN `account` acc ON ass.owner_id = acc.account_id
+                                                                            WHERE ss.status = 'ACTIVE' AND active = 1 AND ass.create_by=:accId ORDER BY ass.date DESC");
                                                         $stmt->execute(array(':accId' => $_SESSION['account_id']));
                                                         $ssList = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -123,7 +123,10 @@
                                                             echo('<a href="?redirect=flashcard&id='.htmlentities($row['ssid']).'" class="dropdown-item">');
                                                             echo('<div class="d-flex flex-column">');
                                                             echo('<span class="title">'.$row['title'].'</span>');
+                                                            echo('<div class="d-flex align-items-center gap-2">');
+                                                            echo('<img alt="Ảnh hồ sơ" class="rounded-circle" height="16" src="https://gimg.quizlet.com/a/AEdFTp7cUVYmF2EAGD0TEY3U6Bqvqc2OLrRaEiYZ4yP-yg=s96-c?sz=16" width="16">');
                                                             echo('<span class="text-muted"><small>'.$row['user_name'].'</small></span>');
+                                                            echo('</div>');
                                                             echo('</div>');
                                                             echo('</a>');
                                                             echo('</li>');

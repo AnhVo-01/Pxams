@@ -9,11 +9,9 @@ if ( isset($_POST["uname"]) && isset($_POST["upass"]) &&
         
     if( strlen($_POST["captcha"]) < 1 ){
         $_SESSION["error"] = "Please enter the captcha!";
-        header('Location: ../');
         return;
     } elseif( $_POST["captcha"] != $_SESSION['captcha_text'] ){
         $_SESSION["error"] = "Wrong captcha !!!";
-        header('Location: ../');
         return;
     }else{
         $pass = hash('md5', $salt.$_POST['upass']);
@@ -24,8 +22,7 @@ if ( isset($_POST["uname"]) && isset($_POST["upass"]) &&
             ':em' => $_POST['email'],
             ':dob' => $_POST['dob']
         ));
-
-        header('Location: ../');
+        $_SESSION["success"] = "Account created successfully!";
         return;
     }
 }

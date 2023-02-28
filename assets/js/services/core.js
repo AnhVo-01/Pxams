@@ -36,29 +36,36 @@ function editStudySet(id) {
 
 var ssData = {
     id: '',
-    confirm: false
+    type: ''
 }
 
 function deleteConfirm(value) {
-    ssData.confirm = value;
-    deleteSet(ssData.id);
+    if (value == true) {
+        deleteSet(ssData.id, ssData.type);
+    }
 }
 
-function deleteSet(id) {
+function setDataForDel(id, type) {
     ssData.id = id;
-    if (ssData.confirm == true) {
-        xmlhttp.open("POST", "controllers/LibraryController.php");
-        xmlhttp.onload = function() {
-            if (xmlhttp.readyState === XMLHttpRequest.DONE) {
-                if (xmlhttp.status === 200) {
-                    ssData.confirm = false;
-                    window.location.href = '?redirect=library';
-                }
+    if (type = 1) {
+        ssData.type = 'OWNED';
+    } else {
+        ssData.type = 'ENROLL';
+    }
+}
+
+function deleteSet(id, type) {
+    xmlhttp.open("POST", "controllers/LibraryController.php");
+    xmlhttp.onload = function() {
+        if (xmlhttp.readyState === XMLHttpRequest.DONE) {
+            if (xmlhttp.status === 200) {
+                ssData.confirm = false;
+                window.location.href = '?redirect=library';
             }
         }
-        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-        xmlhttp.send("action=toRecycleBin&ssID="+id);
     }
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+    xmlhttp.send("action=toRecycleBin&ssID="+id+"&type="+type);
 }
 
 function getUrlParameter(sParam) {

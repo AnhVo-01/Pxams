@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 // create the random string.
 $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
