@@ -27,7 +27,7 @@ header {
 }
 
 .top-group .dropdown-menu .dropdown-item i {
-    color: #4257b2;
+    color: #6c32ad;
     font-size: 20px;
     width: 22px;
     text-align: center;
@@ -75,7 +75,7 @@ header {
 
 #optionModal .modal-header {
     border-radius: 0;
-    background-color: #4257b2;
+    background-color: #6c32ad;
     color: #fff;
     padding: 1.5rem 2rem;
     display: inline-flex;
@@ -135,7 +135,7 @@ header {
 
 .UIToggle-option {
     background-color: inherit;
-    color: #3ccfcf;
+    color: #20d489;
     display: inline-block;
     font-size: .875rem;
     font-weight: 700;
@@ -160,7 +160,7 @@ header {
 }
 
 .toggle-switch.dark-on .light {
-    color: #3ccfcf;
+    color: #20d489;
     background-color: var(--drop-down);
 }
 /* ---------------------------- Main ----------------------------- */

@@ -112,7 +112,7 @@
                                                         $stmt = $pdo->prepare("SELECT ss.ssid, title, ass.create_by, ass.owner_id, avatar, acc.user_name, ass.date, 
                                                                             ss.status, visible_to, ass.type, active 
                                                                             FROM `study_set` AS ss 
-                                                                            INNER JOIN `acount_study_set` AS ass ON ss.ssid = ass.ss_id
+                                                                            INNER JOIN `account_study_set` AS ass ON ss.ssid = ass.ss_id
                                                                             INNER JOIN `account` acc ON ass.owner_id = acc.account_id
                                                                             WHERE ss.status = 'ACTIVE' AND active = 1 AND ass.create_by=:accId ORDER BY ass.date DESC");
                                                         $stmt->execute(array(':accId' => $_SESSION['account_id']));
@@ -193,10 +193,10 @@
                                     <a class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" style="color: #fff;">Create</a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a class="dropdown-item" onclick="createStudySetDraft()">
+                                            <button class="dropdown-item" onclick="createStudySetDraft()">
                                                 <i class="far fa-clone me-2"></i>
                                                 Study sets
-                                            </a>
+                                            </button>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="#">
@@ -272,10 +272,10 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="?redirect=user">Profile</a>
+                                <li class="nav-link">
+                                    <a href="?redirect=profile">Profile</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-link">
                                     <a href="#">Process</a>
                                 </li>
                                 <li class="nav-link">

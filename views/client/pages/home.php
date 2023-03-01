@@ -4,8 +4,6 @@
 
 <link rel="stylesheet" href="assets/css/welcome.css">
 
-<!-- <div class="Login-Cont" id="lg-form"></div> -->
-
 <div class="UIContainer">
     <div class="ImageCard">
         <picture>
@@ -21,9 +19,19 @@
                 </div>
             </div>
             <div class="ImgCard-Control">
-                <button class="btn btn-primary Reg">Sign up for free</button>
-                <a href="?redirect=mobile/M_authority&local=user" class="btn btn-primary Reg">Login</a>
+                <a href="?redirect=register&source=authen" class="btn btn-primary Reg">Sign up for free</a>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    var width = $(window).width(), height = $(window).height();
+    if (height <= 768) {
+      jQuery('.Reg').attr('?redirect=login&source=authen&local=user');
+      jQuery('.Reg').html("Sign up for free");
+    } else {
+       jQuery('.Reg').attr('?redirect=register&source=authen');
+       jQuery('.Reg').html("Login");
+    }
+</script>

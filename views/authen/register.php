@@ -21,17 +21,20 @@
                 </a>
             </div>
             <div class="options-divider"><span class="mx-3">or</span></div>
-            <div class="third-log">
+            
                 <?php
                     if(isset($_SESSION['error'])) {
+                        echo('<div class="p-2">');
                         echo('<p style="color: #f00; margin: 5px 10px;">'.htmlentities($_SESSION['error'])."</p>\n");
+                        echo('</div>');
                         unset($_SESSION['error']);
                     } elseif(isset($_SESSION['success'])) {
+                        echo('<div class="p-2">');
                         echo('<p style="color: #23b26d; margin: 5px 10px;">'.htmlentities($_SESSION['success'])."</p>\n");
                         unset($_SESSION['success']);
+                        echo('</div>');
                     }
                 ?>
-            </div>
     
             <form action="" id="RegForm" onsubmit="do_signup()">
                 <!-- RegForm ------------------------------------------------------------- -->

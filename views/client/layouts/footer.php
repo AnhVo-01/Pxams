@@ -5,7 +5,7 @@
                     <nav class="navbar navbar-expand-lg w-100">
                         <ul class="nav">
                             <?php
-                                if($_SESSION['action'] == "notification"){
+                                if(isset($_SESSION['activeRoute']) && $_SESSION['activeRoute'] == "notification"){
                                     echo('<li class="nav-item active">'."\n");
                                 }else{
                                     echo('<li class="nav-item">'."\n");
@@ -16,7 +16,7 @@
                                 echo("</li>");
                             ?>
                             <?php
-                                if($_SESSION['action'] == "search"){
+                                if(isset($_SESSION['activeRoute']) && $_SESSION['activeRoute'] == "search"){
                                     echo('<li class="nav-item active">'."\n");
                                 }else{
                                     echo('<li class="nav-item">'."\n");
@@ -25,7 +25,7 @@
                                 echo("</li>");
                             ?>
                             <?php
-                                if($_SESSION['action'] == "home"){
+                                if(!isset($_SESSION['activeRoute'])){
                                     echo('<li class="nav-item active">'."\n");
                                 }else{
                                     echo('<li class="nav-item">'."\n");
@@ -37,13 +37,13 @@
                                 <a href="#" data-bs-toggle="offcanvas" data-bs-target="#create"><i class="fas fa-plus-circle fa-xl"></i></a>
                             </li>
                             <?php 
-                                if( isset($_SESSION['account_id']) ){
-                                    $link = "?redirect=client/pages/user&local=user";
+                                if(isset($_SESSION['account_id'])){
+                                    $link = "?redirect=profile&local=user";
                                 } else {
-                                    $link = "?redirect=mobile/M_authority&local=user";
+                                    $link = "?redirect=login&source=authen&local=user";
                                 }
         
-                                if($_SESSION['action'] == "user"){
+                                if(isset($_SESSION['activeRoute']) && $_SESSION['activeRoute'] == "user"){
                                     echo('<li class="nav-item active">'."\n");
                                 }else{
                                     echo('<li class="nav-item">'."\n");

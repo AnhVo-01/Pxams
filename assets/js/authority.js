@@ -1,7 +1,6 @@
 var x = document.getElementById("user-pass");
 var submitBtn = document.querySelector(".opt-btn");
 
-
 $(document).ready(() => {
     $(".showPass").click(() => {
         if (x.type === "password") {
@@ -43,33 +42,41 @@ $(document).ready(() => {
     });
 })
 
+var xml = new XMLHttpRequest;
+
 // ----------------------------------------------------------------
 function do_login(){
-    xmlhttp.open("POST", "controllers/LoginController.php");
-    xmlhttp.onload = function() {
-        if (xmlhttp.readyState === XMLHttpRequest.DONE) {
-            if (xmlhttp.status === 200) {
-                window.location.href = "?redirect=register&source=authen";
+    let form = document.getElementById("LoginForm");
+
+    xml.open("POST", "controllers/LoginController.php");
+    xml.onload = function() {
+        if (xml.readyState === XMLHttpRequest.DONE) {
+            if (xml.status === 200) {
+                if (xml.responseText == 'success') {
+                    window.location.href = "./";
+                    window.location.reload();
+                } else {
+                    window.location.href = "?redirect=login&source=authen";
+                }
             }
         }
     }
-    let form = document.getElementById("LoginForm");
     let formData = new FormData(form);
-    xmlhttp.send(formData);
+    xml.send(formData);
 }
 
 function do_signup() {
     let form = document.getElementById("RegForm");
     // form.preventDefault();
 
-    xmlhttp.open("POST", "controllers/RegisterController.php");
-    xmlhttp.onload = function() {
-        if (xmlhttp.readyState === XMLHttpRequest.DONE) {
-            if (xmlhttp.status === 200) {
+    xml.open("POST", "controllers/RegisterController.php");
+    xml.onload = function() {
+        if (xml.readyState === XMLHttpRequest.DONE) {
+            if (xml.status === 200) {
                 window.location.href = "?redirect=register&source=authen";
             }
         }
     }
     let formData = new FormData(form);
-    xmlhttp.send(formData);
+    xml.send(formData);
 }

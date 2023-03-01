@@ -39,7 +39,7 @@ body {
     border-radius: 50%;
     width: 2.8em;
     height: 2.8em;
-    background: #3ccfcf;
+    background: #20d489;
     justify-content: center;
     align-items: center;
 }
@@ -50,7 +50,7 @@ body {
 
 .cards-control .select-menu {
     background: var(--drop-down);
-    color: #3ccfcf;
+    color: #20d489;
     padding: 8px 10px;
     border-radius: 8px;
 }
@@ -114,14 +114,14 @@ body {
 .set-body .card .add_option {
     display: flex;
     align-items: center;
-    color: #3ccfcf;
+    color: #20d489;
     font-size: 15px;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
 }
 
 .set-body .card .add_option .btn {
-    color: #3ccfcf;
+    color: #20d489;
 }
 
 .set-body .card .add_option .btn:hover,
@@ -173,7 +173,7 @@ body {
 .addnew button {
     color: inherit;
     font-weight: bolder;
-    border-bottom: 3px solid #3ccfcf;
+    border-bottom: 3px solid #20d489;
 }
 
 .addnew button:hover {
@@ -262,7 +262,7 @@ body {
 }
 
 .submit-form {
-    background-color: #3ccfcf;
+    background-color: #20d489;
     color: #fff !important;
     position: relative;
     left: 50%;

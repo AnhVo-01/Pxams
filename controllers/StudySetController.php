@@ -8,7 +8,7 @@ session_start();
 if (isset($_POST['visible']) && isset($_POST['editable']) && isset($_POST['status'])) {
     
     // Check already draft
-    $stmt = $pdo->prepare("SELECT owner_id, s.ssid, type, s.status FROM `acount_study_set` AS ass 
+    $stmt = $pdo->prepare("SELECT owner_id, s.ssid, type, s.status FROM `account_study_set` AS ass 
                         INNER JOIN `study_set` AS s 
                         ON ass.ss_id = s.ssid 
                         WHERE type = 'OWNED' AND s.status = 'DRAFT' AND owner_id=:accId");
@@ -36,7 +36,7 @@ if (isset($_POST['visible']) && isset($_POST['editable']) && isset($_POST['statu
         $_SESSION['study_set_id'] = $studySet_id;
     
         // set study set for account
-        $stmt = $pdo->prepare('INSERT INTO `acount_study_set`(account_id, owner_id, ss_id, date, type, active) VALUES (:accId, ownerId, :ssId, :date, :type, 1)');
+        $stmt = $pdo->prepare('INSERT INTO `account_study_set`(account_id, owner_id, ss_id, date, type, active) VALUES (:accId, ownerId, :ssId, :date, :type, 1)');
         $stmt->execute(
             array(
                 ':accId' => $_SESSION['account_id'],

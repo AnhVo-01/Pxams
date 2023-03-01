@@ -18,7 +18,7 @@
     padding-bottom: 0.5rem;
 }
 .SiteFooter-sectionLink a{
-    color: #2eb8b8;
+    color: #20d489;
 }
 .UIDropdown-select{
     border: 0;
@@ -26,7 +26,7 @@
     width: 100%;
     padding: 5px 0;
     color: var(--text-color1);
-    border-bottom: 2px solid #2eb8b8;
+    border-bottom: 2px solid #20d489;
     background-color: inherit;
 }
 .UIDropdown-select option{

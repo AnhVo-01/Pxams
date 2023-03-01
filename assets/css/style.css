@@ -36,16 +36,16 @@
 }
 
 .dark-theme {
-    --body-color: #0a092d;
+    --body-color: #1e1e2f;
     --header-color: #0a092d;
     --footer-color1: #1a1d28;
     --switch-color: #f2f2f2;
-    --select-border: #646f90;
-    --option-box: #2e3856;
+    --select-border: #5a5a8c;
+    --option-box: #47476f;
     --option-box-highlight: #939bb4;
     --drop-down: #303545;
-    --search-box: #2e3856;
-    --dropdown-hover: #2e3856;
+    --search-box: #47476f;
+    --dropdown-hover: #47476f;
     --text-color1: #fff;
     --text-color2: #ccc;
     --text-color3: #fff;
@@ -71,7 +71,8 @@ header{
     z-index: 100;
     font-size: 15px;
     transition: top 0.3s;
-    background: #4257b2;
+    /* background: #4257b2; */
+    background: #6c32ad;
     border-bottom: 1px solid #a8b1ff;
 }
 a{
@@ -222,13 +223,13 @@ nav.navbar ul.nav li a{
 
 #confirm .modal-content .btn-confirm {
     color: #fff;
-    background-color: #3ccfcf;
+    background-color: #20d489;
 }
 
 #confirm .modal-content .btn-cancel {
-    color: #3ccfcf;
+    color: #20d489;
     background-color: inherit;
-    border: 1px solid #3ccfcf;
+    border: 1px solid #20d489;
 }
 
 #confirm .modal-content .btn:hover {
@@ -435,7 +436,7 @@ nav.navbar ul.nav li a{
     left: 0;
     border-bottom: 1px solid #a8b1ff;
     font-size: 15px;
-    background: #4257b2;
+    background: #6c32ad;
 }
 .mobile-view nav.navbar{
     justify-content: center;

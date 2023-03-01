@@ -3,8 +3,8 @@ require_once 'util/flashcards.php';
 
 $stmt = $pdo->prepare('SELECT ssid, title, description, ass.date, visible_to, editable_by, ass.type, active, user_name
                         FROM `study_set` AS ss 
-                        INNER JOIN `acount_study_set` AS ass ON ss.ssid = ass.ss_id 
-                        INNER JOIN `account` acc ON ass.account_id = acc.account_id 
+                        INNER JOIN `account_study_set` AS ass ON ss.ssid = ass.ss_id 
+                        INNER JOIN `account` acc ON ass.create_by = acc.account_id 
                         WHERE ss.ssid=:ssId');
 $stmt->execute(array(':ssId' => $_GET['id']));
 $studyset = $stmt->fetch(PDO::FETCH_ASSOC);

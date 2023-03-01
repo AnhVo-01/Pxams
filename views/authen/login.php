@@ -26,16 +26,19 @@
                 </a>
             </div>
             <div class="options-divider"><span class="mx-3">or</span></div>
+
+            <?php
+                if(isset($_SESSION['error'])) {
+                    echo('<div class="p-2">');
+                    echo('<p style="color: #f00; margin: 5px 10px;">'.htmlentities($_SESSION['error']).'</p>');
+                    echo('</div>');
+                    unset($_SESSION['error']);
+                }
+            ?>
         
-            <form action="" id="LoginForm">
+            <form action="" id="LoginForm" onsubmit="do_login()">
                 <!-- LoginForm ------------------------------------------------------------- -->
                 <div class="Set-pop">
-                    <?php
-                        if(isset($_SESSION['error'])) {
-                            echo('<p style="color: #f00; margin: 5px 10px;">'.htmlentities($_SESSION['error'])."</p>\n");
-                            unset($_SESSION['error']);
-                        }
-                    ?>
                     <div class="options">
                         <input id="user-name" type="text" name="uname" placeholder="Email / User Name" required>
                     </div>
@@ -50,7 +53,7 @@
                         </label>
                     </div>
                     <div class="options">
-                        <button class="opt-btn" onclick="do_login()">Log In</button>
+                        <button class="opt-btn" type="submit">Log In</button>
                     </div>
                     <div class="options">
                         <div class="auth-actions">

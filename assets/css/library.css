@@ -1,30 +1,26 @@
-.user-top{
+.user-top {
     color: var(--text-color1);
     border-bottom: 1px solid #a8b1ff;
 }
+
 .user-top a:hover{
-    color: #4257b2;
+    color: #56288a;
 }
-.user-top .premium{
+
+.user-top .premium {
     float: right;
-    font-size: 14px;
-    padding-left: 0.5em;
 }
-.user-top .image{
-    border: 2px solid #4257b2;
-    height: 80px;
-    width: 80px;
+
+.user-top .image {
+    border: 2px solid #56288a;
     border-radius: 50%;
 }
+
 .user-top .image img{
     width: 100%;
     height: 100%;
     padding: 2px;
     object-fit: cover;
-}
-.user-top .about .username{
-    font-weight: 700;
-    margin-bottom: 0;
 }
 
 /* ------------------------------------------------ */
@@ -33,7 +29,7 @@
 }
 .user-menu nav.navbar ul.nav li.active a .nav-label::after {
     content: "";
-    background-color: #4257b2;
+    background-color: #5a5a8c;
     bottom: 0;
     left: 0;
     position: absolute;
@@ -42,7 +38,7 @@
 }
 .user-menu nav.navbar ul.nav li:not(.active) a:hover .nav-label::after {
     content: "";
-    background-color: #4257b2;
+    background-color: #5a5a8c;
     bottom: 0;
     left: 0;
     position: absolute;
@@ -51,12 +47,50 @@
 }
 
 /* ======================================================================= */
+.empty-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.empty-page h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: normal;
+    line-height: calc(100/75);
+    max-width: 23rem;
+    color: #646f90;
+    text-align: center;
+}
+
+.empty-page span {
+    font-size: 1rem;
+    letter-spacing: normal;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-top: .25rem;
+    max-width: 20.375rem;
+    color: #646f90;
+    text-align: center;
+}
+
+.empty-page button {
+    font-size: .875rem;
+    letter-spacing: normal;
+    line-height: calc(100/70);
+    border-radius: .5rem;
+    font-weight: 600;
+    min-height: 2.5rem;
+}
+
+/* ------------------------------------------------ */
 .library-filter #f-type {
     background: var(--option-box);
     color: var(--text-color1);
     padding: 0.5em 1em;
-    border-radius: 5px;
+    border-radius: .5rem;
     border-color: #d9dde8;
+    outline: none;
 }
 
 .library-filter option {
@@ -72,7 +106,7 @@
     background: var(--option-box);
     border: 0;
     outline: 0;
-    border-radius: 0.25rem;
+    border-radius: .5rem;
     color: var(--text-color1);
     padding: 0.5rem 1rem;
     width: 400px;
@@ -121,7 +155,7 @@
     justify-content: space-between;
     height: 70px;
     margin-bottom: 0.75rem;
-    border-radius: .25rem;
+    border-radius: .5rem;
     background: linear-gradient(to right, var(--select-border) 50%, var(--option-box) 50%);
     background-size: 200% 100%;
     background-position: right bottom;
@@ -206,7 +240,7 @@
     background-color: var(--select-border);
     border: 1px solid rgba(0,0,0,.1);
     box-shadow: 0 0.125rem 0.25rem #00000014;
-    border-radius: .25rem;
+    border-radius: .5rem;
 }
 
 .ListItemGroup .ss-menu .menu-item {

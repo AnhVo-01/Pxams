@@ -116,7 +116,7 @@
 }
 
 .option i {
-    color: #4257b2;
+    color: #6c32ad;
     font-size: 24px;
     width: 24px;
     text-align: center;
@@ -144,7 +144,7 @@
     border-radius: 50%;
     text-transform: uppercase;
     user-select: none;
-    border: 2px solid #4257b2;
+    border: 2px solid #6c32ad;
 }
 
 /*------------------------- card-content -------------------------*/
@@ -195,7 +195,7 @@
 }
 
 .opt-pop .add-option {
-    color: #3ccfcf;
+    color: #20d489;
     background: var(--body-color);
 }
 
@@ -227,7 +227,7 @@
 .createButton .btn {
     font-weight: bolder;
     color: var(--text-color1);
-    border-bottom: 5px solid #3ccfcf;
+    border-bottom: 5px solid #20d489;
 }
 
 .ToggleCard {

@@ -1,5 +1,5 @@
 a {
-    color: #3ccfcf;
+    color: #20d489;
 }
 
 a:hover {
@@ -61,7 +61,7 @@ a:hover {
 }
 
 .form-title .authen.active {
-    border-bottom: thick solid #3ccfcf;
+    border-bottom: thick solid #20d489;
 }
 
 .Set-pop {
@@ -89,7 +89,7 @@ a:hover {
 }
 
 .third-log:hover {
-    border-color: #3ccfcf;
+    border-color: #20d489;
 }
 
 .options {
@@ -138,7 +138,7 @@ a:hover {
     border: 0;
     border-radius: 8px;
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
-    background-color: #3ccfcf;
+    background-color: #20d489;
 }
 
 .options .opt-btn.disable {
@@ -146,7 +146,8 @@ a:hover {
 }
 
 .options button:hover {
-    background-color: #2eb8b8;
+    /* background-color: #2eb8b8; */
+    background-color: #ffcd1f;
 }
 
 .options-divider {
@@ -177,7 +178,7 @@ a:hover {
 }
 
 .auth-actions a {
-    color: #2eb8b8;
+    color: #20d489;
     font-size: 14px;
     transition: .2s all;
     font-weight: 700;
@@ -190,8 +191,8 @@ a:hover {
     font-weight: 700;
     min-width: 100px;
     text-align: center;
-    color: #5cd6d6;
-    background-color: #2eb8b8;
+    color: #4ee4a6;
+    background-color: #20d489;
     border: 2px solid #010101;
     border-radius: 5px;
 }
@@ -267,7 +268,7 @@ a:hover {
 /* When the checkbox is checked, add a blue background */
 .save-pass-container input:checked~.checkmark,
 .save-pass-container input:checked~.radio-mark {
-    background-color: #3ccfcf;
+    background-color: #20d489;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
