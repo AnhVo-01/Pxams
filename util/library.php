@@ -55,7 +55,7 @@ function getDashboardFeed($pdo, $uid, $month, $year) {
             echo('<div class="TermsCount">');
             echo('<span>'.$set['terms'].' Terms</span>');
             echo('<a href="#" class="owned">');
-            echo('<img alt="Ảnh hồ sơ" class="profile-image" height="16" referrerpolicy="no-referrer" src="https://gimg.quizlet.com/a/AEdFTp7cUVYmF2EAGD0TEY3U6Bqvqc2OLrRaEiYZ4yP-yg=s96-c?sz=16" width="16">');
+            echo('<img alt="Ảnh hồ sơ" class="profile-image" height="16" referrerpolicy="no-referrer" src="assets/image/3.png" width="16">');
             echo('<span class="username">'.$set['user_name'].'</span>');
             echo('</a>');
             echo('</div>');

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="assets/css/library.css">
 
-<div class="container mt-4" style="margin-bottom: 80px;">
+<div class="container mt-8" style="margin-bottom: 80px;">
     <?php
         require "user-profile.php"
     ?>

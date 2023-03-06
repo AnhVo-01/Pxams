@@ -12,7 +12,7 @@
     --bs-indigo: #6610f2;
     --bs-purple: #6f42c1;
     --bs-pink: #d63384;
-    --bs-red: #dc3545;
+    --bs-red: #f1416c;
     --bs-orange: #fd7e14;
     --bs-yellow: #ffc107;
     --bs-green: #198754;
@@ -33,19 +33,19 @@
     /* --bs-primary: #0d6efd; */
     --bs-primary: #00a3ff;
     --bs-secondary: #6c757d;
-    --bs-success: #198754;
+    --bs-success: #50CD89;
     --bs-info: #0dcaf0;
     --bs-warning: #ffc107;
-    --bs-danger: #dc3545;
+    --bs-danger: #f1416c;
     --bs-light: #f8f9fa;
     --bs-dark: #212529;
     /* --bs-primary-rgb: 13, 110, 253; */
     --bs-primary-rgb: 0, 163, 255;
     --bs-secondary-rgb: 108, 117, 125;
-    --bs-success-rgb: 25, 135, 84;
+    --bs-success-rgb: 80, 205, 137;
     --bs-info-rgb: 13, 202, 240;
     --bs-warning-rgb: 255, 193, 7;
-    --bs-danger-rgb: 220, 53, 69;
+    --bs-danger-rgb: 241, 65, 108;
     --bs-light-rgb: 248, 249, 250;
     --bs-dark-rgb: 33, 37, 41;
     --bs-white-rgb: 255, 255, 255;
@@ -3085,7 +3085,7 @@ textarea.form-control.is-valid {
     width: 100%;
     margin-top: .25rem;
     font-size: .875em;
-    color: #dc3545
+    color: #f1416c
 }
 
 .invalid-tooltip {
@@ -3111,7 +3111,7 @@ textarea.form-control.is-valid {
 
 .form-control.is-invalid,
 .was-validated .form-control:invalid {
-    border-color: #dc3545;
+    border-color: #f1416c;
     padding-right: calc(1.5em + .75rem);
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
@@ -3121,7 +3121,7 @@ textarea.form-control.is-valid {
 
 .form-control.is-invalid:focus,
 .was-validated .form-control:invalid:focus {
-    border-color: #dc3545;
+    border-color: #f1416c;
     box-shadow: 0 0 0 .25rem rgba(220, 53, 69, .25)
 }
 
@@ -3133,7 +3133,7 @@ textarea.form-control.is-invalid {
 
 .form-select.is-invalid,
 .was-validated .form-select:invalid {
-    border-color: #dc3545
+    border-color: #f1416c
 }
 
 .form-select.is-invalid:not([multiple]):not([size]),
@@ -3148,18 +3148,18 @@ textarea.form-control.is-invalid {
 
 .form-select.is-invalid:focus,
 .was-validated .form-select:invalid:focus {
-    border-color: #dc3545;
+    border-color: #f1416c;
     box-shadow: 0 0 0 .25rem rgba(220, 53, 69, .25)
 }
 
 .form-check-input.is-invalid,
 .was-validated .form-check-input:invalid {
-    border-color: #dc3545
+    border-color: #f1416c
 }
 
 .form-check-input.is-invalid:checked,
 .was-validated .form-check-input:invalid:checked {
-    background-color: #dc3545
+    background-color: #f1416c
 }
 
 .form-check-input.is-invalid:focus,
@@ -3169,7 +3169,7 @@ textarea.form-control.is-invalid {
 
 .form-check-input.is-invalid~.form-check-label,
 .was-validated .form-check-input:invalid~.form-check-label {
-    color: #dc3545
+    color: #f1416c
 }
 
 .form-check-inline .form-check-input~.invalid-feedback {
@@ -3460,8 +3460,8 @@ fieldset:disabled .btn {
 
 .btn-danger {
     color: #fff;
-    background-color: #dc3545;
-    border-color: #dc3545
+    background-color: #f1416c;
+    border-color: #f1416c
 }
 
 .btn-danger:hover {
@@ -3499,8 +3499,8 @@ fieldset:disabled .btn {
 .btn-danger.disabled,
 .btn-danger:disabled {
     color: #fff;
-    background-color: #dc3545;
-    border-color: #dc3545
+    background-color: #f1416c;
+    border-color: #f1416c
 }
 
 .btn-light {
@@ -3591,6 +3591,11 @@ fieldset:disabled .btn {
     color: #fff;
     background-color: #212529;
     border-color: #212529
+}
+
+.btn-bg-light {
+    border-color: #F5F8FA;
+    background-color: #F5F8FA;
 }
 
 .btn-outline-primary {
@@ -3794,14 +3799,14 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-danger {
-    color: #dc3545;
-    border-color: #dc3545
+    color: #f1416c;
+    border-color: #f1416c
 }
 
 .btn-outline-danger:hover {
     color: #fff;
-    background-color: #dc3545;
-    border-color: #dc3545
+    background-color: #f1416c;
+    border-color: #f1416c
 }
 
 .btn-check:focus+.btn-outline-danger,
@@ -3815,8 +3820,8 @@ fieldset:disabled .btn {
 .btn-outline-danger.dropdown-toggle.show,
 .btn-outline-danger:active {
     color: #fff;
-    background-color: #dc3545;
-    border-color: #dc3545
+    background-color: #f1416c;
+    border-color: #f1416c
 }
 
 .btn-check:active+.btn-outline-danger:focus,
@@ -3829,7 +3834,7 @@ fieldset:disabled .btn {
 
 .btn-outline-danger.disabled,
 .btn-outline-danger:disabled {
-    color: #dc3545;
+    color: #f1416c;
     background-color: transparent
 }
 
@@ -3928,6 +3933,25 @@ fieldset:disabled .btn {
     color: #6c757d
 }
 
+.btn-light-success {
+    color: #50CD89;
+    border-color: #E8FFF3;
+    background-color: #E8FFF3;
+}
+
+.btn-check:checked + .btn.btn-light-success, 
+.btn-check:active + .btn.btn-light-success, 
+.btn.btn-light-success:focus:not(.btn-active), 
+.btn.btn-light-success:hover:not(.btn-active), 
+.btn.btn-light-success:active:not(.btn-active), 
+.btn.btn-light-success.active, 
+.btn.btn-light-success.show, 
+.show > .btn.btn-light-success {
+    color: #FFFFFF;
+    border-color: #50CD89;
+    background-color: #50CD89 !important;
+}
+
 .btn-group-lg>.btn,
 .btn-lg {
     padding: .5rem 1rem;
@@ -4023,7 +4047,8 @@ fieldset:disabled .btn {
     list-style: none;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, .15);
+    border: 0;
+    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.15);
     border-radius: .25rem
 }
 
@@ -5138,7 +5163,8 @@ fieldset:disabled .btn {
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, .125);
+    border: 0;
+    box-shadow: 0px 0px 20px 0px rgb(76, 87, 125, 0.02);
     border-radius: .25rem
 }
 
@@ -7348,7 +7374,7 @@ fieldset:disabled .btn {
 }
 
 .link-danger {
-    color: #dc3545
+    color: #f1416c
 }
 
 .link-danger:focus,
@@ -7799,7 +7825,7 @@ fieldset:disabled .btn {
 }
 
 .border-danger {
-    border-color: #dc3545 !important
+    border-color: #f1416c !important
 }
 
 .border-light {
@@ -8107,14 +8133,42 @@ fieldset:disabled .btn {
 }
 
 .m-3 {
-    margin: 1rem !important
+    margin: .75rem !important
 }
 
 .m-4 {
-    margin: 1.5rem !important
+    margin: 1rem !important
 }
 
 .m-5 {
+    margin: 1.25rem !important
+}
+
+.m-6 {
+    margin: 1.5rem !important
+}
+
+.m-7 {
+    margin: 1.75rem !important
+}
+
+.m-8 {
+    margin: 2rem !important
+}
+
+.m-9 {
+    margin: 2.25rem !important
+}
+
+.m-10 {
+    margin: 2.5rem !important
+}
+
+.m-11 {
+    margin: 2.75rem !important
+}
+
+.m-12 {
     margin: 3rem !important
 }
 
@@ -8138,16 +8192,51 @@ fieldset:disabled .btn {
 }
 
 .mx-3 {
+    margin-right: .75rem !important;
+    margin-left: .75rem !important
+}
+
+.mx-4 {
     margin-right: 1rem !important;
     margin-left: 1rem !important
 }
 
-.mx-4 {
+.mx-5 {
+    margin-right: 1.25rem !important;
+    margin-left: 1.25rem !important
+}
+
+.mx-6 {
     margin-right: 1.5rem !important;
     margin-left: 1.5rem !important
 }
 
-.mx-5 {
+.mx-7 {
+    margin-right: 1.75rem !important;
+    margin-left: 1.75rem !important
+}
+
+.mx-8 {
+    margin-right: 2rem !important;
+    margin-left: 2rem !important
+}
+
+.mx-9 {
+    margin-right: 2.25rem !important;
+    margin-left: 2.25rem !important
+}
+
+.mx-10 {
+    margin-right: 2.5rem !important;
+    margin-left: 2.5rem !important
+}
+
+.mx-11 {
+    margin-right: 2.75rem !important;
+    margin-left: 2.75rem !important
+}
+
+.mx-12 {
     margin-right: 3rem !important;
     margin-left: 3rem !important
 }
@@ -8173,16 +8262,51 @@ fieldset:disabled .btn {
 }
 
 .my-3 {
+    margin-top: .75rem !important;
+    margin-bottom: .75rem !important
+}
+
+.my-4 {
     margin-top: 1rem !important;
     margin-bottom: 1rem !important
 }
 
-.my-4 {
+.my-5 {
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.25rem !important
+}
+
+.my-6 {
     margin-top: 1.5rem !important;
     margin-bottom: 1.5rem !important
 }
 
-.my-5 {
+.my-7 {
+    margin-top: 1.75rem !important;
+    margin-bottom: 1.75rem !important
+}
+
+.my-8 {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important
+}
+
+.my-9 {
+    margin-top: 2.25rem !important;
+    margin-bottom: 2.25rem !important
+}
+
+.my-10 {
+    margin-top: 2.5rem !important;
+    margin-bottom: 2.5rem !important
+}
+
+.my-11 {
+    margin-top: 2.75rem !important;
+    margin-bottom: 2.75rem !important
+}
+
+.my-12 {
     margin-top: 3rem !important;
     margin-bottom: 3rem !important
 }
@@ -8205,14 +8329,42 @@ fieldset:disabled .btn {
 }
 
 .mt-3 {
-    margin-top: 1rem !important
+    margin-top: .75rem !important
 }
 
 .mt-4 {
-    margin-top: 1.5rem !important
+    margin-top: 1rem !important
 }
 
 .mt-5 {
+    margin-top: 1.25rem !important
+}
+
+.mt-6 {
+    margin-top: 1.5rem !important
+}
+
+.mt-7 {
+    margin-top: 1.75rem !important
+}
+
+.mt-8 {
+    margin-top: 2rem !important
+}
+
+.mt-9 {
+    margin-top: 2.25rem !important
+}
+
+.mt-10 {
+    margin-top: 2.5rem !important
+}
+
+.mt-11 {
+    margin-top: 2.75rem !important
+}
+
+.mt-12 {
     margin-top: 3rem !important
 }
 
@@ -8233,14 +8385,42 @@ fieldset:disabled .btn {
 }
 
 .me-3 {
-    margin-right: 1rem !important
+    margin-right: .75rem !important
 }
 
 .me-4 {
-    margin-right: 1.5rem !important
+    margin-right: 1rem !important
 }
 
 .me-5 {
+    margin-right: 1.25rem !important
+}
+
+.me-6 {
+    margin-right: 1.5rem !important
+}
+
+.me-7 {
+    margin-right: 1.75rem !important
+}
+
+.me-8 {
+    margin-right: 2rem !important
+}
+
+.me-9 {
+    margin-right: 2.25rem !important
+}
+
+.me-10 {
+    margin-right: 2.5rem !important
+}
+
+.me-11 {
+    margin-right: 2.75rem !important
+}
+
+.me-12 {
     margin-right: 3rem !important
 }
 
@@ -8261,14 +8441,42 @@ fieldset:disabled .btn {
 }
 
 .mb-3 {
-    margin-bottom: 1rem !important
+    margin-bottom: .75rem !important
 }
 
 .mb-4 {
-    margin-bottom: 1.5rem !important
+    margin-bottom: 1rem !important
 }
 
 .mb-5 {
+    margin-bottom: 1.25rem !important
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem !important
+}
+
+.mb-7 {
+    margin-bottom: 1.75rem !important
+}
+
+.mb-8 {
+    margin-bottom: 2rem !important
+}
+
+.mb-9 {
+    margin-bottom: 2.25rem !important
+}
+
+.mb-10 {
+    margin-bottom: 2.5rem !important
+}
+
+.mb-11 {
+    margin-bottom: 2.75rem !important
+}
+
+.mb-12 {
     margin-bottom: 3rem !important
 }
 
@@ -8289,14 +8497,42 @@ fieldset:disabled .btn {
 }
 
 .ms-3 {
-    margin-left: 1rem !important
+    margin-left: .75rem !important
 }
 
 .ms-4 {
-    margin-left: 1.5rem !important
+    margin-left: 1rem !important
 }
 
 .ms-5 {
+    margin-left: 1.25rem !important
+}
+
+.ms-6 {
+    margin-left: 1.5rem !important
+}
+
+.ms-7 {
+    margin-left: 1.75rem !important
+}
+
+.ms-8 {
+    margin-left: 2rem !important
+}
+
+.ms-9 {
+    margin-left: 2.25rem !important
+}
+
+.ms-10 {
+    margin-left: 2.5rem !important
+}
+
+.ms-11 {
+    margin-left: 2.75rem !important
+}
+
+.ms-12 {
     margin-left: 3rem !important
 }
 
@@ -8317,14 +8553,42 @@ fieldset:disabled .btn {
 }
 
 .p-3 {
-    padding: 1rem !important
+    padding: .75rem !important
 }
 
 .p-4 {
-    padding: 1.5rem !important
+    padding: 1rem !important
 }
 
 .p-5 {
+    padding: 1.25rem !important
+}
+
+.p-6 {
+    padding: 1.5rem !important
+}
+
+.p-7 {
+    padding: 1.75rem !important
+}
+
+.p-8 {
+    padding: 2rem !important
+}
+
+.p-9 {
+    padding: 2.25rem !important
+}
+
+.p-10 {
+    padding: 2.5rem !important
+}
+
+.p-11 {
+    padding: 2.75rem !important
+}
+
+.p-12 {
     padding: 3rem !important
 }
 
@@ -8344,16 +8608,51 @@ fieldset:disabled .btn {
 }
 
 .px-3 {
+    padding-right: .75rem !important;
+    padding-left: .75rem !important
+}
+
+.px-4 {
     padding-right: 1rem !important;
     padding-left: 1rem !important
 }
 
-.px-4 {
+.px-5 {
+    padding-right: 1.25rem !important;
+    padding-left: 1.25rem !important
+}
+
+.px-6 {
     padding-right: 1.5rem !important;
     padding-left: 1.5rem !important
 }
 
-.px-5 {
+.px-7 {
+    padding-right: 1.75rem !important;
+    padding-left: 1.75rem !important
+}
+
+.px-8 {
+    padding-right: 2rem !important;
+    padding-left: 2rem !important
+}
+
+.px-9 {
+    padding-right: 2.25rem !important;
+    padding-left: 2.25rem !important
+}
+
+.px-10 {
+    padding-right: 2.5rem !important;
+    padding-left: 2.5rem !important
+}
+
+.px-11 {
+    padding-right: 2.75rem !important;
+    padding-left: 2.75rem !important
+}
+
+.px-12 {
     padding-right: 3rem !important;
     padding-left: 3rem !important
 }
@@ -8374,16 +8673,51 @@ fieldset:disabled .btn {
 }
 
 .py-3 {
+    padding-top: .75rem !important;
+    padding-bottom: .75rem !important
+}
+
+.py-4 {
     padding-top: 1rem !important;
     padding-bottom: 1rem !important
 }
 
-.py-4 {
+.py-5 {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important
+}
+
+.py-6 {
     padding-top: 1.5rem !important;
     padding-bottom: 1.5rem !important
 }
 
-.py-5 {
+.py-7 {
+    padding-top: 1.75rem !important;
+    padding-bottom: 1.75rem !important
+}
+
+.py-8 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important
+}
+
+.py-9 {
+    padding-top: 2.25rem !important;
+    padding-bottom: 2.25rem !important
+}
+
+.py-10 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important
+}
+
+.py-11 {
+    padding-top: 2.75rem !important;
+    padding-bottom: 2.75rem !important
+}
+
+.py-12 {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important
 }
@@ -8401,14 +8735,42 @@ fieldset:disabled .btn {
 }
 
 .pt-3 {
-    padding-top: 1rem !important
+    padding-top: .75rem !important
 }
 
 .pt-4 {
-    padding-top: 1.5rem !important
+    padding-top: 1rem !important
 }
 
 .pt-5 {
+    padding-top: 1.25rem !important
+}
+
+.pt-6 {
+    padding-top: 1.5rem !important
+}
+
+.pt-7 {
+    padding-top: 1.75rem !important
+}
+
+.pt-8 {
+    padding-top: 2rem !important
+}
+
+.pt-9 {
+    padding-top: 2.25rem !important
+}
+
+.pt-10 {
+    padding-top: 2.5rem !important
+}
+
+.pt-11 {
+    padding-top: 2.75rem !important
+}
+
+.pt-12 {
     padding-top: 3rem !important
 }
 
@@ -8425,14 +8787,42 @@ fieldset:disabled .btn {
 }
 
 .pe-3 {
-    padding-right: 1rem !important
+    padding-right: .75rem !important
 }
 
 .pe-4 {
-    padding-right: 1.5rem !important
+    padding-right: 1rem !important
 }
 
 .pe-5 {
+    padding-right: 1.25rem !important
+}
+
+.pe-6 {
+    padding-right: 1.5rem !important
+}
+
+.pe-7 {
+    padding-right: 1.75rem !important
+}
+
+.pe-8 {
+    padding-right: 2rem !important
+}
+
+.pe-9 {
+    padding-right: 2.25rem !important
+}
+
+.pe-10 {
+    padding-right: 2.5rem !important
+}
+
+.pe-11 {
+    padding-right: 2.75rem !important
+}
+
+.pe-12 {
     padding-right: 3rem !important
 }
 
@@ -8449,14 +8839,42 @@ fieldset:disabled .btn {
 }
 
 .pb-3 {
-    padding-bottom: 1rem !important
+    padding-bottom: .75rem !important
 }
 
 .pb-4 {
-    padding-bottom: 1.5rem !important
+    padding-bottom: 1rem !important
 }
 
 .pb-5 {
+    padding-bottom: 1.25rem !important
+}
+
+.pb-6 {
+    padding-bottom: 1.5rem !important
+}
+
+.pb-7 {
+    padding-bottom: 1.75rem !important
+}
+
+.pb-8 {
+    padding-bottom: 2rem !important
+}
+
+.pb-9 {
+    padding-bottom: 2.25rem !important
+}
+
+.pb-10 {
+    padding-bottom: 2.5rem !important
+}
+
+.pb-11 {
+    padding-bottom: 2.75rem !important
+}
+
+.pb-12 {
     padding-bottom: 3rem !important
 }
 
@@ -8473,14 +8891,42 @@ fieldset:disabled .btn {
 }
 
 .ps-3 {
-    padding-left: 1rem !important
+    padding-left: .75rem !important
 }
 
 .ps-4 {
-    padding-left: 1.5rem !important
+    padding-left: 1rem !important
 }
 
 .ps-5 {
+    padding-left: 1.25rem !important
+}
+
+.ps-6 {
+    padding-left: 1.5rem !important
+}
+
+.ps-7 {
+    padding-left: 1.75rem !important
+}
+
+.ps-8 {
+    padding-left: 2rem !important
+}
+
+.ps-9 {
+    padding-left: 2.25rem !important
+}
+
+.ps-10 {
+    padding-left: 2.5rem !important
+}
+
+.ps-11 {
+    padding-left: 2.75rem !important
+}
+
+.ps-12 {
     padding-left: 3rem !important
 }
 
@@ -8510,6 +8956,18 @@ fieldset:disabled .btn {
 
 .fs-6 {
     font-size: 1rem !important
+}
+
+.fs-7 {
+    font-size: 0.95rem !important
+}
+
+.fs-75 {
+    font-size: 0.85rem !important;
+}
+
+.fs-85 {
+    font-size: 0.75rem !important;
 }
 
 .fst-italic {

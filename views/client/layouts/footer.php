@@ -142,8 +142,8 @@
                                 <li class="SiteFooter-sectionLink mt-3">
                                     <div class="theme-setting">
                                         <span class="ms-1"><strong>Dark mode</strong></span>
-                                        <div class="toggle-switch">
-                                            <span class="switch"></span>
+                                        <div class="form-switch">
+                                            <input type="checkbox" class="form-check-input toggle-switch cursor-pointer">
                                         </div>
                                     </div>
                                 </li>
@@ -183,6 +183,7 @@
 
     <script src="assets/js/darkmode.js"></script>
     <script src="assets/js/tooltip.js"></script>
+    <script src="assets/js/plugins/convertSVG.js"></script>
     <script src="assets/js/services/core.js"></script>
 </body>
 </html>

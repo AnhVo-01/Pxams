@@ -116,7 +116,7 @@
 }
 
 .option i {
-    color: #6c32ad;
+    color: var(--icon-color-1);
     font-size: 24px;
     width: 24px;
     text-align: center;

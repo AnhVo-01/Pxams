@@ -14,6 +14,7 @@
     --header-color: #fff;
     --footer-color1: #fff;
     --switch-color: #0a092d;
+    --icon-color-1: #6c32ad;
     --select-border: #edeff4;
     --option-box: #fff;
     --option-box-highlight: #646f90;
@@ -23,6 +24,7 @@
     --text-color1: #010101;
     --text-color2: #010101;
     --text-color3: #303545;
+    --text-color4: #3F4254;
     --text-color-reverse: #fff;
     --dark-green: #a4ddc5;
     --light-green: #f2fbf6;
@@ -40,6 +42,7 @@
     --header-color: #0a092d;
     --footer-color1: #1a1d28;
     --switch-color: #f2f2f2;
+    --icon-color-1: #8383af;
     --select-border: #5a5a8c;
     --option-box: #47476f;
     --option-box-highlight: #939bb4;
@@ -49,6 +52,7 @@
     --text-color1: #fff;
     --text-color2: #ccc;
     --text-color3: #fff;
+    --text-color4: #fff;
     --text-color-reverse: #010101;
     --dark-green: #19804f;
     --light-green: #23b26d;
@@ -110,6 +114,15 @@ a{
 .toast-alert {
     position: fixed;
     right: 0;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.toggle-switch:checked {
+    background-color: #20d489;
+    border-color: #20d489;
 }
 /* ---------------------------------- Top-left ----------------------------------*/
 nav.navbar ul.nav li a{
@@ -178,7 +191,7 @@ nav.navbar ul.nav li a{
     max-height: 345px;
     height: auto;
     top: 0;
-    left: 160px;
+    left: 162px;
     border-radius: 0.25rem;
     background-color: var(--drop-down);
 }
@@ -302,16 +315,16 @@ nav.navbar ul.nav li a{
     max-height: 80vh;
     overflow-y: auto;
 }
-.dropdown-ls ul li{
-    padding: 10px 20px;
+.dropdown-ls ul li.nav-item{
     color: var(--text-color1);
 }
 .dropdown-ls ul li:hover{
     background-color: var(--dropdown-hover);
     cursor: pointer;
 }
-.dropdown-ls ul.nav li a{
+.dropdown-ls ul.nav li.nav-item a{
     display: block;
+    padding: 10px 20px;
     color: var(--text-color2) !important;
 }
 
@@ -319,38 +332,6 @@ nav.navbar ul.nav li a{
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.toggle-switch{
-    cursor: pointer;
-    width: 26px;
-    height: 12px;
-    border-radius: 20px;
-    background-color: var(--switch-color);
-}
-.toggle-switch .switch{
-    position: relative;
-    height: 12px;
-    width: 26px;
-    transition: var(--tran-05);
-}
-
-.toggle-switch .switch::before {
-    content: '';
-    position: absolute;
-    height: 9px;
-    width: 9px;
-    border-radius: 50%;
-    top: 6px;
-    left: 2px;
-    transform: translateY(-50%);
-    background-color: var(--body-color);
-    transition: var(--tran-04);
-}
-.toggle-switch.dark-on {
-    background: var(--switch-color);
-}
-.toggle-switch.dark-on .switch::before{
-    left: 15px;
 }
 
 /* ------ Popup -------------------------------------------------*/

@@ -1,43 +1,27 @@
 <div class="user-top mb-4">
 <?php
-    if (isset($_GET['local'])) { ?>
-        <style type="text/css">
-            .user-top {
-                font-size: 14px;
-            }
-
-            .user-top a {
-                color: var(--text-color1);
-            }
-        </style>
-        <div class="row">
-            <div class="col-4"  style="padding-top: 5px;">
-                <a data-bs-toggle="offcanvas" data-bs-target="#setting-box">
-                    <i class="fas fa-cog fa-lg"></i>
-                </a>
-            </div>
-            <div class="col-4">
-                <div class="image" style="height: 60px; width: 60px; margin: 0 auto;">
-                    <img alt="Ảnh hồ sơ" class="rounded-circle" src="https://gimg.quizlet.com/a-/AOh14GgnLlV8m31W4uh75mFzjx41BLiZE7irWhqAE0S5=s96-c?sz=32">
-                </div>
-                <input type="hidden" class="navbar-brand image">
-                <input type="hidden" class="nav-menu">
-                <input type="hidden" id="user_box">
-                <div class="text-center py-3">
-                    <span><strong>VoNVA</strong></span>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="premium" style="padding: 5px 10px; font-weight: 600">
-                    <a href="#">
-                        <span>Premium</span>
-                        <i class="fas fa-gem" style="color: gold;"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    <?php
+    if (isset($_GET['local'])) {
+        $link = "&local=" . $_GET['local'];
+        echo('<div class="row">');
+        echo('<div class="col-4"  style="padding-top: 5px;">');
+        echo('<a data-bs-toggle="offcanvas" data-bs-target="#setting-box"><i class="fas fa-cog fa-lg"></i></a>');
+        echo('</div>');
+        echo('<div class="col-4">');
+        echo('<div class="image" style="height: 60px; width: 60px; margin: 0 auto;">');
+        echo('<img alt="Ảnh hồ sơ" class="rounded-circle" src="assets/image/3.png">');
+        echo('</div>');
+        echo('<div class="text-center py-3">');
+        echo('<span><strong>VoNVA</strong></span>');
+        echo('</div></div>');
+        echo('<div class="col-4">');
+        echo('<div class="premium" style="padding: 5px 10px; font-weight: 600">');
+        echo('<a href="#">');
+        echo('<span>Premium</span>');
+        echo('<i class="fas fa-gem" style="color: gold;"></i>');
+        echo('</a>');
+        echo('</div></div></div>');
     } else {
+        $link = "";
         echo ('<div class="d-flex align-items-center gap-3">');
         echo ('<div class="image" style="height: 80px; width: 80px;">');
         echo ('<img alt="Ảnh hồ sơ" class="rounded-circle" src="assets/image/3.png">');
@@ -70,7 +54,7 @@
     } else {
         echo('<li class="nav-item">');
     }
-    echo('<a href="?uid='.htmlentities($_SESSION['account_id']).'&redirect=library" class="nav-link">');
+    echo('<a href="?uid='.htmlentities($_SESSION['account_id']).'&redirect=library'.$link.'" class="nav-link">');
     echo('<span class="nav-label">Library</span>');
     echo('</a></li>');
 

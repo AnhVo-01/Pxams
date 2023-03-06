@@ -124,7 +124,7 @@
                                                             echo('<div class="d-flex flex-column">');
                                                             echo('<span class="title">'.$row['title'].'</span>');
                                                             echo('<div class="d-flex align-items-center gap-2">');
-                                                            echo('<img alt="Ảnh hồ sơ" class="rounded-circle" height="16" src="https://gimg.quizlet.com/a/AEdFTp7cUVYmF2EAGD0TEY3U6Bqvqc2OLrRaEiYZ4yP-yg=s96-c?sz=16" width="16">');
+                                                            echo('<img alt="Ảnh hồ sơ" class="rounded-circle" height="16" src="assets/image/3.png" width="16">');
                                                             echo('<span class="text-muted"><small>'.$row['user_name'].'</small></span>');
                                                             echo('</div>');
                                                             echo('</div>');
@@ -193,10 +193,10 @@
                                     <a class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" style="color: #fff;">Create</a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <button class="dropdown-item" onclick="createStudySetDraft()">
+                                            <a class="dropdown-item cursor-pointer" onclick="createStudySetDraft()">
                                                 <i class="far fa-clone me-2"></i>
                                                 Study sets
-                                            </button>
+                                            </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="#">
@@ -252,7 +252,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="#" data-bs-toggle="collapse" data-bs-target="#setting">
-                                    <img alt="Ảnh hồ sơ" class="rounded-circle" src="https://gimg.quizlet.com/a-/AOh14GgnLlV8m31W4uh75mFzjx41BLiZE7irWhqAE0S5=s96-c?sz=32" style="height: 32px; width: 32px;">
+                                    <img alt="Ảnh hồ sơ" class="rounded-circle" src="assets/image/3.png" height="32" width="32">
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -264,53 +264,50 @@
                         <div class="dropdown-ls collapse" id="setting">
                             <ul class="nav flex-column">
                                 <li class="nav-item nav-tabs">
-                                    <div class="d-flex">
-                                        <img alt="Ảnh hồ sơ" class="rounded-circle" src="https://gimg.quizlet.com/a-/AOh14GgnLlV8m31W4uh75mFzjx41BLiZE7irWhqAE0S5=s96-c?sz=32" style="height: 32px; width: 32px;">
+                                    <a href="?redirect=user" class="d-flex">
+                                        <img alt="Ảnh hồ sơ" class="rounded-circle" src="assets/image/3.png" height="32" width="32">
                                         <div class="d-flex flex-column ps-3">
                                             <span class="small"><strong>VoNVA</strong></span>
                                             <span class="small">vonvahe151420@fpt.edu.vn</span>
                                         </div>
-                                    </div>
+                                    </a>
                                 </li>
-                                <li class="nav-link">
+                                <li class="nav-item">
                                     <a href="?redirect=profile">Profile</a>
                                 </li>
-                                <li class="nav-link">
+                                <li class="nav-item">
                                     <a href="#">Process</a>
                                 </li>
-                                <li class="nav-link">
+                                <li class="nav-item">
                                     <div class="theme-setting">
                                         <a href="#mode" class="text nav-text">Dark mode</a>
-                                        <div class="toggle-switch">
-                                            <span class="switch"></span>
+                                        <div class="form-switch">
+                                            <input type="checkbox" class="form-check-input toggle-switch cursor-pointer">
                                         </div>
                                     </div>
                                 </li>
-                                <li class="nav-link nav-tabs">
+                                <li class="nav-item nav-tabs">
                                     <a href="#">Setting</a>
                                 </li>
-                                <li class="nav-link">
+                                <li class="nav-item">
                                     <a href="#" id="myBtn">Refer a friend</a>
                                 </li>
-                                <li class="nav-link">
+                                <li class="nav-item">
                                     <a href="#">Help and feedback</a>
                                 </li>
-                                <li class="nav-link">
+                                <li class="nav-item">
                                     <a href="#">Blog</a>
                                 </li>
-                                <li class="nav-link">
+                                <li class="nav-item">
                                     <a href="#">Privacy policy</a>
                                 </li>
-                                <li class="nav-link">
-                                    <div class="d-flex">
-                                        <a href="#">Premium</a>
-                                        <i class="fas fa-gem ms-2" style="color: gold;"></i>
-                                    </div>
+                                <li class="nav-item">
+                                    <a href="#">Premium<i class="fas fa-gem ms-2" style="color: gold;"></i></a>
                                 </li>
-                                <li class="nav-link nav-tabs">
+                                <li class="nav-item nav-tabs">
                                     <a href="#">App</a>
                                 </li>
-                                <li class="nav-link">
+                                <li class="nav-item">
                                     <a href="controllers/LogoutController.php">
                                         <span class="text nav-text">Log Out</span>
                                     </a>

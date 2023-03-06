@@ -4,26 +4,26 @@
 //     settingsmenu.classList.toggle("settings-menu-height");
 // }
 $(document).ready(function() {
-    $('.toggle-switch').click(function(){
-        $('.toggle-switch').toggleClass("dark-on");
-        document.body.classList.toggle("dark-theme");
-    
+    $(".toggle-switch").change(() => {
         if(localStorage.getItem("theme") == "light"){
+            $(".toggle-switch").prop("checked", true);
+            document.body.classList.add("dark-theme");
             localStorage.setItem("theme", "dark");
-        }
-        else{
+        }else{
+            $(".toggle-switch").prop("checked", false);
+            document.body.classList.remove("dark-theme");
             localStorage.setItem("theme", "light");
         }
-    });
+    })
 });
 
 if(localStorage.getItem("theme") == "light"){
-    $('.toggle-switch').removeClass("dark-on");
     document.body.classList.remove("dark-theme");
+    $(".toggle-switch").prop("checked", false);
 }
 else if(localStorage.getItem("theme") == "dark"){
-    $('.toggle-switch').addClass("dark-on");
     document.body.classList.add("dark-theme");
+    $(".toggle-switch").prop("checked", true);
 }
 else{
     localStorage.setItem("theme", "light");

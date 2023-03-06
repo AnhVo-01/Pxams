@@ -42,7 +42,7 @@ $(document).ready(() => {
     });
 })
 
-var xml = new XMLHttpRequest;
+var xml = new XMLHttpRequest();
 
 // ----------------------------------------------------------------
 function do_login(){

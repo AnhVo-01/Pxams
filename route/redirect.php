@@ -19,3 +19,4 @@
 	} else {
 		require_once('views/client/layouts/404.php');
 	}
+?>
