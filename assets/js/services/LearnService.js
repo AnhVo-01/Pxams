@@ -120,3 +120,20 @@ function startOver() {
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     xmlhttp.send("ss_id="+getUrlParameter("id")+"&question_id=&value=startOver&action=firstLoad");
 }
+
+function contLearn() {
+    xmlhttp.open("POST", "controllers/LearnController.php");
+    xmlhttp.onload = function() {
+        if (xmlhttp.readyState === XMLHttpRequest.DONE) {
+            if (xmlhttp.status === 200) {
+                $('.flash-box').html(xmlhttp.response);
+            }
+        }
+    }
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+    xmlhttp.send("ss_id="+getUrlParameter("id")+"&question_id=&value=&action=firstLoad");
+}
+
+function backToFlashCard() {
+    window.location.href = "?redirect=flashcard&id=" + getUrlParameter("id");
+}

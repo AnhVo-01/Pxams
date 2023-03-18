@@ -119,8 +119,8 @@
                     <div class="d-flex flex-column">
                         <span>Dark mode</span>
                     </div>
-                    <div class="toggle-switch">
-                        <span class="switch"></span>
+                    <div class="form-switch">
+                        <input type="checkbox" class="form-check-input toggle-switch cursor-pointer">
                     </div>
                 </div>
             </div>

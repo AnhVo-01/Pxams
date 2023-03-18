@@ -7,12 +7,17 @@
 }
 
 /*===============================================================================*/
-.carousel-inner {
-    height: 380px;
-    overflow: unset;
+.swiper {
+    border-radius: .5rem;
+    margin: -20px;
+    padding: 20px;
 }
 
-.carousel-item {
+.swiper-wrapper {
+    height: 380px;
+}
+
+.swiper-slide {
     width: 100%;
     height: 100%;
     position: relative;
@@ -25,7 +30,7 @@
 
 /* Position the front and back side */
 .flip-card-front, .flip-card-back {
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     width: 100%;
     height: 100%;
@@ -52,7 +57,7 @@
     transform: rotateX(180deg);
 }
 
-.carousel-item .flip-card-inner {
+.swiper-slide .flip-card-inner {
     cursor: pointer;
     position: relative;
     font-size: 20px;
@@ -65,32 +70,56 @@
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
 }
 
-.carousel-item .flip-card-inner .qa::-webkit-scrollbar {
+.swiper-slide .flip-card-inner .qa::-webkit-scrollbar {
     width: 5px;
 }
 
-.carousel-item .flip-card-inner .qa::-webkit-scrollbar-thumb {
+.swiper-slide .flip-card-inner .qa::-webkit-scrollbar-thumb {
     background: #888;
 }
 
-.carousel .controls {
+.swiper .controls {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
     gap: 1rem;
+    height: 45px;
 }
 
-.carousel .controls button {
+.swiper .controls .swiper-button-prev,
+.swiper .controls .swiper-button-next {
     color: var(--text-color2);
-    border: 1px solid var(--text-color2);
+    border: 2px solid var(--text-color2);
     padding: 10px;
     width: 300px;
+    border-radius: .5rem;
 }
 
-.controls button:hover {
-    color: var(--text-color1);
-    border-color: var(--text-color1);
+.controls .swiper-button-prev:hover,
+.controls .swiper-button-next:hover {
+    color: var(--icon-color-1);
+    border-color: var(--icon-color-1);
+}
+
+.swiper-button-next:after, 
+.swiper-button-prev:after {
+    font-family: "Font Awesome 5 Pro" !important;
+    font-weight: 900 !important;
+    font-size: 1.5em;
+    line-height: .04167em;
+    vertical-align: -.125em;
+}
+
+.swiper-button-prev:after, 
+.swiper-rtl .swiper-button-next:after {
+    content: "\f053";
+}
+
+.swiper-button-next:after, 
+.swiper-rtl .swiper-button-prev:after {
+    content: "\f054" !important;
 }
 
 /*----------------------------- right -----------------------------*/

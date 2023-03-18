@@ -50,23 +50,21 @@
     #header{
         display: none;
     }
-    .mobile-view{
-        display: block;
-    }
     .navigator{
         display: block;
     }
-    .carousel-inner{
+    .swiper-wrapper{
         height: 250px;
     }
-    .carousel-item .qa{
+    .swiper-slide .qa{
         font-size: 16px;
     }
-    .carousel .controls{
+    .swiper .controls{
         font-size: 12px;
         padding: 0;
     }
-    .carousel .controls button{
+    .swiper .controls .swiper-button-prev,
+    .swiper .controls .swiper-button-next{
         visibility: hidden;
     }
     .card-option{
@@ -87,11 +85,15 @@
         /* height: 90vh !important; */
         z-index: -1 !important;
     }
+    
+    .Login-Cont .close {
+        display: none;
+    }
+
     .Login-box{
-        top: 11% !important;
-        transform: translate(-50%, -11%) !important;
         width: 97vw !important;
-        height: 90vh !important;
+        max-height: 98vh !important;
+        background: transparent !important;
     }
     .third-log a {
         font-size: 14px !important; 
@@ -115,6 +117,11 @@
         display: none;
     }
 
+    /* --------------- Home ---------------------------------- */
+    .AchievementsStreaksBoard {
+        flex-direction: column;
+    }
+
     /* --------------- Study set ----------------------------- */
     .study-set-box {
         width: 95vw !important;
@@ -124,5 +131,19 @@
     }
     .submit-form {
         width: 90% !important;
+    }
+
+    /* --------------- Learn --------------------------------- */
+    .learn-content {
+        margin: .75rem 0 !important;
+        padding: 0;
+    }
+
+    .flash-cards {
+        padding: 1.5rem !important;
+    }
+
+    .flash-card-body .answer .select {
+        min-width: 100% !important;
     }
 }

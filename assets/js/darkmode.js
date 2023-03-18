@@ -14,6 +14,17 @@ $(document).ready(function() {
             document.body.classList.remove("dark-theme");
             localStorage.setItem("theme", "light");
         }
+    });
+
+    $(".learn-bg-theme").click(() => {
+        $(".learn-bg-theme").toggleClass("dark-on");
+        if(localStorage.getItem("theme") == "light"){
+            document.body.classList.add("dark-theme");
+            localStorage.setItem("theme", "dark");
+        }else{
+            document.body.classList.remove("dark-theme");
+            localStorage.setItem("theme", "light");
+        }
     })
 });
 
@@ -22,6 +33,7 @@ if(localStorage.getItem("theme") == "light"){
     $(".toggle-switch").prop("checked", false);
 }
 else if(localStorage.getItem("theme") == "dark"){
+    $(".learn-bg-theme").addClass("dark-on");
     document.body.classList.add("dark-theme");
     $(".toggle-switch").prop("checked", true);
 }

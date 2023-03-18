@@ -1,0 +1,48 @@
+.AchievementsStreaksBoard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.AchievementsImageStreak {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.AchievementsImageStreak .goal-number {
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #282e3e;
+}
+
+.AchievementsDetailStreak {
+    align-self: center;
+    margin: auto;
+    max-width: 17.875rem;
+}
+
+.AchievementsDetailStreak h5 {
+    font-weight: 900;
+}
+
+.AchievementsDetailStreak .moti {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    max-width: 100%;
+    position: relative;
+}
+
+.AchievementsCalendarStreak {
+    display: flex;
+    width: 20rem;
+}
+
+.AchievementsCalendarStreak .calendar {
+    width: 100%;
+}

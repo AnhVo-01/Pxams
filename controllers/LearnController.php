@@ -83,6 +83,8 @@
             }
             $listQuesJSON = json_encode($_SESSION['listQuestion']);
             echo $listQuesJSON;
+
+            exit();
         } elseif ($_POST['action'] == 'choose') {
 
             $listQuestion = $_SESSION['listQuestion'];
@@ -111,6 +113,8 @@
                                     ':learnId' => $result['learn_id']
                                 )
                             );
+
+                            $_SESSION['progress'] = $result['progress'];
                         } else {
                             $sql = $pdo->prepare("INSERT INTO `learn_study_set`(`account_id`, `ss_id`, `progress`) VALUES (:accId, :ssId, 1)");
                             $sql->execute(
@@ -127,7 +131,7 @@
                 } 
             }
             $_SESSION['listQuestion'] = $listQuestion;
-            flashBox($pdo, $listQuestion, $result['progress'], $_SESSION['totalQuestion']);
+            flashBox($pdo, $listQuestion, isset($_SESSION['progress']) ? $_SESSION['progress'] : 0, $_SESSION['totalQuestion']);
             exit();
         } 
     }

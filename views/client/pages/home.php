@@ -1,37 +1,42 @@
-<?php
-    $_SESSION['action'] = "home";
-?>
+<link rel="stylesheet" href="assets/css/home.css">
+<link rel="stylesheet" href="assets/css/calendar.css">
 
-<link rel="stylesheet" href="assets/css/welcome.css">
+<div class="container">
+    <div class="row py-10">
+        <div class="col-lg-9">
+            <div class="AchievementsStreaks">
+                <h5 class="fw-bolder">Achievements</h5>
+                <div class="card">
+                    <div class="card-body p-8">
+                        <div class="AchievementsStreaksBoard">
+                            <div class="AchievementsImageStreak">
+                                <img alt="2-week streak" src="assets/image/icons/streak-Week.svg">
+                                <span class="goal-number">2</span>
+                            </div>
+                            <div class="AchievementsDetailStreak">
+                                <h5>2-week streak</h5>
+                                <div class="moti">Study <b>next week</b> to keep your streak going!</div>
+                            </div>
+                            <div class="AchievementsCalendarStreak">
+                                <div class="calendar">
+                                    <div class="weekdays">
+                                        <div class="text-danger">S</div>
+                                        <div>M</div>
+                                        <div>T</div>
+                                        <div>W</div>
+                                        <div>T</div>
+                                        <div>F</div>
+                                        <div>S</div>
+                                    </div>
+                                    <div class="days"></div>
+                                </div>
 
-<div class="UIContainer">
-    <div class="ImageCard">
-        <picture>
-            <source srcset="assets/image/MobileHero.png" media="(max-width: 768px)">
-            <source srcset="assets/image/Alt-Image.png">
-            <img src="assets/image/Alt-Image.png" alt="">
-        </picture>
-        <div class="ImageCard-Text">
-            <div class="ImageCard-Text-Content">
-                <h1 class="UIHeading">The best digital flashcards and study tools</h1>
-                <div class="UIParagraph">
-                    <p>Join over 60 million students using Pxams’s science-backed flashcards, practice tests and expert solutions to improve their grades and reach their goals.</p>
+                                <script src="assets/js/calender.js"></script>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="ImgCard-Control">
-                <a href="?redirect=register&source=authen" class="btn btn-primary Reg">Sign up for free</a>
             </div>
         </div>
     </div>
 </div>
-
-<script>
-    var width = $(window).width(), height = $(window).height();
-    if (height <= 768) {
-      jQuery('.Reg').attr('?redirect=login&source=authen&local=user');
-      jQuery('.Reg').html("Sign up for free");
-    } else {
-       jQuery('.Reg').attr('?redirect=register&source=authen');
-       jQuery('.Reg').html("Login");
-    }
-</script>

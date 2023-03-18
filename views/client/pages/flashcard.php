@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'util/flashcards.php';
 
 $stmt = $pdo->prepare('SELECT ssid, title, description, ass.date, visible_to, editable_by, ass.type, active, user_name
@@ -19,29 +19,20 @@ $listQuestion = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!-- Main Content ----------------------------------------- -->
 <div class="container" style="margin-bottom: 80px;">
-    <div class="my-4">
+    <div class="my-8">
         <div class="row mb-3">
             <div class="col-md-8">
                 <!-- Carousel -->
-                <div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+                <div class="swiper mySwiper">
                     <!-- The slideshow/carousel -->
-                    <div class="carousel-inner">
+                    <div class="swiper-wrapper">
                         <?php showFlashCard($pdo, $listQuestion) ?>
                     </div>
 
-                    <!-- Left and right controls/icons -->
                     <div class="controls">
-                        <button type="button" class="btn prev-btn" data-bs-target="#demo" data-bs-slide="prev">
-                            <i class="fas fa-chevron-left fa-xl"></i>
-                        </button>
-                        <div class="d-flex">
-                            <span id="index"></span>
-                            <span>/</span>
-                            <span id="card-total"></span>
-                        </div>
-                        <button type="button" class="btn next-btn" data-bs-target="#demo" data-bs-slide="next">
-                            <i class="fas fa-chevron-right fa-xl"></i>
-                        </button>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
                     </div>
                 </div>
             </div>
@@ -96,19 +87,19 @@ $listQuestion = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <i class="fas fa-plus"></i>
                                 </button>
                             </li>
-                            <?php 
+                            <?php
                             if ($studyset['type'] == 'OWNED') {
-                                echo('<li class="mx-2">');
-                                echo('<button class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">');
-                                echo('<i class="fas fa-pen"></i>');
-                                echo('</button>');
-                                echo('</li>');
+                                echo ('<li class="mx-2">');
+                                echo ('<button class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">');
+                                echo ('<i class="fas fa-pen"></i>');
+                                echo ('</button>');
+                                echo ('</li>');
                             } else {
-                                echo('<li class="mx-2">');
-                                echo('<button class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Save and edit">');
-                                echo('<i class="far fa-clone"></i>');
-                                echo('</button>');
-                                echo('</li>');
+                                echo ('<li class="mx-2">');
+                                echo ('<button class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Save and edit">');
+                                echo ('<i class="far fa-clone"></i>');
+                                echo ('</button>');
+                                echo ('</li>');
                             }
                             ?>
                             <li class="mx-2">
@@ -256,9 +247,9 @@ $listQuestion = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             </div>
                         </div>
                     </div>
-                    
+
                     <?php
-                        getAllCards($pdo, $listQuestion, $studyset);
+                    getAllCards($pdo, $listQuestion, $studyset);
                     ?>
                 </div>
             </div>

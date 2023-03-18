@@ -2,11 +2,7 @@
 
 function showFlashCard($pdo, $list) {
     for ($i = 0; $i < sizeof($list); $i++) {
-        if($i == 0) {
-            echo('<div class="carousel-item active">');
-        } else {
-            echo('<div class="carousel-item">');
-        }
+        echo('<div class="swiper-slide">');
         echo('<div class="flip-card">');
         echo('<div class="flip-card-inner">');
         echo('<div class="flip-card-front qa">');
@@ -92,3 +88,4 @@ function getAllCards($pdo, $list, $studyset) {
         echo('</div></div></div>');
     }
 }
+?>

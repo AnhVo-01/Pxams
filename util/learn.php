@@ -44,7 +44,14 @@ function flashBox($pdo, $listQuestion, $progress, $total) {
     $percent = ($tu / $mau) * 100;
                 
     echo('<div class="progress-bar" style="width:'.$percent.'%"></div>');
-    echo('</div></div></div>');
+    echo('</div></div>');
+    echo('<div class="mt-8>');
+    if ($progress == $total) {
+        echo('<button class="btn btn-primary" onclick="backToFlashCard()">Go to flashcard</button>');
+    } else {
+        echo('<button class="btn btn-primary" onclick="contLearn()">Continue</button>');
+    }
+    echo('</div></div>');
 }
 
 function learnSuccessful() {

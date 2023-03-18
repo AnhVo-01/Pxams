@@ -77,3 +77,4 @@ function getDashboardFeed($pdo, $uid, $month, $year) {
         echo('</div>');
     }
 }
+?>

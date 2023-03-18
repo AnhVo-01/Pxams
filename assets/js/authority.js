@@ -42,41 +42,35 @@ $(document).ready(() => {
     });
 })
 
-var xml = new XMLHttpRequest();
-
 // ----------------------------------------------------------------
 function do_login(){
     let form = document.getElementById("LoginForm");
-
-    xml.open("POST", "controllers/LoginController.php");
-    xml.onload = function() {
-        if (xml.readyState === XMLHttpRequest.DONE) {
-            if (xml.status === 200) {
-                if (xml.responseText == 'success') {
-                    window.location.href = "./";
-                    window.location.reload();
-                } else {
-                    window.location.href = "?redirect=login&source=authen";
-                }
-            }
+    xmlhttp.open("POST", "controllers/LoginController.php");
+    xmlhttp.onload = function() {
+        if (xmlhttp.response) {
+            localStorage.setItem("userInfo", xmlhttp.response);
+            window.location.href = "?redirect=home";
+        } else {
+            window.location.href = "?redirect=login&source=authen";
         }
+        console.log(xmlhttp.response);
     }
     let formData = new FormData(form);
-    xml.send(formData);
+    xmlhttp.send(formData);  
 }
 
 function do_signup() {
     let form = document.getElementById("RegForm");
     // form.preventDefault();
 
-    xml.open("POST", "controllers/RegisterController.php");
-    xml.onload = function() {
-        if (xml.readyState === XMLHttpRequest.DONE) {
-            if (xml.status === 200) {
+    xmlhttp.open("POST", "controllers/RegisterController.php");
+    xmlhttp.onload = function() {
+        if (xmlhttp.readyState === XMLHttpRequest.DONE) {
+            if (xmlhttp.status === 200) {
                 window.location.href = "?redirect=register&source=authen";
             }
         }
     }
     let formData = new FormData(form);
-    xml.send(formData);
+    xmlhttp.send(formData);
 }

@@ -1,5 +1,5 @@
     <footer>
-        <div class="mobile-view">
+        <div class="mobile-view d-md-none">
             <div class="container-fluid">
                 <div class="px-3">
                     <nav class="navbar navbar-expand-lg w-100">

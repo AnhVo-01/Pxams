@@ -126,21 +126,26 @@
             <div class="row mb-6">
               <label class="col-lg-4 col-form-label required fw-bold fs-6">Full Name</label>
               <div class="col-lg-8 fv-row">
-                <input type="text" placeholder="First name" name="fName" value="Max" class="form-control form-control-solid mb-3 mb-lg-0">
+                <input type="text" placeholder="First name" name="fName" value="Max" class="form-control form-control-solid fw-bold mb-3 mb-lg-0">
               </div>
             </div>
-            <div class="row mb-6">
-              <label class="col-lg-4 col-form-label required fw-bold fs-6">Company</label>
-              <div class="col-lg-8 fv-row">
-                <input type="text" placeholder="Company name" name="company" value="Keenthemes" class="form-control form-control-solid">
-              </div>
-            </div>
+            
             <div class="row mb-6">
               <label class="col-lg-4 col-form-label fw-bold fs-6">
                 <span class="required">Contact Phone</span>
               </label>
               <div class="col-lg-8 fv-row">
-                <input type="tel" placeholder="Phone number" name="contactPhone" class="form-control form-control-solid">
+                <input type="tel" placeholder="Phone number" name="contactPhone" class="form-control form-control-solid fw-bold">
+              </div>
+            </div>
+
+            <div class="row mb-6">
+              <label class="col-lg-4 col-form-label required fw-bold fs-6">Account type</label>
+              <div class="col-lg-8 fv-row">
+                <select name="timeZone" class="form-select form-select-solid fw-bold">
+                  <option value="0">Student</option>
+                  <option value="1">Teacher</option>
+                </select>
               </div>
             </div>
             
@@ -150,7 +155,7 @@
               </label>
               <div class="col-lg-8 fv-row">
                 <select name="country" id="province" class="form-select form-select-solid fw-bold">
-                  <option value="">Select a Country...</option>
+                  
                 </select>
               </div>
             </div>
@@ -158,7 +163,7 @@
             <div class="row mb-6">
               <label class="col-lg-4 col-form-label required fw-bold fs-6">Time Zone</label>
               <div class="col-lg-8 fv-row">
-                <select name="timeZone" class="form-select form-select-solid">
+                <select name="timeZone" class="form-select form-select-solid fw-bold">
                   <option value="">Select a Timezone..</option>
                 </select>
               </div>
@@ -234,7 +239,7 @@
                   <div class="col-lg-4">
                     <div class="kt_signin_password_edit">
                       <label class="form-label fs-7 fw-bolder mb-3">New Password</label>
-                      <input type="password" name="newPassword" class="form-control form-control-solid" required>
+                      <input type="password" name="newPassword" class="form-control form-control-solid" onkeyup="CheckPassword(this)" required>
                     </div>
                   </div>
                   <div class="col-lg-4">

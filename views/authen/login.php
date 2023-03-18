@@ -36,7 +36,7 @@
                 }
             ?>
         
-            <form action="" id="LoginForm" onsubmit="do_login()">
+            <form action="#" id="LoginForm">
                 <!-- LoginForm ------------------------------------------------------------- -->
                 <div class="Set-pop">
                     <div class="options">
@@ -48,12 +48,12 @@
                     </div>
                     <div class="save-pass">
                         <label class="save-pass-container">Remember password
-                            <input type="checkbox" name="remember" <?php if(isset($_COOKIE["remember"]) > 0){ ?>checked<?php } ?>>
+                            <input type="checkbox" name="remember" <?php if(isset($_COOKIE["remember"]) > 0){ echo('checked'); } ?>>
                             <span class="checkmark"></span>
                         </label>
                     </div>
                     <div class="options">
-                        <button class="opt-btn" type="submit">Log In</button>
+                        <button class="opt-btn" type="submit" onclick="do_login()">Log In</button>
                     </div>
                     <div class="options">
                         <div class="auth-actions">

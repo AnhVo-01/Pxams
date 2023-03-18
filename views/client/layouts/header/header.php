@@ -17,6 +17,9 @@
     <!-- Latest compiled JavaScript -->
     <script src="assets/js/plugins/bootstrap.bundle.min.js"></script>
 
+    <link href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" rel="stylesheet"></link>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/footer.css">

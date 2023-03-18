@@ -64,8 +64,12 @@ function deleteSet(id, type) {
             }
         }
     }
-    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("action=toRecycleBin&ssID="+id+"&type="+type);
+}
+
+function logout() {
+    localStorage.removeItem("userInfo");
 }
 
 function getUrlParameter(sParam) {

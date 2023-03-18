@@ -30,9 +30,8 @@ const renderCalender = () =>{
         "December"
     ];
 
-    document.querySelector('.date h1').innerHTML = months[date.getMonth()];
-
-    document.querySelector('.date p').innerHTML = new Date().toDateString();
+    $(".date h1").html(months[date.getMonth()]);
+    $(".date p").html(new Date().toDateString())
 
     let days = "";
 
@@ -54,14 +53,14 @@ const renderCalender = () =>{
     monthDays.innerHTML = days;
 };
 
-document.querySelector('.prev').addEventListener("click",() =>{
+$(".prev").click(() => {
     date.setMonth(date.getMonth()-1);
     renderCalender();
-});
+})
 
-document.querySelector('.next').addEventListener('click',() =>{
+$(".next").click(() => {
     date.setMonth(date.getMonth()+1);
     renderCalender();
-});
+})
 
 renderCalender();

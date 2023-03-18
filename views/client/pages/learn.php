@@ -1,8 +1,10 @@
 <link rel="stylesheet" href="assets/css/learn.css">
 
 <!-- Main -->
-<div class="container" style="margin-bottom: 80px; margin-top: 2rem;">
-    <div class="flash-box"></div>
+<div class="container">
+    <div class="learn-content">
+        <div class="flash-box"></div>
+    </div>
 </div>
 
 <div class="checkpoint-ft" style="display: none;">
@@ -32,7 +34,7 @@
                     <div class="col-5 UIFieldset">
                         <span class="UIFieldset-legend">BACKGROUND</span>
                         <div class="UIFieldset-fields">
-                            <div class="toggle-switch">
+                            <div class="learn-bg-theme">
                                 <span class="UIToggle-option light">Light</span>
                                 <span class="UIToggle-option dark">Dark</span>
                             </div>

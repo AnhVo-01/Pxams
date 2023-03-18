@@ -276,9 +276,6 @@
                                     <a href="?redirect=profile">Profile</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#">Process</a>
-                                </li>
-                                <li class="nav-item">
                                     <div class="theme-setting">
                                         <a href="#mode" class="text nav-text">Dark mode</a>
                                         <div class="form-switch">
@@ -287,7 +284,7 @@
                                     </div>
                                 </li>
                                 <li class="nav-item nav-tabs">
-                                    <a href="#">Setting</a>
+                                    <a href="#">Premium<i class="fas fa-gem ms-2" style="color: gold;"></i></a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" id="myBtn">Refer a friend</a>
@@ -295,20 +292,11 @@
                                 <li class="nav-item">
                                     <a href="#">Help and feedback</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="#">Blog</a>
-                                </li>
-                                <li class="nav-item">
+                                <li class="nav-item nav-tabs">
                                     <a href="#">Privacy policy</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#">Premium<i class="fas fa-gem ms-2" style="color: gold;"></i></a>
-                                </li>
-                                <li class="nav-item nav-tabs">
-                                    <a href="#">App</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="controllers/LogoutController.php">
+                                    <a href="controllers/LogoutController.php" onclick="logout()">
                                         <span class="text nav-text">Log Out</span>
                                     </a>
                                 </li>

@@ -36,7 +36,7 @@ if (isset($_POST['visible']) && isset($_POST['editable']) && isset($_POST['statu
         $_SESSION['study_set_id'] = $studySet_id;
     
         // set study set for account
-        $stmt = $pdo->prepare('INSERT INTO `account_study_set`(account_id, owner_id, ss_id, date, type, active) VALUES (:accId, ownerId, :ssId, :date, :type, 1)');
+        $stmt = $pdo->prepare('INSERT INTO `account_study_set`(create_by, owner_id, ss_id, date, type, active) VALUES (:accId, ownerId, :ssId, :date, :type, 1)');
         $stmt->execute(
             array(
                 ':accId' => $_SESSION['account_id'],

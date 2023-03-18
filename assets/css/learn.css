@@ -58,6 +58,7 @@ header {
 .top-right {
     justify-content: flex-end;
     gap: 1.25rem;
+    flex-wrap: nowrap;
 }
 
 .top-right .btn {
@@ -124,7 +125,7 @@ header {
     padding: 0;
 }
 
-.toggle-switch {
+.learn-bg-theme {
     display: inline-flex;
     border: .125rem solid #d9dde8;
     border-radius: .25rem;
@@ -150,20 +151,26 @@ header {
 }
 
 .UIToggle-option:hover {
+    cursor: pointer;
     color: #ffcd1f;
 }
 
-.toggle-switch .light,
-.toggle-switch.dark-on .dark {
+.learn-bg-theme .light,
+.learn-bg-theme.dark-on .dark {
     color: #303545;
     background-color: #ffcd1f;
 }
 
-.toggle-switch.dark-on .light {
+.learn-bg-theme.dark-on .light {
     color: #20d489;
     background-color: var(--drop-down);
 }
 /* ---------------------------- Main ----------------------------- */
+.learn-content {
+    margin-top: 2rem;
+    margin-bottom: 80px; 
+}
+
 .flash-box{
     position: relative;
     display: flex;
@@ -200,6 +207,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 1.5rem;
 }
 .flash-card-body .question{
     font-size: 18px;
@@ -290,4 +298,8 @@ header {
     color: var(--text-color1);
     font-weight: 900;
     font-size: 14px;
+}
+
+.mobile-view {
+    display: none;
 }

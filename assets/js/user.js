@@ -6,7 +6,7 @@ $(document).ready(() => {
                 myObj = JSON.parse(xmlhttp.response);
 
                 console.log(JSON.parse(xmlhttp.response));
-                let text = "";
+                let text = '<option value="">Select a Country...</option>';
                 for (let x in myObj) {
                     text += "<option>" + myObj[x].name + "</option>";
                 }
@@ -16,6 +16,15 @@ $(document).ready(() => {
     };
     xmlhttp.send();
 });
+
+function CheckPassword(inputtxt) {
+    var paswd = /^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,32}$/;
+    if (inputtxt.value.match(paswd)) {
+        $(inputtxt).css("border-color", "#20d489");
+    } else {
+        $(inputtxt).css("border-color", "#f00");
+    }
+}
 
 function changeEmail() {
     $(".kt_signin_email").toggleClass("active");
