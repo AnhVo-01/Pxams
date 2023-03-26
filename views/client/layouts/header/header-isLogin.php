@@ -219,16 +219,13 @@
 
                 <div class="col-lg-4 col-md-10">
                     <nav class="navbar" id="user_box">
-                        <ul class="nav top-right">
-                            <li class="nav-item search-box">
-                                <form action="Search" method="POST">
-                                    <i class="fas fa-magnifying-glass fa-lg icon"></i>
-                                    <input type="text" placeholder="Search...">
-                                </form>
-                            </li>
-                            <li class="nav-item">
+                        <div class="top-right gap-5">
+                            <div class="search-box">
+                                <input type="text" placeholder="Search...">
+                            </div>
+                            <div class="d-flex align-items-center gap-5">
                                 <div class="dropdown">
-                                    <a href="#" class="rounded-circle top-noti" data-bs-toggle="dropdown">
+                                    <a href="#" class="rounded-circle top-noti text-light" data-bs-toggle="dropdown">
                                         <span class="badge-num bg-primary">3</span>
                                         <i class="far fa-bell"></i>
                                     </a>
@@ -249,18 +246,12 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
-                            <li class="nav-item">
                                 <a href="#" data-bs-toggle="collapse" data-bs-target="#setting">
-                                    <img alt="Ảnh hồ sơ" class="rounded-circle" src="assets/image/3.png" height="32" width="32">
+                                    <img alt="Ảnh hồ sơ" class="rounded-circle" src="assets/image/3.png" height="37" width="37">
                                 </a>
-                            </li>
-                            <li class="nav-item">
-                                <button class="menu-toggle">
-                                    <i class="far fa-bars"></i>
-                                </button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
+                        
                         <div class="dropdown-ls collapse" id="setting">
                             <ul class="nav flex-column">
                                 <li class="nav-item nav-tabs">

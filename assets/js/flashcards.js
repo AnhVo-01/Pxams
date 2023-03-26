@@ -3,17 +3,19 @@ var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     grabCursor: true,
     centeredSlides: true,
+    allowTouchMove: true,
     breakpoints: {
+        992: {
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                type: "fraction",
+            },
+        },
         320: {
             pagination: {
                 el: ".swiper-pagination",
                 dynamicBullets: true,
-            },
-        },
-        992: {
-            pagination: {
-                el: ".swiper-pagination",
-                type: "fraction",
             },
         },
     },

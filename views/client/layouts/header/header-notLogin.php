@@ -126,20 +126,15 @@
 
                 <div class="col-lg-5">
                     <nav class="navbar" id="user_box">
-                        <ul class="nav top-right">
-                            <li class="nav-item search-box" style="width: 70%;">
-                                <form action="Search" method="POST">
-                                    <i class="fas fa-magnifying-glass fa-lg icon"></i>
-                                    <input type="text" placeholder="Search...">
-                                </form>
-                            </li>
-                            <li class="nav-item">
-                                <a href="?redirect=login&source=authen" class="btn btn-light" style="color: #000; padding: 0.27rem 0.75rem;">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="?redirect=register&source=authen" class="btn btn-warning" style="color: #000; padding: 0.27rem 0.75rem;">Sign up</a>
-                            </li>
-                        </ul>
+                        <div class="top-right">
+                            <div class="search-box">
+                                <input type="text" placeholder="Search...">
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <a href="?redirect=login&source=authen" class="btn btn-light bg-light">Login</a>
+                                <a href="?redirect=register&source=authen" class="btn btn-warning" style="width: 90px">Sign up</a>
+                            </div>
+                        </div>
                     </nav>
                 </div>
             </div>

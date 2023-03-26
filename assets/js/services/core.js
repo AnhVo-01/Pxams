@@ -26,7 +26,7 @@ function editStudySet(id) {
     xmlhttp.onload = function() {
         if (xmlhttp.readyState === XMLHttpRequest.DONE) {
             if (xmlhttp.status === 200) {
-                window.location.href = '?redirect=studyset';
+                window.location.href = '?redirect=studyset&activity=edit';
             }
         }
     }

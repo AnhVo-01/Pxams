@@ -18,7 +18,13 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
                 <span class="text-muted"><small><?=htmlentities($ssDetails['udate'])?></small></span>
             </div>
             <div class="d-none d-lg-block">
-                <button type="button" class="btn btn-primary" onclick="createStudySet()">Create</button>
+            <?php
+                if ($_GET['activity'] == 'edit') {
+                    echo('<a href="?redirect=flashcard&id='.$_SESSION['study_set_id'].'" class="btn btn-primary">Save</a>');
+                } else {
+                    echo('<button type="button" class="btn btn-primary" onclick="createStudySet('.$_SESSION['study_set_id'].')">Create</button>');
+                }
+            ?>
             </div>
         </div>
 
@@ -190,7 +196,13 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
         </div>
 
         <div class="cards-control">
-            <button type="button" class="btn btn-primary" style="padding: 0.75rem 2rem;" onclick="createStudySet(<?= $_SESSION['study_set_id'] ?>)">Create</button>
+            <?php
+                if ($_GET['activity'] == 'edit') {
+                    echo('<a href="?redirect=flashcard&id='.$_SESSION['study_set_id'].'" class="btn btn-primary" style="padding: 0.75rem 2rem;">Save</a>');
+                } else {
+                    echo('<button type="button" class="btn btn-primary" style="padding: 0.75rem 2rem;" onclick="createStudySet('.$_SESSION['study_set_id'].')">Create</button>');
+                }
+            ?>
         </div>
         <script src="assets/js/studyset.js"></script>
         <script src="assets/js/services/StudySetService.js"></script>

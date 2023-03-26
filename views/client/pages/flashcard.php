@@ -90,7 +90,7 @@ $listQuestion = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <?php
                             if ($studyset['type'] == 'OWNED') {
                                 echo ('<li class="mx-2">');
-                                echo ('<button class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">');
+                                echo ('<button class="nav-item" onclick="editStudySet('.$_GET['id'].')" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">');
                                 echo ('<i class="fas fa-pen"></i>');
                                 echo ('</button>');
                                 echo ('</li>');
@@ -137,7 +137,7 @@ $listQuestion = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         </button>
                                     </li>
                                     <li>
-                                        <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#confirm" onclick="deleteSet(<?= $studyset['ssid'] ?>);">
+                                        <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#confirm" onclick="setDataForDel(<?= $studyset['ssid'] ?>, 1);">
                                             <i class="far fa-trash"></i>
                                             <span>Delete</span>
                                         </button>

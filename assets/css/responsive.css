@@ -17,9 +17,6 @@
         position: absolute;
     }
 
-    .nav-item:has(.menu-toggle) {
-        display: block;
-    }
     .subnav {
         max-width: 245px;
     }
@@ -72,9 +69,6 @@
     }
     .card-option ul.options {
         padding-left: 0.5rem !important;
-    }
-    .card-option .question{
-        border-bottom: 2px solid #f6f7fb;
     }
     .cards-control-menu{
         display: none !important;

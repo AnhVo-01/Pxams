@@ -61,10 +61,16 @@ function getDashboardFeed($pdo, $uid, $month, $year) {
             echo('</div>');
             echo('<div class="SetPreviewTitle">');
             echo('<span>'.$set['title'].'</span>');
+            if($set['visible_to'] == 1) {
+                echo('<i class="far fa-user-friends"></i>');
+            } else if ($set['visible_to'] == 2 || $set['visible_to'] == 3) {
+                echo('<i class="far fa-lock-alt"></i>');
+            }
             echo('</div></div></div>');
             echo('<ul class="ss-menu" id="menu-'.htmlentities($set['ssid']).'">');
             if ($set['type'] == 'OWNED') {
                 $type = 1;
+                echo('<li><button class="btn menu-item" onclick="editStudySet('.$set['ssid'].');"><i class="fas fa-pen"></i>Edit</button></li>');
             } else {
                 $type = 0;
             }
