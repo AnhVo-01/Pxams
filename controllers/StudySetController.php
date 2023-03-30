@@ -1,12 +1,13 @@
 <?php
 require_once '../util/pdo.php';
+require_once '../util/util.php';
 require_once '../util/StudySet.php';
 
 session_start();
 
 // ----- Create a study set --------------------
 if (isset($_POST['visible']) && isset($_POST['editable']) && isset($_POST['status'])) {
-    
+
     // Check already draft
     $stmt = $pdo->prepare("SELECT owner_id, s.ssid, type, s.status FROM `account_study_set` AS ass 
                         INNER JOIN `study_set` AS s 
@@ -31,10 +32,10 @@ if (isset($_POST['visible']) && isset($_POST['editable']) && isset($_POST['statu
                 ':editable' => $_POST['editable']
             )
         );
-    
+
         $studySet_id = $pdo->lastInsertId();
         $_SESSION['study_set_id'] = $studySet_id;
-    
+
         // set study set for account
         $stmt = $pdo->prepare('INSERT INTO `account_study_set`(create_by, owner_id, ss_id, date, type, active) VALUES (:accId, ownerId, :ssId, :date, :type, 1)');
         $stmt->execute(
@@ -46,7 +47,7 @@ if (isset($_POST['visible']) && isset($_POST['editable']) && isset($_POST['statu
                 ':ssId' => $studySet_id
             )
         );
-    
+
         insertQuestion($pdo, $studySet_id);
     }
 
@@ -55,15 +56,15 @@ if (isset($_POST['visible']) && isset($_POST['editable']) && isset($_POST['statu
 
 // ----- Set title/description for study set --------------------
 if (isset($_POST['title']) && isset($_POST['desc'])) {
-    if(empty($_POST['title']) && empty($_POST['desc'])) {
+    if (empty($_POST['title']) && empty($_POST['desc'])) {
         $status = 'DRAFT';
         $title = NULL;
         $desc = NULL;
-    } elseif(empty($_POST['title'])) {
+    } elseif (empty($_POST['title'])) {
         $status = 'INPROGRESS';
         $title = NULL;
         $desc = $_POST['desc'];
-    } elseif(empty($_POST['desc'])) {
+    } elseif (empty($_POST['desc'])) {
         $status = 'INPROGRESS';
         $title = $_POST['title'];
         $desc = NULL;
@@ -92,10 +93,10 @@ if (isset($_POST['visible']) && isset($_POST['editable']) && isset($_POST['visib
     } else {
         $visible_pass = NULL;
     }
-    
+
     if ($_POST['editable'] == 0) {
         $editable_pass = $_POST['editable_pass'];
-    }else {
+    } else {
         $editable_pass = NULL;
     }
 
@@ -138,9 +139,7 @@ if (isset($_POST['type']) && isset($_POST['question_id'])) {
 
 // ----- Add more option / Delete question --------------------
 if (isset($_POST['action']) && isset($_POST['question_id'])) {
-    if ($_POST['action'] == 'addOption') {
-        createOption($pdo, $_POST['question_id']);
-    } elseif($_POST['action'] == 'delete') {
+    if ($_POST['action'] == 'delete') {
         $stmt = $pdo->prepare('DELETE FROM `question_table` WHERE question_id =:questionId');
         $stmt->execute(
             array(
@@ -163,14 +162,14 @@ if (isset($_POST['action']) && isset($_POST['question_id'])) {
         $stmt->execute(array(':qid' => $_POST['question_id']));
         $count = $stmt->rowCount();
 
-        for($i = 1; $i <= $count; $i++) {
-            if($_POST['answer'.$i] == 'on'){
+        for ($i = 1; $i <= $count; $i++) {
+            if ($_POST['answer' . $i] == 'on') {
                 $answer = 1;
             } else {
                 $answer = 0;
             }
-            $optionId = $_POST['option_id'.$i];
-    
+            $optionId = $_POST['option_id' . $i];
+
             $stmt = $pdo->prepare('UPDATE `option_table` SET `answer`=:ans WHERE option_id=:optionId');
             $stmt->execute(
                 array(
@@ -179,7 +178,7 @@ if (isset($_POST['action']) && isset($_POST['question_id'])) {
                 )
             );
         }
-    
+
         exit();
     }
 
@@ -196,14 +195,41 @@ if (isset($_POST['action']) && isset($_POST['question_id'])) {
                                 WHERE ssid =:ssId AND (qt.question IS NULL OR ot.option_title IS NULL)');
         $stmt->execute(array(':ssId' => $_SESSION['study_set_id']));
         $emptyCount = $stmt->rowCount();
-        
-        if($emptyCount < 1) {
+
+        if ($emptyCount < 1) {
             $stmt = $pdo->prepare("UPDATE `study_set` SET `status` = 'ACTIVE' WHERE ssid=:ssId");
             $stmt->execute(array(':ssId' => $_SESSION['study_set_id']));
         } else {
-            echo('toast');
+            echo ('toast');
             $_SESSION['toast'] = "Empty";
             return;
+        }
+    } elseif ($_POST['action'] === 'importTerm') {
+        $import = preg_split("/\r\n|\n|\r/", $_POST['inputT']);
+
+        for ($i = 0; $i < sizeof($import); $i++) {
+            if ($import[$i] === '') continue;
+
+            if (preg_match("/[A-Za-z0-9]*([.])/", $import[$i]) == 0) {
+                $stmt = $pdo->prepare('INSERT INTO `question_table`(`type`, `question`, `ssid`) VALUES (0, :qTitle, :ssId)');
+                $stmt->execute(
+                    array(
+                        ':qTitle' => $import[$i],
+                        ':ssId' => $_SESSION['study_set_id']
+                    )
+                );
+
+                $_SESSION['qId_in_this'] = $pdo->lastInsertId();
+            } elseif (isset($_SESSION['qId_in_this'])) {
+                $optionIm = trim(substr($import[$i], 2));
+                $stmt = $pdo->prepare('INSERT INTO `option_table` (question_id, option_title) VALUES (:qId, :optionTitle)');
+                $stmt->execute(
+                    array(
+                        ':optionTitle' => $optionIm,
+                        ':qId' => $_SESSION['qId_in_this']
+                    )
+                );
+            }
         }
     }
 
@@ -211,15 +237,26 @@ if (isset($_POST['action']) && isset($_POST['question_id'])) {
 }
 
 // ----- Update option ----------------------
-if (isset($_POST['optionTitle']) && isset($_POST['option_id'])) {
+if (isset($_POST['optionTitle']) && isset($_POST['option_id']) && isset($_POST['question_id'])) {
 
-    $stmt = $pdo->prepare('UPDATE `option_table` SET option_title=:optionTitle WHERE option_id=:optionId');
-    $stmt->execute(
-        array(
-            ':optionTitle' => $_POST['optionTitle'],
-            ':optionId' => $_POST['option_id']
-        )
-    );
+    if ($_POST['option_id'] == $_POST['question_id']) {
+        $stmt = $pdo->prepare('INSERT INTO `option_table` (question_id, option_title) VALUES (:qId, :optionTitle)');
+        $stmt->execute(
+            array(
+                ':optionTitle' => trim($_POST['optionTitle']),
+                ':qId' => $_POST['question_id']
+            )
+        );
+    } else {
+        $stmt = $pdo->prepare('UPDATE `option_table` SET option_title=:optionTitle WHERE option_id=:optionId AND question_id=:qid');
+        $stmt->execute(
+            array(
+                ':optionTitle' => $_POST['optionTitle'],
+                ':optionId' => $_POST['option_id'],
+                ':qid' => $_POST['question_id']
+            )
+        );
+    }
 
     exit();
 }

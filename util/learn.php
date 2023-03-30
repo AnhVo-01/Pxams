@@ -33,7 +33,7 @@ function flashBox($pdo, $listQuestion, $progress, $total) {
     }
 
     echo('<div class="in-progress">');
-    echo('<h3>Tốt lắm, bạn đang tiến bộ đấy.</h3>');
+    echo('<h3>Going strong, you can do this.</h3>');
     echo('<div class="d-flex flex-column mt-4">');
     echo('<span><small>');
     echo($progress.' / '. $total . ' questions');

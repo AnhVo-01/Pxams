@@ -71,19 +71,19 @@ function reloadOption($pdo, $listQuestion) {
         $listOption = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $count = $stmt->rowCount();
 
-        echo('<ul class="option_details">');
-        foreach($listOption as $option) {
-            echo('<li>');
+        echo('<ul class="option_details" id="option_details_'.htmlentities($question['question_id']).'">');
+        for ($i = 0; $i < sizeof($listOption); $i++) {
+            echo('<li id="op'.htmlentities($question['question_id']).$i.'">');
             if ($question['type'] == 1) {
                 echo('<i class="far fa-square"></i>');
             } else {
                 echo('<i class="far fa-circle"></i>');
             }
             echo('<div class="d-flex w-100">');
-            echo('<input type="text" placeholder="Enter option" onchange="setOption(this)" id="'.htmlentities($option['option_id']).'" value="'.htmlentities($option['option_title']).'">');
+            echo('<input type="text" placeholder="Enter option" onchange="setOption(this, '.htmlentities($question['question_id']).')" id="'.htmlentities($listOption[$i]['option_id']).'" value="'.htmlentities($listOption[$i]['option_title']).'">');
 
             if($count > 1) {
-                echo('<button class="btn" style="color: var(--text-color1);" onclick="deleteOption('.htmlentities($option['option_id']).')"><i class="fa fa-times"></i></button>');
+                echo('<button class="btn" style="color: var(--text-color1);" onclick="deleteOption('.htmlentities($question['question_id']).', '.htmlentities($listOption[$i]['option_id']).')"><i class="fa fa-times"></i></button>');
             }
             echo('</div></li>');
         }
@@ -91,7 +91,7 @@ function reloadOption($pdo, $listQuestion) {
         if($count < 10) {
             echo('<div class="add_option">');
             echo('<i class="far fa-plus"></i>');
-            echo('<button type="button" class="btn" onclick="addMoreOption('.htmlentities($question['question_id']).')">More option</button>');
+            echo('<button type="button" class="btn" onclick="addMoreOption('.$count.', '.$question['type'].', '.htmlentities($question['question_id']).')">More option</button>');
             echo('</div>');
         }else{
             echo('<span>Maximum of nine option entries reached</span>');

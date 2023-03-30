@@ -10,6 +10,11 @@ function flashMessage() {
     }
 }
 
+function startsWith ($string, $startString) {
+    $len = strlen($startString);
+    return (substr($string, 0, $len) === $startString);
+}
+
 // a bit of utility code
 function validateProfile() {
     if( strlen($_POST['first_name']) == 0 || strlen($_POST['last_name']) == 0 ||

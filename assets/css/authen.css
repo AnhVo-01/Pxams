@@ -30,7 +30,7 @@ a:hover {
     background: var(--drop-down);
     width: 50vw;
     max-width: 600px;
-    height: 100%;
+    height: fit-content;
     max-height: 89vh;
     overflow: auto;
     top: 50%;

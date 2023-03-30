@@ -1,21 +1,39 @@
 $(document).ready(() => {
-    $('.set-body').load('util/option.php');
+    $(".set-body").load("util/option.php");
 });
 
 function cancelSA() {
-    $('.set-body').load('util/option.php');
+    $(".set-body").load("util/option.php");
 }
 
 function report() {
-    $('#study-set-report').load('views/client/layouts/feedback-modal.php');
+    $("#study-set-report").load("views/client/layouts/feedback-modal.php");
 }
+
+function openImportTerm() {
+    $(".ImportTerms").toggleClass("active");
+}
+
+$(".import-textarea").bind("keydown", function (e) {
+    if (e.key == "Tab") {
+        e.preventDefault();
+        var start = this.selectionStart;
+        var end = this.selectionEnd;
+
+        // set textarea value to: text before caret + tab + text after caret
+        this.value = this.value.substring(0, start) + "\t" + this.value.substring(end);
+
+        // put caret at right position again
+        this.selectionStart = this.selectionEnd = start + 1;
+    }
+});
 
 // ----- Auto resize textarea ------------------------------------
 function expandtext(text) {
     if (text.scrollHeight > text.clientHeight) {
         text.style.height = text.scrollHeight + "px";
     } else {
-        text.style.height = text.scrollHeight +"px";
+        text.style.height = text.scrollHeight + "px";
     }
 }
 

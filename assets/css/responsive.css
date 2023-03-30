@@ -87,6 +87,7 @@
     .Login-box{
         width: 97vw !important;
         max-height: 98vh !important;
+        height: 100% !important;
         background: transparent !important;
     }
     .third-log a {

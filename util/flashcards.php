@@ -6,7 +6,7 @@ function showFlashCard($pdo, $list) {
         echo('<div class="flip-card">');
         echo('<div class="flip-card-inner">');
         echo('<div class="flip-card-front qa">');
-        echo('<div class="question">'.htmlentities($list[$i]['question']).'</div>');
+        echo('<div class="question">'.$list[$i]['question'].'</div>');
         echo('<br>');
 
         $questionId = htmlentities($list[$i]['question_id']);

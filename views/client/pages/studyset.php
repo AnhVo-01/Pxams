@@ -1,4 +1,4 @@
-<?php 
+<?php
 $stmt = $pdo->prepare('SELECT * FROM `study_set` WHERE ssid = :ssId');
 $stmt->execute(array(':ssId' => $_SESSION['study_set_id']));
 $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -15,29 +15,29 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
             <div class="d-flex flex-column">
                 <h5>Create a new study set</h5>
                 <!-- <span class="text-muted"><small>Saved 4 min ago</small></span> -->
-                <span class="text-muted"><small><?=htmlentities($ssDetails['udate'])?></small></span>
+                <span class="text-muted"><small><?= htmlentities($ssDetails['udate']) ?></small></span>
             </div>
             <div class="d-none d-lg-block">
-            <?php
-                if ($_GET['activity'] == 'edit') {
-                    echo('<a href="?redirect=flashcard&id='.$_SESSION['study_set_id'].'" class="btn btn-primary">Save</a>');
+                <?php
+                if (isset($_GET['activity']) && $_GET['activity'] == 'edit') {
+                    echo ('<a href="?redirect=flashcard&id=' . $_SESSION['study_set_id'] . '" class="btn btn-primary">Save</a>');
                 } else {
-                    echo('<button type="button" class="btn btn-primary" onclick="createStudySet('.$_SESSION['study_set_id'].')">Create</button>');
+                    echo ('<button type="button" class="btn btn-primary" onclick="createStudySet(' . $_SESSION['study_set_id'] . ')">Create</button>');
                 }
-            ?>
+                ?>
             </div>
         </div>
 
         <div class="set-header">
             <div class="d-flex flex-column my-3">
                 <span>Title</span>
-                <input type="text" id="titleVal" placeholder="Enter a title" value="<?=htmlentities($ssDetails['title'])?>" onchange="setTitle(this)">
+                <input type="text" id="titleVal" placeholder="Enter a title" value="<?= htmlentities($ssDetails['title']) ?>" onchange="setTitle(this)">
             </div>
             <div class="d-flex flex-column my-3">
                 <span>Description</span>
-                <input type="text" id="descVal" placeholder="Add a description..." value="<?=htmlentities($ssDetails['description'])?>" onchange="setDescription(this)">
+                <input type="text" id="descVal" placeholder="Add a description..." value="<?= htmlentities($ssDetails['description']) ?>" onchange="setDescription(this)">
             </div>
-            
+
             <div class="cards-control">
                 <ul class="nav">
                     <li class="mx-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Setting">
@@ -45,8 +45,8 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
                             <i class="fas fa-cog fa-lg"></i>
                         </button>
                     </li>
-                    <li class="mx-2">
-                        <button class="nav-item" id="flip-qna" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Import">
+                    <li class="mx-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Import">
+                        <button class="nav-item" onclick="openImportTerm()">
                             <i class="fas fa-file-import"></i>
                         </button>
                     </li>
@@ -73,59 +73,59 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
                                         <div class="d-flex flex-column">
                                             <span class="mb-2"><small>VISIBLE TO</small></span>
                                             <select name="visible" class="select-menu">
-                                                <option value="0" <?=htmlentities($ssDetails['visible_to']) == 0 ? 'selected' : '' ?>>Everyone</option>
-                                                <option value="1" <?=htmlentities($ssDetails['visible_to']) == 1 ? 'selected' : '' ?>>Certain Classes</option>
-                                                <option value="2" <?=htmlentities($ssDetails['visible_to']) == 2 ? 'selected' : '' ?>>User with a password</option>
-                                                <option value="3" <?=htmlentities($ssDetails['visible_to']) == 3 ? 'selected' : '' ?>>Just me</option>
+                                                <option value="0" <?= htmlentities($ssDetails['visible_to']) == 0 ? 'selected' : '' ?>>Everyone</option>
+                                                <option value="1" <?= htmlentities($ssDetails['visible_to']) == 1 ? 'selected' : '' ?>>Certain Classes</option>
+                                                <option value="2" <?= htmlentities($ssDetails['visible_to']) == 2 ? 'selected' : '' ?>>User with a password</option>
+                                                <option value="3" <?= htmlentities($ssDetails['visible_to']) == 3 ? 'selected' : '' ?>>Just me</option>
                                             </select>
                                             <span class="des-text">
-                                            <?php 
-                                            if (htmlentities($ssDetails['visible_to']) == 1) {
-                                                echo('All members in the class can use this set');
-                                            } else if (htmlentities($ssDetails['visible_to']) == 2) {
-                                                echo('Only people with this password can use this set');
-                                            } else if (htmlentities($ssDetails['visible_to']) == 3) {
-                                                echo('Only you can view this set');
-                                            } else {
-                                                echo('All users can use this set');
-                                            }
-                                            ?>
+                                                <?php
+                                                if (htmlentities($ssDetails['visible_to']) == 1) {
+                                                    echo ('All members in the class can use this set');
+                                                } else if (htmlentities($ssDetails['visible_to']) == 2) {
+                                                    echo ('Only people with this password can use this set');
+                                                } else if (htmlentities($ssDetails['visible_to']) == 3) {
+                                                    echo ('Only you can view this set');
+                                                } else {
+                                                    echo ('All users can use this set');
+                                                }
+                                                ?>
                                             </span>
                                         </div>
                                         <div class="set-pass">
-                                            <input type="password" name="visible_pass" class="select-menu" value="<?=htmlentities($ssDetails['visible_pass'])?>" placeholder="Create a password">
+                                            <input type="password" name="visible_pass" class="select-menu" value="<?= htmlentities($ssDetails['visible_pass']) ?>" placeholder="Create a password">
                                             <span class="mt-2"><small>PASSWORD</small></span>
                                         </div>
                                     </div>
                                     <div class="col-md-6 my-3">
                                         <div class="d-flex flex-column">
                                             <span class="mb-2"><small>EDITABLE BY</small></span>
-                                            <?php 
-                                                echo('<select name="editable" class="select-menu">');
-                                                if (htmlentities($ssDetails['visible_to']) != 3) {
-                                                    if (htmlentities($ssDetails['editable_by']) == 0) {
-                                                        echo('<option value="0" id="justme" selected>Users with a password</option>');
-                                                        echo('<option value="1">Just me</option>');
-                                                    } else {
-                                                        echo('<option value="0" id="justme">Users with a password</option>');
-                                                        echo('<option value="1" selected>Just me</option>');
-                                                    }
+                                            <?php
+                                            echo ('<select name="editable" class="select-menu">');
+                                            if (htmlentities($ssDetails['visible_to']) != 3) {
+                                                if (htmlentities($ssDetails['editable_by']) == 0) {
+                                                    echo ('<option value="0" id="justme" selected>Users with a password</option>');
+                                                    echo ('<option value="1">Just me</option>');
                                                 } else {
-                                                    echo('<option value="1" selected>Just me</option>');
+                                                    echo ('<option value="0" id="justme">Users with a password</option>');
+                                                    echo ('<option value="1" selected>Just me</option>');
                                                 }
-                                                
-                                                echo('</select>');
-                                                echo('<span class="des-text">');
-                                                if (htmlentities($ssDetails['editable_by']) == 1 ) {
-                                                    echo('Only you can edit this set');
-                                                } else {
-                                                    echo('Only people with this password can edit this set');
-                                                }
-                                                echo('</span>');
+                                            } else {
+                                                echo ('<option value="1" selected>Just me</option>');
+                                            }
+
+                                            echo ('</select>');
+                                            echo ('<span class="des-text">');
+                                            if (htmlentities($ssDetails['editable_by']) == 1) {
+                                                echo ('Only you can edit this set');
+                                            } else {
+                                                echo ('Only people with this password can edit this set');
+                                            }
+                                            echo ('</span>');
                                             ?>
                                         </div>
                                         <div class="set-pass">
-                                            <input type="password" name="editable_pass" class="select-menu" value="<?=htmlentities($ssDetails['editable_pass'])?>" placeholder="Create a password">
+                                            <input type="password" name="editable_pass" class="select-menu" value="<?= htmlentities($ssDetails['editable_pass']) ?>" placeholder="Create a password">
                                             <span class="mt-2"><small>PASSWORD</small></span>
                                         </div>
                                     </div>
@@ -197,14 +197,52 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
 
         <div class="cards-control">
             <?php
-                if ($_GET['activity'] == 'edit') {
-                    echo('<a href="?redirect=flashcard&id='.$_SESSION['study_set_id'].'" class="btn btn-primary" style="padding: 0.75rem 2rem;">Save</a>');
-                } else {
-                    echo('<button type="button" class="btn btn-primary" style="padding: 0.75rem 2rem;" onclick="createStudySet('.$_SESSION['study_set_id'].')">Create</button>');
-                }
+            if ($_GET['activity'] == 'edit') {
+                echo ('<a href="?redirect=flashcard&id=' . $_SESSION['study_set_id'] . '" class="btn btn-primary" style="padding: 0.75rem 2rem;">Save</a>');
+            } else {
+                echo ('<button type="button" class="btn btn-primary" style="padding: 0.75rem 2rem;" onclick="createStudySet(' . $_SESSION['study_set_id'] . ')">Create</button>');
+            }
             ?>
         </div>
-        <script src="assets/js/studyset.js"></script>
-        <script src="assets/js/services/StudySetService.js"></script>
     </div>
 </div>
+
+<div class="ImportTerms">
+    <div class="container">
+        <div class="cancel mb-8">
+            <button type="button" class="btn" onclick="openImportTerm()">Cancel Import</button>
+        </div>
+        <div class="d-flex align-items-center">
+            <span class="fw-bolder">Import your data.&nbsp;</span>
+            <span>Copy and Paste your data here (from Word, Excel, Google Docs, etc.)</span>
+        </div>
+        <form id="import-term">
+            <input type="hidden" name="action" value="importTerm">
+            <textarea class="import-textarea" name="inputT" placeholder="Question1   Answer1
+Option 1
+Option 2
+
+Question2   Answer2
+Option 1
+Option 2"></textarea>
+            <div class="ImportBtn">
+                <button type="button" class="btn btn-success" onclick="importTerms()">
+                    Import
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="import-terms-preview">
+        <div class="container">
+            <h5 class="fw-bolder">Preview</h5>
+            <div class="ImportTerms-previewRows">
+                <p>Nothing to preview yet.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="assets/js/studyset.js"></script>
+<script src="assets/js/services/StudySetService.js"></script>
