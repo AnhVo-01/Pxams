@@ -12,7 +12,7 @@
 	}
 
 	if (isset($_SESSION['account_id'])) {
-		require_once('views/client/pages/' . $path . '.php');
+		require_once("views/client/pages/$path.php");
 	} elseif(isset($_GET['source'])) {
 	    $source = $_GET['source'];
 		require_once("views/$source/$path.php");

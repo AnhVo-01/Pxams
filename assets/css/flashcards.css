@@ -179,18 +179,13 @@
 /*------------------------- card-content -------------------------*/
 .add-to {
     position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
+    z-index: 1081;
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.7);
-    /* Black w/ opacity */
     transition: all ease-in-out 0.2s;
 }
 

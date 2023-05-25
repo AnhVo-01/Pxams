@@ -34,7 +34,7 @@ function reloadOption($pdo, $listQuestion) {
 
         echo('<div class="card-header">');
         echo('<ul class="nav card-menu">');
-        echo('<li><a href="#" class="btn remove-btn"><i class="fas fa-trash"></i></a></li>');
+        echo('<li><a href="javascript:void(0);" class="btn remove-btn" onclick="deleteQuestion('.htmlentities($question['question_id']).')"><i class="fas fa-trash"></i></a></li>');
         echo('<li><a href="#" class="btn moveBtn" style="cursor: all-scroll;"><i class="fas fa-grip-lines fa-lg"></i></a></li>');
         echo('</ul>');
         echo('</div>');

@@ -224,15 +224,13 @@ nav.navbar ul.nav li a {
 /* ------------------ sub-nav ------------------ */
 .subnav {
     position: absolute;
-    overflow: hidden;
     display: none;
     width: 300px;
-    max-height: 345px;
-    height: auto;
     top: 0;
     left: 162px;
     border-radius: 0.25rem;
     background-color: var(--drop-down);
+    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.15);
 }
 
 .subnav ul {
@@ -241,17 +239,16 @@ nav.navbar ul.nav li a {
 }
 
 .subnav .all {
-    position: absolute;
-    border-top: 1px solid var(--text-color1);
+    position: sticky;
     padding: 6px 0;
-    bottom: 0;
-    width: 100%;
+    border-radius: 0 0 0.25rem 0.25rem;
+    border-top: 1px solid var(--text-color1);
     background-color: var(--drop-down);
 }
 
 .subnav .subnav-content {
     position: relative;
-    height: 300px;
+    max-height: 300px;
     overflow: auto;
 }
 
@@ -320,6 +317,7 @@ nav.navbar ul.nav li a {
     color: var(--text-color1);
     padding: 0.475rem 0;
     width: 100%;
+    line-height: 1.4;
 }
 
 .search-box input:focus {

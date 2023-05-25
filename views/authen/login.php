@@ -53,7 +53,7 @@
                         </label>
                     </div>
                     <div class="options">
-                        <button class="opt-btn" type="submit" onclick="do_login()">Log In</button>
+                        <button class="opt-btn" type="button" onclick="do_login()">Log In</button>
                     </div>
                     <div class="options">
                         <div class="auth-actions">

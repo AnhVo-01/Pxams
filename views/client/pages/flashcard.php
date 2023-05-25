@@ -53,7 +53,7 @@ $listQuestion = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <div class="d-flex align-items-center">
                         <span class="mx-2">| Terms in this set</span>
-                        <span id="total"></span>
+                        <span>(<?= sizeof($listQuestion) ?>)</span>
                     </div>
                 </div>
                 <div class="option">
@@ -67,10 +67,6 @@ $listQuestion = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="option">
                     <i class="fas fa-file-alt"></i>
                     <span>Test</span>
-                </div>
-                <div class="option">
-                    <i class="fas fa-link"></i>
-                    <span>Match</span>
                 </div>
             </div>
         </div>

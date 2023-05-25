@@ -132,6 +132,7 @@
 
 .Feed-title {
     display: flex;
+    margin-top: 2rem;
     padding-bottom: 1rem;
     color: var(--text-color1);
     font-size: .75rem;

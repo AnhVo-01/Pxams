@@ -24,31 +24,31 @@ if (isset($_POST['visible']) && isset($_POST['editable']) && isset($_POST['statu
         $_SESSION['study_set_id'] = $hadDraft['ssid'];
     } else {
         // new study set
-        $stmt = $pdo->prepare('INSERT INTO `study_set`(status, visible_to, editable_by) VALUES (:status, :visible, :editable)');
+        $stmt = $pdo->prepare('INSERT INTO `study_set`(cdate, status, visible_to, editable_by) VALUES (:cdate, :status, :visible, :editable)');
         $stmt->execute(
             array(
+                ':cdate' => date("Y-m-d H:i:s"),
                 ':status' => $_POST['status'],
                 ':visible' => $_POST['visible'],
                 ':editable' => $_POST['editable']
             )
         );
 
-        $studySet_id = $pdo->lastInsertId();
-        $_SESSION['study_set_id'] = $studySet_id;
+        $_SESSION['study_set_id'] = $pdo->lastInsertId();
 
         // set study set for account
-        $stmt = $pdo->prepare('INSERT INTO `account_study_set`(create_by, owner_id, ss_id, date, type, active) VALUES (:accId, ownerId, :ssId, :date, :type, 1)');
+        $stmt = $pdo->prepare('INSERT INTO `account_study_set`(create_by, owner_id, ss_id, date, type, active) VALUES (:accId, :ownerId, :ssId, :cdate, :type, 1)');
         $stmt->execute(
             array(
                 ':accId' => $_SESSION['account_id'],
                 ':ownerId' => $_SESSION['account_id'],
-                ':type' => 'OWNED',
-                ':date' => time(),
-                ':ssId' => $studySet_id
+                ':ssId' => $_SESSION['study_set_id'],
+                ':cdate' => date("Y-m-d"),
+                ':type' => 'OWNED'
             )
         );
 
-        insertQuestion($pdo, $studySet_id);
+        insertQuestion($pdo, $_SESSION['study_set_id']);
     }
 
     exit();
@@ -187,8 +187,8 @@ if (isset($_POST['action']) && isset($_POST['question_id'])) {
     // ----- Create question --------------------
     if ($_POST['action'] === 'addQuestion') {
         insertQuestion($pdo, $_SESSION['study_set_id']);
-    } elseif ($_POST['action'] === 'createFinish') {
-        // check input is empty or not
+    } elseif ($_POST['action'] === 'createFinish') { // check input is empty or not
+        
         $stmt = $pdo->prepare('SELECT * FROM `question_table` AS qt
                                 INNER JOIN `option_table` AS ot
                                 ON qt.question_id = ot.question_id
@@ -204,13 +204,15 @@ if (isset($_POST['action']) && isset($_POST['question_id'])) {
             $_SESSION['toast'] = "Empty";
             return;
         }
-    } elseif ($_POST['action'] === 'importTerm') {
+        
+    } elseif ($_POST['action'] === 'importTerm') {  // get import term
+
         $import = preg_split("/\r\n|\n|\r/", $_POST['inputT']);
 
         for ($i = 0; $i < sizeof($import); $i++) {
             if ($import[$i] === '') continue;
 
-            if (preg_match("/[A-Za-z0-9]*([.])/", $import[$i]) == 0) {
+            if (preg_match("/([(])*[A-Za-z0-9]*([.,)])/", $import[$i]) == 0) {
                 $stmt = $pdo->prepare('INSERT INTO `question_table`(`type`, `question`, `ssid`) VALUES (0, :qTitle, :ssId)');
                 $stmt->execute(
                     array(
@@ -221,7 +223,7 @@ if (isset($_POST['action']) && isset($_POST['question_id'])) {
 
                 $_SESSION['qId_in_this'] = $pdo->lastInsertId();
             } elseif (isset($_SESSION['qId_in_this'])) {
-                $optionIm = trim(substr($import[$i], 2));
+                $optionIm = trim(substr($import[$i], 3));
                 $stmt = $pdo->prepare('INSERT INTO `option_table` (question_id, option_title) VALUES (:qId, :optionTitle)');
                 $stmt->execute(
                     array(

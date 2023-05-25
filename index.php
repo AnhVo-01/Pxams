@@ -13,7 +13,11 @@
 	} elseif(isset($_GET['share']) && isset($_GET['id'])) {
 		require_once('route/share.php');
 	} else {
-		require_once('views/client/pages/welcome.php'); /*require giao diện trang chủ*/
+		if (isset($_SESSION['account_id'])) {
+			require_once('views/client/pages/home.php');
+		} else {
+			require_once('views/client/pages/welcome.php'); /*require giao diện trang chủ*/
+		}
 	}
 
 	require('views/client/layouts/footer.php');

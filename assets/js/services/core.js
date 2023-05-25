@@ -26,7 +26,7 @@ function editStudySet(id) {
     xmlhttp.onload = function() {
         if (xmlhttp.readyState === XMLHttpRequest.DONE) {
             if (xmlhttp.status === 200) {
-                window.location.href = '?redirect=studyset&activity=edit';
+                window.location.href = '?redirect=studyset';
             }
         }
     }
@@ -60,7 +60,7 @@ function deleteSet(id, type) {
         if (xmlhttp.readyState === XMLHttpRequest.DONE) {
             if (xmlhttp.status === 200) {
                 ssData.confirm = false;
-                window.location.href = '?redirect=library';
+                window.location.href = '?uid='+getUrlParameter("uid")+'&redirect=library';
             }
         }
     }

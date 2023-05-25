@@ -49,7 +49,7 @@ function do_login(){
     xmlhttp.onload = function() {
         if (xmlhttp.response) {
             localStorage.setItem("userInfo", xmlhttp.response);
-            window.location.href = "?redirect=home";
+            window.location.href = "./";
         } else {
             window.location.href = "?redirect=login&source=authen";
         }

@@ -19,7 +19,7 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
             </div>
             <div class="d-none d-lg-block">
                 <?php
-                if (isset($_GET['activity']) && $_GET['activity'] == 'edit') {
+                if ($ssDetails['status'] == 'ACTIVE') {
                     echo ('<a href="?redirect=flashcard&id=' . $_SESSION['study_set_id'] . '" class="btn btn-primary">Save</a>');
                 } else {
                     echo ('<button type="button" class="btn btn-primary" onclick="createStudySet(' . $_SESSION['study_set_id'] . ')">Create</button>');
@@ -197,10 +197,10 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
 
         <div class="cards-control">
             <?php
-            if ($_GET['activity'] == 'edit') {
-                echo ('<a href="?redirect=flashcard&id=' . $_SESSION['study_set_id'] . '" class="btn btn-primary" style="padding: 0.75rem 2rem;">Save</a>');
+            if ($ssDetails['status'] == 'ACTIVE') {
+                echo ('<a href="?redirect=flashcard&id=' . $_SESSION['study_set_id'] . '" class="btn btn-primary">Save</a>');
             } else {
-                echo ('<button type="button" class="btn btn-primary" style="padding: 0.75rem 2rem;" onclick="createStudySet(' . $_SESSION['study_set_id'] . ')">Create</button>');
+                echo ('<button type="button" class="btn btn-primary" onclick="createStudySet(' . $_SESSION['study_set_id'] . ')">Create</button>');
             }
             ?>
         </div>
