@@ -163,7 +163,7 @@ if (isset($_POST['action']) && isset($_POST['question_id'])) {
         $count = $stmt->rowCount();
 
         for ($i = 1; $i <= $count; $i++) {
-            if ($_POST['answer' . $i] == 'on') {
+            if ($_POST['answer'] == $i) {
                 $answer = 1;
             } else {
                 $answer = 0;

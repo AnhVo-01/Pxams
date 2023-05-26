@@ -404,13 +404,14 @@
 }
 
 .card-option .answer{
-    color: #010101;
+    color: #1d7c50;
     background-color: #a4ddc5;
     /* background-color: #f1f8e9; */
 }
 
 .card-option .answer i{
     color: #19804f;
+    /* color: #1d7c50; */
 }
 
 .card-option .card {
