@@ -24,27 +24,6 @@ if (isset($_POST['action']) && isset($_POST['ssID'])) {
     exit();
 }
 
-if (isset($_POST['action']) && isset($_POST['uid'])) { 
-    if($_POST['action'] == 'firstLoad') {
-
-        if ($_POST['uid'] == $_SESSION['account_id']) {
-            $uid = $_SESSION['account_id'];
-        } else {
-            $uid = $_POST['uid'];
-        }
-
-        $stmt = $pdo->prepare("SELECT ssid, title, cdate, udate, status, visible_to, ass.active
-                            FROM `study_set` AS ss 
-                            INNER JOIN `account_study_set` AS ass ON ss.ssid = ass.ss_id 
-                            INNER JOIN `account` acc ON ass.create_by = acc.account_id 
-                            WHERE (ss.status = 'DRAFT' OR ss.status = 'INPROGRESS') AND acc.account_id = :accId ORDER BY udate DESC");
-        $stmt->execute(array(':accId' => $uid));
-        $progressList = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-        getLastedAct($progressList);
-    }
-}
-
 if (isset($_POST['sortField']) && isset($_POST['searchField'])) {
     $stmt = $pdo->prepare('SELECT ssid, title, description, cdate, udate, ass.date, status, visible_to, ass.type, active
                         FROM `study_set` AS ss 

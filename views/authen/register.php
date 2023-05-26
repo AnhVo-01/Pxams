@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="assets/css/authen.css">
+<link rel="stylesheet" href="assets/css/_authen.css">
 
 <div class="Login-Cont">
     <a href="./" class="close px-4" id="close-set">&times;</a>
@@ -8,33 +8,19 @@
             <span class="authen active">Register</span>
         </div>
         <div class="Login-body">
-            <div class="third-log">
-                <a href="#">
-                    <i class="fab fa-google fa-lg"></i>
-                    <span>Login width Google</span>
-                </a>
-            </div>
-            <div class="third-log">
-                <a href="#">
-                    <i class="fab fa-facebook fa-lg"></i>
-                    <span>Login width Facebook</span>
-                </a>
-            </div>
-            <div class="options-divider"><span class="mx-3">or</span></div>
-            
-                <?php
-                    if(isset($_SESSION['error'])) {
-                        echo('<div class="p-2">');
-                        echo('<p style="color: #f00; margin: 5px 10px;">'.htmlentities($_SESSION['error'])."</p>\n");
-                        echo('</div>');
-                        unset($_SESSION['error']);
-                    } elseif(isset($_SESSION['success'])) {
-                        echo('<div class="p-2">');
-                        echo('<p style="color: #23b26d; margin: 5px 10px;">'.htmlentities($_SESSION['success'])."</p>\n");
-                        unset($_SESSION['success']);
-                        echo('</div>');
-                    }
-                ?>
+            <?php
+                if(isset($_SESSION['error'])) {
+                    echo('<div class="p-2">');
+                    echo('<p style="color: #f00; margin: 5px 10px;">'.htmlentities($_SESSION['error'])."</p>\n");
+                    echo('</div>');
+                    unset($_SESSION['error']);
+                } elseif(isset($_SESSION['success'])) {
+                    echo('<div class="p-2">');
+                    echo('<p style="color: #23b26d; margin: 5px 10px;">'.htmlentities($_SESSION['success'])."</p>\n");
+                    unset($_SESSION['success']);
+                    echo('</div>');
+                }
+            ?>
     
             <form action="" id="RegForm" onsubmit="do_signup()">
                 <!-- RegForm ------------------------------------------------------------- -->
@@ -50,7 +36,7 @@
                     </div>
                     <div class="options">
                         <span class="opt-label">USERNAME</span>
-                        <input class="in-cus" type="text" name="uname" placeholder="vanh123" required>
+                        <input class="in-cus" type="text" name="uname" placeholder="pxmas" required>
                     </div>
                     <div class="options">
                         <span class="opt-label">EMAIL</span>
@@ -78,14 +64,10 @@
                     <div class="options">
                         <button class="opt-btn disable" type="submit" disabled>Sign Up</button>
                     </div>
-                    <div class="options">
-                        <span>Already have an account?</span>
-                        <a href="?redirect=login&source=authen">Login</a>
-                    </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-<script src="assets/js/authority.js"></script>
+<script src="assets/js/services/authority.js"></script>

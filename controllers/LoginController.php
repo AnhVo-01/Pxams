@@ -34,12 +34,11 @@ if ( isset($_POST["uname"]) && isset($_POST["pass"]) ) {
         $_SESSION['account_id'] = $row['account_id'];
 
         $acc = new Account($row['account_id'], $row['user_name'], $row['phone'], $row['email'], $row['type']);
-        echo json_encode($acc);
-        return;
+        $toastr = array("type" => "success", "data" => $acc, "message" => "200");
+        echo json_encode($toastr);
     } else {
-        $_SESSION["error"] = "Incorrect email or password.";
-        header("Location: ?redirect=login&source=authen");
-        return;
+        $toastr = array("type" => "danger", "message" => "Incorrect email or password!!!");
+        echo json_encode($toastr);
     }
     
     exit();

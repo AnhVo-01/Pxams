@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="assets/css/authen.css">
+<link rel="stylesheet" href="assets/css/_authen.css">
 
 <!-- Login Content ----------------------------------------- -->
 <div class="Login-Cont">
@@ -26,17 +26,8 @@
                 </a>
             </div>
             <div class="options-divider"><span class="mx-3">or</span></div>
-
-            <?php
-                if(isset($_SESSION['error'])) {
-                    echo('<div class="p-2">');
-                    echo('<p style="color: #f00; margin: 5px 10px;">'.htmlentities($_SESSION['error']).'</p>');
-                    echo('</div>');
-                    unset($_SESSION['error']);
-                }
-            ?>
         
-            <form action="#" id="LoginForm">
+            <form id="LoginForm">
                 <!-- LoginForm ------------------------------------------------------------- -->
                 <div class="Set-pop">
                     <div class="options">
@@ -53,12 +44,12 @@
                         </label>
                     </div>
                     <div class="options">
-                        <button class="opt-btn" type="button" onclick="do_login()">Log In</button>
+                        <button class="opt-btn" type="submit">Log In</button>
                     </div>
                     <div class="options">
                         <div class="auth-actions">
                             <a href="#">Use magic link instead</a>
-                            <a href="forgotten.html">Forgot password?</a>
+                            <a href="?redirect=forgotten&source=authen">Forgot password?</a>
                         </div>    
                     </div>
                 </div>
@@ -67,4 +58,4 @@
     </div>
 </div>
 
-<script src="assets/js/authority.js"></script>
+<script src="assets/js/services/Authority.js"></script>

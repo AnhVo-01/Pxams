@@ -1,14 +1,13 @@
-var x = document.getElementById("user-pass");
 var submitBtn = document.querySelector(".opt-btn");
 
 $(document).ready(() => {
     $(".showPass").click(() => {
-        if (x.type === "password") {
-            x.type = "text";
-            show.classList.replace("fa-eye-slash", "fa-eye");
+        if ($("#user-pass").attr('type') == 'password') {
+            $("#user-pass").attr('type', 'text');
+            $(".showPass").attr('class', 'far fa-eye showPass');
         } else {
-            x.type = "password";
-            show.classList.replace("fa-eye", "fa-eye-slash");
+            $("#user-pass").attr('type', 'password');
+            $(".showPass").attr('class', 'far fa-eye-slash showPass');
         }
     });
 
@@ -42,22 +41,44 @@ $(document).ready(() => {
     });
 })
 
+function back() {
+    window.history.back();
+}
+
 // ----------------------------------------------------------------
-function do_login(){
+$("#LoginForm").submit(function(event) {
+    event.preventDefault();
+
     let form = document.getElementById("LoginForm");
     xmlhttp.open("POST", "controllers/LoginController.php");
-    xmlhttp.onload = function() {
-        if (xmlhttp.response) {
-            localStorage.setItem("userInfo", xmlhttp.response);
-            window.location.href = "./";
-        } else {
-            window.location.href = "?redirect=login&source=authen";
+    xmlhttp.onload = () => {
+        if (xmlhttp.readyState === XMLHttpRequest.DONE) {
+            if (xmlhttp.status === 200) {
+                let response = JSON.parse(xmlhttp.response);
+
+                if (response.type == "success") {
+                    let expiry = new Date().getTime() + 1000 * 60 * 60 * 24 * 30;
+                    let userInfo = Object.assign(response.data, {
+                        expiry: expiry,
+                    });
+                    localStorage.setItem("auth-user", JSON.stringify(userInfo));
+                    setCookie('auth-user', response.data.account_id, 30);
+                    window.location.href = "./";
+                } else {
+                    $(".toast-alert").addClass(response.type);
+                    $(".toast-body p").html(response.message);
+                    $(".toast").addClass("show");
+                    setTimeout(function () {
+                        $(".toast").removeClass("show");
+                    }, 3000);
+                }
+            }
         }
-        console.log(xmlhttp.response);
-    }
+    };
+
     let formData = new FormData(form);
     xmlhttp.send(formData);  
-}
+});
 
 function do_signup() {
     let form = document.getElementById("RegForm");

@@ -80,7 +80,12 @@ header {
 }
 
 a {
+    color: #20d489;
     text-decoration: none !important;
+}
+
+a:hover {
+    color: #ffcd1f;
 }
 
 .offcanvas {
@@ -143,7 +148,25 @@ a {
 
 .toast-alert {
     position: fixed;
-    right: 0;
+    top: 10px;
+    right: 5px;
+    z-index: 1000;
+    border-radius: 0.375rem;
+}
+
+.toast-alert.danger {
+    background: #f00;
+    color: #f00;
+}
+
+.toast-alert.warning {
+    background-color: #ff0;
+    color: #6c757d;
+}
+
+.toast-alert.success {
+    background-color: #54a254;
+    color: #6c757d;
 }
 
 .cursor-pointer {

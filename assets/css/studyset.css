@@ -22,7 +22,7 @@ body {
     outline: 0;
     padding: 10px;
     border-radius: .25em;
-    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.125rem 0.5rem 0 #2e385614;
 }
 
 .cards-control {
@@ -59,7 +59,7 @@ body {
     padding-bottom: 20px;
 }
 
-.set-body .card {
+.study-set .card {
     position: relative;
     font-size: 18px;
     line-height: 25px;
@@ -68,13 +68,19 @@ body {
     margin-bottom: 40px;
     color: var(--text-color1);
     background-color: var(--option-box);
-    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.125rem 0.5rem 0 #2e385614;
 }
 
 .set-body .card .card-header {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
+    background-color: inherit;
+}
+
+.set-body .card .card-header .remove-btn {
+    position: absolute;
+    right: 1rem;
 }
 
 .card-menu li .btn {
@@ -87,6 +93,8 @@ body {
 
 .set-body .card .card-body {
     height: fit-content;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .set-body .card ul.option_details,
@@ -118,6 +126,7 @@ body {
     font-size: 15px;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+    margin-top: 0.75rem;
 }
 
 .set-body .card .add_option .btn {
@@ -133,17 +142,16 @@ body {
 }
 
 .set-body .card textarea {
-    background: inherit;
     width: 100%;
     outline: 0;
-    padding: 15px 0;
+    padding: .75rem;
     overflow: hidden;
-    min-height: 55px;
-    /* height: max-content; */
     border: 0;
+    height: 50px;
     color: var(--text-color1);
     border-bottom: 2px solid var(--text-color1);
     resize: none;
+    background: #f2f2f2;
 }
 
 .set-body .card textarea:focus {
@@ -198,8 +206,13 @@ body {
 .answer_opt {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
+}
+
+.answer_opt .btn {
+    outline: 0;
+    box-shadow: none;
 }
 
 .answer_opt select,
@@ -212,6 +225,7 @@ body {
     padding: 0.5em 0.75em;
     font-size: 15px;
     width: 200px;
+    height: 40px;
     border-radius: 3px;
     color: var(--text-color1);
     background: inherit;
@@ -220,10 +234,6 @@ body {
 
 .answer_opt option {
     background: var(--option-box);
-}
-
-.answer_opt .btn {
-    color: var(--text-color2);
 }
 
 /* ------ Option ------------------------ */

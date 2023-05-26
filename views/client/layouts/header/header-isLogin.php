@@ -287,7 +287,7 @@
                                     <a href="#">Privacy policy</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="controllers/LogoutController.php" onclick="logout()">
+                                    <a href="javascript:void(0);" onclick="logout()">
                                         <span class="text nav-text">Log Out</span>
                                     </a>
                                 </li>

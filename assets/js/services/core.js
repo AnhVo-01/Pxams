@@ -1,5 +1,14 @@
 const xmlhttp = new XMLHttpRequest();
 
+$(document).ready(() => {
+    let item = JSON.parse(localStorage.getItem("auth-user"));
+    if (item && new Date().getTime() > item.expiry) {
+        localStorage.removeItem("auth-user");
+        deleteCookie('auth-user');
+        window.location.href = "/";
+    }
+});
+
 function redirect(e) {
     xmlhttp.open("GET", "route/routes.php?redirect="+e.id);
     xmlhttp.onload = function() {
@@ -19,19 +28,6 @@ function createStudySetDraft() {
     }
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     xmlhttp.send("visible=0&editable=1&status=DRAFT");
-}
-
-function editStudySet(id) {
-    xmlhttp.open("POST", "controllers/LibraryController.php");
-    xmlhttp.onload = function() {
-        if (xmlhttp.readyState === XMLHttpRequest.DONE) {
-            if (xmlhttp.status === 200) {
-                window.location.href = '?redirect=studyset';
-            }
-        }
-    }
-    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    xmlhttp.send("action=edit&ssID="+id);
 }
 
 var ssData = {
@@ -69,7 +65,9 @@ function deleteSet(id, type) {
 }
 
 function logout() {
-    localStorage.removeItem("userInfo");
+    localStorage.removeItem("auth-user");
+    deleteCookie('auth-user');
+    window.location.href = "./";
 }
 
 function getUrlParameter(sParam) {
@@ -87,3 +85,7 @@ function getUrlParameter(sParam) {
     }
     return false;
 };
+
+function back() {
+    window.history.back();
+}

@@ -1,10 +1,6 @@
-$(document).ready(() => {
-    $(".set-body").load("util/option.php");
-});
-
-function cancelSA() {
-    $(".set-body").load("util/option.php");
-}
+// $(document).ready(() => {
+//     $(".set-body").load("util/option.php");
+// });
 
 function report() {
     $("#study-set-report").load("views/client/layouts/feedback-modal.php");

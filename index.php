@@ -2,10 +2,18 @@
 	require_once 'util/pdo.php';
     session_start();
 
-	// require('controllers/HeaderController.php');
+	$cookie_name = "auth-user";
+	if(isset($_COOKIE[$cookie_name])) {
+		$_SESSION['account_id'] = $_COOKIE[$cookie_name];
+	} else {
+		session_unset();
+	}
+
     require 'views/client/layouts/header/header.php';
 
-	// require_once('route/routes.php');
+    echo('<div class="toast-alert">');
+    require 'util/toast.php';
+    echo('</div>');
 
 
 	if(isset($_GET['redirect']) || isset($_GET['source'])) {

@@ -113,7 +113,15 @@ if (isset($_POST['visible']) && isset($_POST['editable']) && isset($_POST['visib
     header('Location: ../?redirect=studyset');
 }
 
-// ----- Set question for set --------------------
+// ----- Add more question --------------------
+if (isset($_POST['ssId']) && isset($_POST['action'])) {
+    if ($_POST['action'] == 'addQuestion') {
+        insertQuestion($pdo, $_POST['ssId']);
+        return showAll($pdo, $_POST['ssId']);
+    }
+}
+
+// ----- Set question --------------------
 if (isset($_POST['question']) && isset($_POST['question_id'])) {
     $stmt = $pdo->prepare('UPDATE `question_table` SET question=:question WHERE question_id=:questionId');
     $stmt->execute(
@@ -134,11 +142,27 @@ if (isset($_POST['type']) && isset($_POST['question_id'])) {
             ':questionId' => $_POST['question_id']
         )
     );
+
+    return cancelSetAnswer($pdo, getQuestion($pdo, $_POST['question_id']));
+}
+
+// ----- Set answer for question --------------------
+if (isset($_POST['active']) && isset($_POST['action']) && isset($_POST['question_id'])) {
+    if ($_POST['action'] == 'setAnswer') {
+        $question = getQuestion($pdo, $_POST['question_id']);
+
+        if ($_POST['active'] == 'true') {
+            return setAnswer($pdo, $question);
+        } else {
+            return cancelSetAnswer($pdo, $question);
+        }
+    }
+
     exit();
 }
 
-// ----- Add more option / Delete question --------------------
-if (isset($_POST['action']) && isset($_POST['question_id'])) {
+// ----- Set answer / Delete question --------------------
+if (isset($_POST['ssId']) && isset($_POST['action']) && isset($_POST['question_id'])) {
     if ($_POST['action'] == 'delete') {
         $stmt = $pdo->prepare('DELETE FROM `question_table` WHERE question_id =:questionId');
         $stmt->execute(
@@ -146,28 +170,18 @@ if (isset($_POST['action']) && isset($_POST['question_id'])) {
                 ':questionId' => $_POST['question_id']
             )
         );
-    } elseif ($_POST['action'] == 'setAnswer') {
-        $stmt = $pdo->prepare('SELECT * FROM `question_table` WHERE question_id=:questionId');
-        $stmt->execute(
-            array(
-                ':questionId' => $_POST['question_id']
-            )
-        );
-        $question = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        return setAnswer($pdo, $question);
     } elseif ($_POST['action'] == 'submitAnswer') {
-        // ----- Set answer ----------------------
         $stmt = $pdo->prepare('SELECT * FROM `option_table` WHERE question_id = :qid');
         $stmt->execute(array(':qid' => $_POST['question_id']));
         $count = $stmt->rowCount();
 
         for ($i = 1; $i <= $count; $i++) {
-            if ($_POST['answer'] == $i) {
+            if ( ($_POST['ansType'] == 1 && isset($_POST['answer' . $i]) && $_POST['answer' . $i] == 'on') xor ($_POST['ansType'] == 0 && $_POST['answer'] == $i) ) {
                 $answer = 1;
             } else {
                 $answer = 0;
             }
+
             $optionId = $_POST['option_id' . $i];
 
             $stmt = $pdo->prepare('UPDATE `option_table` SET `answer`=:ans WHERE option_id=:optionId');
@@ -179,15 +193,16 @@ if (isset($_POST['action']) && isset($_POST['question_id'])) {
             );
         }
 
-        exit();
+        $stmt = $pdo->prepare('UPDATE `question_table` SET `answer`=1 WHERE question_id = :qid');
+        $stmt->execute(array(':qid' => $_POST['question_id']));
     }
 
-    exit();
-} elseif (isset($_POST['action']) && isset($_SESSION['study_set_id'])) {
-    // ----- Create question --------------------
-    if ($_POST['action'] === 'addQuestion') {
-        insertQuestion($pdo, $_SESSION['study_set_id']);
-    } elseif ($_POST['action'] === 'createFinish') { // check input is empty or not
+    return showAll($pdo, $_POST['ssId']);
+}
+
+
+if (isset($_POST['action']) && isset($_SESSION['study_set_id'])) {
+    if ($_POST['action'] === 'createFinish') { // check input is empty or not
         
         $stmt = $pdo->prepare('SELECT * FROM `question_table` AS qt
                                 INNER JOIN `option_table` AS ot
@@ -264,20 +279,12 @@ if (isset($_POST['optionTitle']) && isset($_POST['option_id']) && isset($_POST['
 }
 
 // ----- Delete option --------------------
-if (isset($_POST['option_id'])) {
+if (isset($_POST['option_id']) && isset($_POST['question_id'])) {
     $stmt = $pdo->prepare('DELETE FROM `option_table` WHERE option_id=:optionId');
     $stmt->execute(
         array(
             ':optionId' => $_POST['option_id']
         )
     );
-
-    // // load-all
-    // $stmt = $pdo->prepare('SELECT * FROM `question_table` WHERE ssid = :ssId');
-    // $stmt->execute(array(':ssId' => $_SESSION['study_set_id']));
-    // $listQuestion = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // reloadOption($pdo, $listQuestion);
-
-    exit();
+    return cancelSetAnswer($pdo, getQuestion($pdo, $_POST['question_id']));
 }

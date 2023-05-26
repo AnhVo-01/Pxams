@@ -181,6 +181,7 @@
         </div>
     </footer>
 
+    <script src="assets/js/cookie.js"></script>
     <script src="assets/js/darkmode.js"></script>
     <script src="assets/js/tooltip.js"></script>
     <script src="assets/js/plugins/convertSVG.js"></script>

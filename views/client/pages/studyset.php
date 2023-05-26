@@ -1,6 +1,7 @@
 <?php
+require_once 'util/StudySet.php';
 $stmt = $pdo->prepare('SELECT * FROM `study_set` WHERE ssid = :ssId');
-$stmt->execute(array(':ssId' => $_SESSION['study_set_id']));
+$stmt->execute(array(':ssId' => $_GET['ssid']));
 $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
@@ -20,9 +21,9 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
             <div class="d-none d-lg-block">
                 <?php
                 if ($ssDetails['status'] == 'ACTIVE') {
-                    echo ('<a href="?redirect=flashcard&id=' . $_SESSION['study_set_id'] . '" class="btn btn-primary">Save</a>');
+                    echo ('<a href="?redirect=flashcard&id=' . $_GET['ssid'] . '" class="btn btn-primary">Save</a>');
                 } else {
-                    echo ('<button type="button" class="btn btn-primary" onclick="createStudySet(' . $_SESSION['study_set_id'] . ')">Create</button>');
+                    echo ('<button type="button" class="btn btn-primary" onclick="createStudySet(' . $_GET['ssid'] . ')">Create</button>');
                 }
                 ?>
             </div>
@@ -180,10 +181,12 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
                 <!-- study-set report -->
                 <div id="study-set-report"></div>
             </div>
-
         </div>
 
         <div class="set-body">
+            <?php
+            showAll($pdo, $_GET['ssid']);
+            ?>
         </div>
 
         <div class="card" style="background: inherit; border-radius: .25em;">
@@ -198,9 +201,9 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
         <div class="cards-control">
             <?php
             if ($ssDetails['status'] == 'ACTIVE') {
-                echo ('<a href="?redirect=flashcard&id=' . $_SESSION['study_set_id'] . '" class="btn btn-primary">Save</a>');
+                echo ('<a href="?redirect=flashcard&id=' . $_GET['ssid'] . '" class="btn btn-primary">Save</a>');
             } else {
-                echo ('<button type="button" class="btn btn-primary" onclick="createStudySet(' . $_SESSION['study_set_id'] . ')">Create</button>');
+                echo ('<button type="button" class="btn btn-primary" onclick="createStudySet(' . $_GET['ssid'] . ')">Create</button>');
             }
             ?>
         </div>

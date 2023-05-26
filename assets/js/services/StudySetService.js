@@ -17,12 +17,12 @@ function addNewCard() {
     xmlhttp.onload = function() {
         if (xmlhttp.readyState === XMLHttpRequest.DONE) {
             if (xmlhttp.status === 200) {
-                $('.set-body').load('util/option.php');
+                $('.set-body').html(xmlhttp.responseText);
             }
         }
     }
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    xmlhttp.send("action=addQuestion");
+    xmlhttp.send("action=addQuestion&ssId=" + getUrlParameter("ssid"));
 }
 
 function setQuestion(e) {
@@ -36,7 +36,7 @@ function setQuestionType(type, id) {
     xmlhttp.onload = function() {
         if (xmlhttp.readyState === XMLHttpRequest.DONE) {
             if (xmlhttp.status === 200) {
-                $('.set-body').load('util/option.php');
+                $(".option-container-"+id).html(xmlhttp.responseText);
             }
         }
     }
@@ -49,12 +49,12 @@ function deleteQuestion(id) {
     xmlhttp.onload = function() {
         if (xmlhttp.readyState === XMLHttpRequest.DONE) {
             if (xmlhttp.status === 200) {
-                $('.set-body').load('util/option.php');
+                $('.set-body').html(xmlhttp.responseText);
             }
         }
     }
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    xmlhttp.send("question_id="+id+"&action=delete");
+    xmlhttp.send("question_id="+id+"&action=delete&ssId=" + getUrlParameter("ssid"));
 }
 
 function setOption(e, qid) {
@@ -87,41 +87,49 @@ function deleteOption(qid, id) {
         xmlhttp.onload = function() {
             if (xmlhttp.readyState === XMLHttpRequest.DONE) {
                 if (xmlhttp.status === 200) {
-                    $('.set-body').load('util/option.php');
+                    $(".option-container-"+qid).html(xmlhttp.responseText);
                 }
             }
         }
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xmlhttp.send("option_id="+id);
+        xmlhttp.send("option_id="+id+"&question_id="+qid);
     }
 }
 
+// --------------------------------------------------------------------------------------------
+var setAnswerType = false;
 function setAnswer(id) {
     xmlhttp.open("POST", "controllers/StudySetController.php");
     xmlhttp.onload = function() {
         if (xmlhttp.readyState === XMLHttpRequest.DONE) {
             if (xmlhttp.status === 200) {
-                $(".option-container-"+id+"").html(xmlhttp.responseText);
+                $(".option-container-"+id).html(xmlhttp.responseText);
             }
         }
     }
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    xmlhttp.send("question_id="+id+"&action=setAnswer");
+    xmlhttp.send("question_id="+id+"&action=setAnswer&active="+!setAnswerType);
+    setAnswerType = !setAnswerType;
 }
 
-function submitAnswer(id) {
+function submitAnswer(id, type) {
     xmlhttp.open("POST", "controllers/StudySetController.php");
     xmlhttp.onload = function() {
         if (xmlhttp.readyState === XMLHttpRequest.DONE) {
             if (xmlhttp.status === 200) {
-                $('.set-body').load('util/option.php');
+                $('.set-body').html(xmlhttp.response);
+                setAnswerType = false;
             }
         }
     }
     let form = document.querySelector(".set_answer_"+id+"");
     let formData = new FormData(form);
+    formData.append('ssId', getUrlParameter("ssid"));
+    formData.append('ansType', type);
     xmlhttp.send(formData);
 }
+
+// --------------------------------------------------------------------------------------------
 
 function createStudySet(id) {
     xmlhttp.open("POST", "controllers/StudySetController.php");

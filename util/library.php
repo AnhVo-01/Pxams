@@ -5,7 +5,7 @@ function getLastedAct($progressList) {
         foreach($progressList as $row) {
             if ($row['active'] == 1 && $row['status'] !== 'ACTIVE') {
                 echo('<div class="ListItemGroup" oncontextmenu="option('.htmlentities($row['ssid']).'); return false;">');
-                echo('<div class="ListItem" onclick="editStudySet('.htmlentities($row['ssid']).')">');
+                echo('<a class="ListItem" href="?redirect=studyset&ssid='.htmlentities($row['ssid']).'">');
                 echo('<div class="SetPreview">');
                 echo('<div class="SetPreviewTitle">');
                 echo('<span>( '.htmlentities($row['status']).' )</span>');
@@ -17,7 +17,7 @@ function getLastedAct($progressList) {
                 } else if ($row['visible_to'] == 2 || $row['visible_to'] == 3) {
                     echo('<i class="far fa-lock-alt"></i>');
                 }
-                echo('</div></div></div>');
+                echo('</div></div></a>');
                 echo('<ul class="ss-menu" id="menu-'.htmlentities($row['ssid']).'">');
                 echo('<li><button class="btn menu-item" onclick="editStudySet('.$row['ssid'].');"><i class="fas fa-pen"></i>Edit</button></li>');
                 echo('<li><button class="btn menu-item" onclick="setDataForDel('.$row['ssid'].', 1);" data-bs-toggle="modal" data-bs-target="#confirm">');
