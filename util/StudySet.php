@@ -167,3 +167,20 @@ function cancelSetAnswer($pdo, $question)
     }
     echo ('</div>');
 }
+
+function importPreview($listQuestion) {
+    for ($i = 0; $i < sizeof($listQuestion); $i++) {
+        if ($listQuestion[$i] === '') {
+            echo ('</ul>'); 
+            continue;
+        }
+
+        if (preg_match("/([(])*[A-Za-z0-9]*([.,)])/", $listQuestion[$i]) == 0) {
+            echo ('<ul class="previewRows">');
+            echo ('<li>'.$listQuestion[$i].'</li>');
+        } else {
+            $optionIm = trim(substr($listQuestion[$i], 3));
+            echo ('<li>'.$optionIm.'</li>');
+        }
+    }
+}

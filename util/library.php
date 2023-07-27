@@ -19,7 +19,6 @@ function getLastedAct($progressList) {
                 }
                 echo('</div></div></a>');
                 echo('<ul class="ss-menu" id="menu-'.htmlentities($row['ssid']).'">');
-                echo('<li><button class="btn menu-item" onclick="editStudySet('.$row['ssid'].');"><i class="fas fa-pen"></i>Edit</button></li>');
                 echo('<li><button class="btn menu-item" onclick="setDataForDel('.$row['ssid'].', 1);" data-bs-toggle="modal" data-bs-target="#confirm">');
                 echo('<i class="far fa-trash"></i><span>Remove</span>');
                 echo('</button></li>');
@@ -70,7 +69,7 @@ function getDashboardFeed($pdo, $uid, $month, $year) {
             echo('<ul class="ss-menu" id="menu-'.htmlentities($set['ssid']).'">');
             if ($set['type'] == 'OWNED') {
                 $type = 1;
-                echo('<li><button class="btn menu-item" onclick="editStudySet('.$set['ssid'].');"><i class="fas fa-pen"></i>Edit</button></li>');
+                echo('<li><a href="?redirect=studyset&ssid='.$set['ssid'].'" class="btn menu-item"><i class="fas fa-pen"></i>Edit</a></li>');
             } else {
                 $type = 0;
             }

@@ -42,50 +42,6 @@ function showFlashCard($pdo, $list) {
 }
 
 function getAllCards($pdo, $list, $studyset) {
-    foreach($list as $question) {
-        echo('<div class="card-option p-0">');
-        echo('<div class="card">');
-        echo('<div class="card-header">');
-        echo('<button class="btn bookmark-card"><i class="far fa-star"></i></button>');
-        if($studyset['type'] == 'OWNED') {
-            echo('<button class="btn edit-card"><i class="fas fa-pen"></i></button>');
-        }
-        echo('</div>');
-        echo('<div class="card-body">');
-        echo('<div class="question">'.htmlentities($question['question']).'</div>');
-        echo('<ul class="options">');
-
-        $stmt = $pdo->prepare('SELECT * FROM `option_table` WHERE question_id = :qid');
-        $stmt->execute(array(':qid' => htmlentities($question['question_id'])));
-        $listOption = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        if ($question['type'] == 1) {
-            foreach($listOption as $option) {
-                if($option['answer'] == 1) {
-                    echo('<li class="answer">');
-                    echo('<i class="fas fa-check-square"></i>');
-                } else {
-                    echo('<li>');
-                    echo('<i class="far fa-square"></i>');
-                }
-                echo('<span>'.htmlentities($option['option_title']).'</span>');
-                echo('</li>');
-            }
-        }else{
-            foreach($listOption as $option) {
-                if($option['answer'] == 1) {
-                    echo('<li class="answer">');
-                    echo('<i class="far fa-dot-circle"></i>');
-                } else {
-                    echo('<li>');
-                    echo('<i class="far fa-circle"></i>');
-                }
-                echo('<span>'.htmlentities($option['option_title']).'</span>');
-                echo('</li>');
-            }
-        }
-        echo('</ul>');
-        echo('</div></div></div>');
-    }
+    
 }
 ?>

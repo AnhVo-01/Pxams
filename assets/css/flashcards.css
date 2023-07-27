@@ -326,7 +326,7 @@
     justify-content: space-between;
 }
 
-.cards-control button {
+.cards-control .nav-item {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -348,7 +348,7 @@
     text-align: center;
 }
 
-.cards-control ul li button:not(.dropdown-item) {
+.cards-control ul li .nav-item:not(.dropdown-item) {
     border: 1px solid var(--text-color1);
     border-radius: 50%;
     width: 36px;
@@ -406,7 +406,7 @@
 .card-option .answer{
     color: #1d7c50;
     background-color: #a4ddc5;
-    /* background-color: #f1f8e9; */
+    /* background-color: #f7fbf9; */
 }
 
 .card-option .answer i{
