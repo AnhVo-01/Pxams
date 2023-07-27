@@ -7,8 +7,6 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
 
 <link rel="stylesheet" href="assets/css/studyset.css">
 
-<div class="toast-alert"></div>
-
 <!-- Main Content --------------------------------------- -->
 <div class="container" style="margin-bottom: 80px;">
     <div class="study-set">
@@ -220,8 +218,7 @@ $ssDetails = $stmt->fetch(PDO::FETCH_ASSOC);
             <span>Copy and Paste your data here (from Word, Excel, Google Docs, etc.)</span>
         </div>
         <form id="import-term">
-            <input type="hidden" name="action" value="importTerm">
-            <textarea class="import-textarea" name="inputT" placeholder="Question1   Answer1
+            <textarea onchange="importPreview()" class="import-textarea" name="inputT" placeholder="Question1   Answer1
 Option 1
 Option 2
 

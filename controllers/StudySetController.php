@@ -201,19 +201,19 @@ if (isset($_POST['ssId']) && isset($_POST['action']) && isset($_POST['question_i
 }
 
 
-if (isset($_POST['action']) && isset($_SESSION['study_set_id'])) {
+if (isset($_POST['action']) && isset($_POST['study_set_id'])) {
     if ($_POST['action'] === 'createFinish') { // check input is empty or not
         
         $stmt = $pdo->prepare('SELECT * FROM `question_table` AS qt
                                 INNER JOIN `option_table` AS ot
                                 ON qt.question_id = ot.question_id
                                 WHERE ssid =:ssId AND (qt.question IS NULL OR ot.option_title IS NULL)');
-        $stmt->execute(array(':ssId' => $_SESSION['study_set_id']));
+        $stmt->execute(array(':ssId' => $_POST['study_set_id']));
         $emptyCount = $stmt->rowCount();
 
         if ($emptyCount < 1) {
             $stmt = $pdo->prepare("UPDATE `study_set` SET `status` = 'ACTIVE' WHERE ssid=:ssId");
-            $stmt->execute(array(':ssId' => $_SESSION['study_set_id']));
+            $stmt->execute(array(':ssId' => $_POST['study_set_id']));
         } else {
             echo ('toast');
             $_SESSION['toast'] = "Empty";
@@ -232,7 +232,7 @@ if (isset($_POST['action']) && isset($_SESSION['study_set_id'])) {
                 $stmt->execute(
                     array(
                         ':qTitle' => $import[$i],
-                        ':ssId' => $_SESSION['study_set_id']
+                        ':ssId' => $_POST['study_set_id']
                     )
                 );
 
@@ -248,6 +248,13 @@ if (isset($_POST['action']) && isset($_SESSION['study_set_id'])) {
                 );
             }
         }
+        exit();
+
+    } elseif ($_POST['action'] === 'importPreview') {
+
+        $import = preg_split("/\r\n|\n|\r/", $_POST['inputT']);
+
+        return importPreview($import);
     }
 
     exit();

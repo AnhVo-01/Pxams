@@ -147,8 +147,26 @@ function createStudySet(id) {
             }
         }
     }
-    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("action=createFinish");
+}
+
+// --------------------------------------------------------------------------------------------
+
+function importPreview() {
+    xmlhttp.open("POST", "controllers/StudySetController.php");
+    xmlhttp.onload = function() {
+        if (xmlhttp.readyState === XMLHttpRequest.DONE) {
+            if (xmlhttp.status === 200) {
+                $(".ImportTerms-previewRows").html(xmlhttp.response);
+            }
+        }
+    }
+    let form = document.querySelector("#import-term");
+    let formData = new FormData(form);
+    formData.append('action', 'importPreview');
+    formData.append('study_set_id', getUrlParameter("ssid"));
+    xmlhttp.send(formData);
 }
 
 function importTerms () {
@@ -162,5 +180,7 @@ function importTerms () {
     }
     let form = document.querySelector("#import-term");
     let formData = new FormData(form);
+    formData.append('action', 'importTerm');
+    formData.append('study_set_id', getUrlParameter("ssid"));
     xmlhttp.send(formData);
 }

@@ -114,7 +114,7 @@
                                                                             FROM `study_set` AS ss 
                                                                             INNER JOIN `account_study_set` AS ass ON ss.ssid = ass.ss_id
                                                                             INNER JOIN `account` acc ON ass.owner_id = acc.account_id
-                                                                            WHERE ss.status = 'ACTIVE' AND active = 1 AND ass.create_by=:accId ORDER BY ass.date DESC");
+                                                                            WHERE ss.status = 'ACTIVE' AND active = 1 AND ass.create_by=:accId ORDER BY ass.date DESC LIMIT 10");
                                                         $stmt->execute(array(':accId' => $_SESSION['account_id']));
                                                         $ssList = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -135,7 +135,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="all">
-                                                    <a class="dropdown-item text-primary" href="?redirect=library">View alls</a>
+                                                    <a class="dropdown-item text-primary" href="?uid=<?= $_SESSION['account_id'] ?>&redirect=library">View alls</a>
                                                 </div>
                                             </div>
                                         </li>

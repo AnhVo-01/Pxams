@@ -370,3 +370,18 @@ body {
     padding-top: 1.25rem;
     margin-top: 1.25rem;
 }
+
+.previewRows {
+    list-style: none;
+    padding: 20px 30px;
+    line-height: 25px;
+    font-weight: 500;
+    border-radius: .25em;
+    color: var(--text-color1);
+    background-color: var(--option-box);
+    box-shadow: 0 0.125rem 0.5rem 0 #2e385614;
+}
+
+.previewRows li:not(:first-child) {
+    padding-left: 20px;
+}
